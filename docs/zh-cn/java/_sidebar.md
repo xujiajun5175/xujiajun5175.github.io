@@ -20,6 +20,7 @@
   - [logback 日志](zh-cn/java/springboot/09-logback.md)
   - [拦截器和过滤器的使用](zh-cn/java/springboot/10-filter-interceptor.md)
   - [springboot 自动装配](zh-cn/java/springboot/11-autoconfig.md)
+  - [spring 组件注册的多种方式](zh-cn/java/springboot/12-component-register.md)
 
 - **Spring Security**
 
