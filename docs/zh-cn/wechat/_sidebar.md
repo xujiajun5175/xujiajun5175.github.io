@@ -1,0 +1,2 @@
+- [微信小程序](zh-cn/wechat/)
+  - [第三方 api](zh-cn/wechat/api)
