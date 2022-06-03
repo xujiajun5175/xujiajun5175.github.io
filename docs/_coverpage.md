@@ -14,7 +14,7 @@
 
 - 书山有路勤为径,学海无涯苦作舟
 
-[Gitee](https://gitee.com/xujiajun0319/xujiajun0319/)
+[GitHub](https://github.com/18626428291/18626428291.github.io.git)
 [Get Started](zh-cn/vue/)
 
 ![](_media/bg.png)
