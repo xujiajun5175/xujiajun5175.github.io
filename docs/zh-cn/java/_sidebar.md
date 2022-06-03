@@ -21,6 +21,9 @@
   - [拦截器和过滤器的使用](zh-cn/java/springboot/10-filter-interceptor.md)
   - [springboot 自动装配](zh-cn/java/springboot/11-autoconfig.md)
   - [spring 组件注册的多种方式](zh-cn/java/springboot/12-component-register.md)
+  - [spring Bean 生命周期](zh-cn/java/springboot/13-bean-life.md)
+  - [BeanPostProcessor 和 InstantiationAwareBeanPostProcessor](zh-cn/java/springboot/14-beanpostprocessor.md)
+  - [BeanFactoryPostProcessor 和 BeanDefinitionRegistryPostProcessor](zh-cn/java/springboot/15-beanfactorypostprocessor.md)
 
 - **Spring Security**
 
