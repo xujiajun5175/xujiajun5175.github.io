@@ -24,6 +24,7 @@
   - [spring Bean 生命周期](zh-cn/java/springboot/13-bean-life.md)
   - [BeanPostProcessor 和 InstantiationAwareBeanPostProcessor](zh-cn/java/springboot/14-beanpostprocessor.md)
   - [BeanFactoryPostProcessor 和 BeanDefinitionRegistryPostProcessor](zh-cn/java/springboot/15-beanfactorypostprocessor.md)
+  - [SpringApplication](zh-cn/java/springboot/16-spring-application.md)
 
 - **Spring Security**
 
