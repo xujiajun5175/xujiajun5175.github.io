@@ -25,6 +25,8 @@
   - [BeanPostProcessor 和 InstantiationAwareBeanPostProcessor](zh-cn/java/springboot/14-beanpostprocessor.md)
   - [BeanFactoryPostProcessor 和 BeanDefinitionRegistryPostProcessor](zh-cn/java/springboot/15-beanfactorypostprocessor.md)
   - [SpringApplication](zh-cn/java/springboot/16-spring-application.md)
+  - [SpringBoot 异步调用](zh-cn/java/springboot/17-spring.async.md)
+  - [整合 WebSocket](zh-cn/java/springboot/18-websocket.md)
 
 - **Spring Security**
 
