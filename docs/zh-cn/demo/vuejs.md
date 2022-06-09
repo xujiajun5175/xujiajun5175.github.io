@@ -10,7 +10,7 @@
 
 - 实现效果
 
-  ![2022-02-12 23.27.44](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/2022-02-12%2023.27.44.gif)
+![vuejs-2022-06-09-16-14-17](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/vscode/vuejs-2022-06-09-16-14-17.gif)
 
 - 实现代码
 

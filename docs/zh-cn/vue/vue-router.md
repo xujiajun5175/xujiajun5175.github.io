@@ -79,8 +79,6 @@ npm install vue-router@4
 npm update vue-router --save
 ```
 
-
-
 #### 配置
 
 !> 基于 vue-cli 创建项目工程
@@ -153,16 +151,16 @@ npm update vue-router --save
    import VueRouter from 'vue-router'
    //引入路由器
    import router from './router/index'
-   
+
    ...
    Vue.use(VueRouter)
-   
+
    new Vue({
      ...
      router,
      ...
    }).$mount('#app')
-   
+
    ```
 
    编写 index.html 或者 App.vue
@@ -209,7 +207,7 @@ npm update vue-router --save
 
 ##### 效果
 
-![2022-02-15 00.04.20](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/2022-02-15%2000.04.20.gif)
+![2022-02-15 00.04.20](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/2022-02-15%2000.04.20.gif)
 
 ### router-link
 
@@ -314,7 +312,7 @@ export default {}
 
 #### 效果
 
-![ ](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/2022-02-15%2000.44.05.gif)
+![ ](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/2022-02-15%2000.44.05.gif)
 
 !> 实际项目中,很少会嵌套至六级,一般三级及以下
 
@@ -392,7 +390,7 @@ export default {}
                :to="`/home/homechild1/detail?id=${item.id}&title=${item.title}`"
                >{{ item.title }}</router-link
              > -->
-   
+
              <!-- to的 对象写法-->
              <router-link
                :to="{
@@ -411,7 +409,7 @@ export default {}
          <router-view></router-view>
        </div>
      </template>
-   
+
      <script>
      export default {
        data() {
@@ -434,13 +432,13 @@ export default {}
        },
      }
      </script>
-   
+
      <style></style>
      ```
 
 - 效果
 
-  ![2022-02-15 22.27.32](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/2022-02-15%2022.27.32.gif)
+  ![2022-02-15 22.27.32](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/2022-02-15%2022.27.32.gif)
 
 #### params 参数
 
@@ -452,15 +450,15 @@ export default {}
 
      需要配置路由信息 使用**占位符**对参数占位
 
-     ![image-20220215224911422](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220215224911422.png)
+     ![image-20220215224911422](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220215224911422.png)
 
      然后`to`属性中直接拼接相应的参数
 
-     ![image-20220215225045635](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220215225045635.png)
+     ![image-20220215225045635](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220215225045635.png)
 
      组件取值 `$route.params`
 
-     ![image-20220215225217728](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220215225217728.png)
+     ![image-20220215225217728](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220215225217728.png)
 
   2. 对象方式
 
@@ -474,13 +472,13 @@ export default {}
 
 ---
 
-![image-20220215222912302](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220215222912302.png)
+![image-20220215222912302](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220215222912302.png)
 
 !> 一般名称需要见名知义,原则上是可以随便命名
 
 #### 在 router-link 中使用
 
-![image-20220215223300223](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220215223300223.png)
+![image-20220215223300223](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220215223300223.png)
 
 !> 需要使用对象写法为`to`属性赋值,优点就是为了简化长路径
 
@@ -538,7 +536,7 @@ export default {}
        	title: $route.query.title
      }; // 返回的需要是对象
    }
-   
+
    //简化
    ...
    props(query){ // 结构赋值 优化
@@ -547,7 +545,7 @@ export default {}
        	title: query.title
      };
    }
-   
+
    //再简化
    ...
    props(query:{id,title}){ // 结构赋值 连续写法
@@ -556,7 +554,7 @@ export default {}
        	title
      };
    }
-   
+
    ```
 
    !> 这种方式的优点是相对灵活,并且可以使用于`params`和`query`
@@ -579,7 +577,7 @@ export default {}
 
 添加`replace`属性
 
-![image-20220215233124357](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220215233124357.png)
+![image-20220215233124357](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220215233124357.png)
 
 ### 编程式路由导航
 
@@ -632,7 +630,7 @@ methods: {
 
 **效果**
 
-![dad](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/dad.gif)
+![dad](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/dad.gif)
 
 ##### **back() && forward()**
 
@@ -665,7 +663,7 @@ export default {
 
 **效果**
 
-![2022-02-16 00.00.48](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/2022-02-16%2000.00.48-20220216002031.gif)
+![2022-02-16 00.00.48](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/2022-02-16%2000.00.48-20220216002031.gif)
 
 ##### **go() **
 
@@ -697,11 +695,11 @@ export default {
 
 !> 哪个组件需要缓存就针对哪个组件,最好使用`include`,而不是全部使用.`include`使用的是**组件名**(取自组件本身的`name`配置项)!!!
 
-![2022-02-16 00.37.18](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/2022-02-16%2000.37.18-20220216003742.gif)
+![2022-02-16 00.37.18](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/2022-02-16%2000.37.18-20220216003742.gif)
 
 !> 如果组件较多或者想缓存多个组件,可以使用数组传入组件名
 
-![image-20220216003952167](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220216003952167-20220216003952.png)
+![image-20220216003952167](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220216003952167-20220216003952.png)
 
 ### 生命周期钩子函数
 
@@ -760,7 +758,7 @@ export default {
 
 #### 效果
 
-![2022-02-16 00.57.59](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/2022-02-16%2000.57.59-20220216005851.gif)
+![2022-02-16 00.57.59](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/2022-02-16%2000.57.59-20220216005851.gif)
 
 ### 路由守卫
 
@@ -925,10 +923,6 @@ export default {
 
 <!-- tabs:end -->
 
-
-
-
-
 ### 异常问题解决
 
 ---
@@ -939,9 +933,7 @@ export default {
 
 `NavigationDuplicated: Avoided redundant navigation to current location: "/shopcart".`
 
-![img](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/webp-20220218155447.jpg)
-
-
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/webp-20220218155447.jpg)
 
 **问题解释**
 
@@ -966,10 +958,6 @@ Router.prototype.push = function push(location) {
 **参考文档**
 
 > https://www.jianshu.com/p/68d933df4c70
-
-
-
-
 
 <style>
   .props_func{

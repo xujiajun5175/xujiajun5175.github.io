@@ -10,7 +10,7 @@
 
 骰子的一面，最多可以放置 9 个点。
 
-![bg2015071328](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071328-20220217211115.png)
+![bg2015071328](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071328-20220217211115.png)
 
 下面，就来看看 Flex 如何实现，从 1 个点到 9 个点的布局。你可以到[codepen](https://codepen.io/LandonSchropp/pen/KpzzGo)查看 Demo。
 
@@ -30,13 +30,13 @@
 
 <!-- tabs:start -->
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217223606773-20220217223606.png" alt="image-20220217223606773" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217223606773-20220217223606.png" alt="image-20220217223606773" style="zoom:25%;pointer-events: none;" />**
 
 **左对齐**
 
 Flex 布局默认就是首行左对齐
 
-![bg2015071301](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071301-20220217211400.png)
+![bg2015071301](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071301-20220217211400.png)
 
 ```css
 .box {
@@ -44,11 +44,11 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217223648204-20220217223648.png" alt="image-20220217223648204" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217223648204-20220217223648.png" alt="image-20220217223648204" style="zoom:25%;pointer-events: none;" />**
 
 **居中对齐**
 
-![bg2015071302](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071302-20220217211540.png)
+![bg2015071302](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071302-20220217211540.png)
 
 ```css
 .box {
@@ -57,11 +57,11 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217223708370-20220217223708.png" alt="image-20220217223708370" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217223708370-20220217223708.png" alt="image-20220217223708370" style="zoom:25%;pointer-events: none;" />**
 
 **右对齐**
 
-![bg2015071303](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071303-20220217211552.png)
+![bg2015071303](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071303-20220217211552.png)
 
 ```css
 .box {
@@ -70,13 +70,13 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217223733562-20220217223733.png" alt="image-20220217223733562" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217223733562-20220217223733.png" alt="image-20220217223733562" style="zoom:25%;pointer-events: none;" />**
 
 **交叉轴对齐**
 
 设置交叉轴对齐方式，可以垂直移动主轴。
 
-![bg2015071304](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071304-20220217212052.png)
+![bg2015071304](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071304-20220217212052.png)
 
 ```css
 .box {
@@ -85,9 +85,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217223752523-20220217223752.png" alt="image-20220217223752523" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217223752523-20220217223752.png" alt="image-20220217223752523" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071305](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071305-20220217212138.png)
+![bg2015071305](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071305-20220217212138.png)
 
 ```css
 .box {
@@ -97,9 +97,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217223816617-20220217223816.png" alt="image-20220217223816617" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217223816617-20220217223816.png" alt="image-20220217223816617" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071306](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071306-20220217212210.png)
+![bg2015071306](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071306-20220217212210.png)
 
 ```css
 .box {
@@ -109,9 +109,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217223830983-20220217223831.png" alt="image-20220217223830983" style="zoom:25%;pointer-events: none;" ondragstart="return false;"  />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217223830983-20220217223831.png" alt="image-20220217223830983" style="zoom:25%;pointer-events: none;" ondragstart="return false;"  />**
 
-![bg2015071307](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071307-20220217212236.png)
+![bg2015071307](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071307-20220217212236.png)
 
 ```css
 .box {
@@ -129,9 +129,9 @@ Flex 布局默认就是首行左对齐
 
 <!-- tabs:start -->
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225010803-20220217225010.png" alt="image-20220217225010803" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225010803-20220217225010.png" alt="image-20220217225010803" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071308](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071308-20220217222034.png)
+![bg2015071308](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071308-20220217222034.png)
 
 ```css
 .box {
@@ -140,9 +140,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225028502-20220217225028.png" alt="image-20220217225028502" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225028502-20220217225028.png" alt="image-20220217225028502" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071309](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071309-20220217222131.png)
+![bg2015071309](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071309-20220217222131.png)
 
 ```css
 .box {
@@ -152,9 +152,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225037187-20220217225037.png" alt="image-20220217225037187" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225037187-20220217225037.png" alt="image-20220217225037187" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071310](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071310-20220217222155.png)
+![bg2015071310](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071310-20220217222155.png)
 
 ```css
 .box {
@@ -165,7 +165,7 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225059194-20220217225059.png" alt="image-20220217225059194" style="zoom: 25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225059194-20220217225059.png" alt="image-20220217225059194" style="zoom: 25%;pointer-events: none;" />**
 
 ![bg2015071311](https://www.ruanyifeng.com/blogimg/asset/2015/bg2015071311.png)
 
@@ -178,9 +178,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225108809-20220217225108.png" alt="image-20220217225108809" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225108809-20220217225108.png" alt="image-20220217225108809" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071312](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071312-20220217222402.png)
+![bg2015071312](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071312-20220217222402.png)
 
 ```css
 .box {
@@ -192,9 +192,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225117810-20220217225117.png" alt="image-20220217225117810" style="zoom: 25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225117810-20220217225117.png" alt="image-20220217225117810" style="zoom: 25%;pointer-events: none;" />**
 
-![bg2015071313](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071313-20220217222420.png)
+![bg2015071313](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071313-20220217222420.png)
 
 ```css
 .box {
@@ -215,7 +215,7 @@ Flex 布局默认就是首行左对齐
 
 <!-- tabs:start -->
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225127009-20220217225127.png" alt="image-20220217225127009" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225127009-20220217225127.png" alt="image-20220217225127009" style="zoom:25%;pointer-events: none;" />**
 
 ![bg2015071314](https://www.ruanyifeng.com/blogimg/asset/2015/bg2015071314.png)
 
@@ -241,9 +241,9 @@ Flex 布局默认就是首行左对齐
 
 <!-- tabs:start -->
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225136043-20220217225136.png" alt="image-20220217225136043" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225136043-20220217225136.png" alt="image-20220217225136043" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071315](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071315-20220217222825.png)
+![bg2015071315](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071315-20220217222825.png)
 
 ```css
 .box {
@@ -254,7 +254,7 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225144562-20220217225144.png" alt="image-20220217225144562" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225144562-20220217225144.png" alt="image-20220217225144562" style="zoom:25%;pointer-events: none;" />**
 
 ![bg2015071316](https://www.ruanyifeng.com/blogimg/asset/2015/bg2015071316.png)
 
@@ -293,9 +293,9 @@ Flex 布局默认就是首行左对齐
 
 <!-- tabs:start -->
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225154958-20220217225155.png" alt="image-20220217225154958" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225154958-20220217225155.png" alt="image-20220217225154958" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071317](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071317-20220217223203.png)
+![bg2015071317](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071317-20220217223203.png)
 
 ```css
 .box {
@@ -305,9 +305,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225202955-20220217225203.png" alt="image-20220217225202955" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225202955-20220217225203.png" alt="image-20220217225202955" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071318](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071318-20220217223219.png)
+![bg2015071318](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071318-20220217223219.png)
 
 ```css
 .box {
@@ -318,9 +318,9 @@ Flex 布局默认就是首行左对齐
 }
 ```
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225212375-20220217225212.png" alt="image-20220217225212375" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225212375-20220217225212.png" alt="image-20220217225212375" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071319](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071319-20220217223316.png)
+![bg2015071319](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071319-20220217223316.png)
 
 ```html
 <div class="box">
@@ -367,9 +367,9 @@ Flex 布局默认就是首行左对齐
 
 <!-- tabs:start -->
 
-###### **<img src="https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/image-20220217225222252-20220217225222.png" alt="image-20220217225222252" style="zoom:25%;pointer-events: none;" />**
+###### **<img src="https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/image-20220217225222252-20220217225222.png" alt="image-20220217225222252" style="zoom:25%;pointer-events: none;" />**
 
-![bg2015071320](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071320-20220217223418.png)
+![bg2015071320](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071320-20220217223418.png)
 
 ```css
 .box {
@@ -390,7 +390,7 @@ Flex 布局默认就是首行左对齐
 
 最简单的网格布局，就是平均分布。在容器里面平均分配空间，跟上面的骰子布局很像，但是需要设置项目的自动缩放
 
-![bg2015071321](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071321-20220217225457.png)
+![bg2015071321](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071321-20220217225457.png)
 
 ```html
 <div class="Grid">
@@ -414,7 +414,7 @@ Flex 布局默认就是首行左对齐
 
 ---
 
-某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。![bg2015071322](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071322-20220217225539.png)
+某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。![bg2015071322](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071322-20220217225539.png)
 
 ```html
 <div class="Grid">
@@ -465,7 +465,7 @@ Flex 布局默认就是首行左对齐
   - 副栏
 - 尾部（footer）
 
-![bg2015071323](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071323-20220217225757.png)
+![bg2015071323](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071323-20220217225757.png)
 
 ```html
 <body class="HolyGrail">
@@ -534,7 +534,7 @@ footer {
 
 常常需要在输入框的前方添加提示，后方添加按钮。
 
-![bg2015071324](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071324-20220217225924.png)
+![bg2015071324](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071324-20220217225924.png)
 
 ```html
 <div class="InputAddOn">
@@ -565,7 +565,7 @@ footer {
 
 有时，页面内容太少，无法占满一屏的高度，底栏就会抬高到页面的中间。这时可以采用 Flex 布局，让底栏总是出现在页面的底部。
 
-![bg2015071326](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071326-20220217230021.png)
+![bg2015071326](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071326-20220217230021.png)
 
 ```html
 <body class="Site">
@@ -593,7 +593,7 @@ footer {
 
 每行的项目数固定，会自动分行。
 
-![bg2015071330](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071330-20220217230405.png)
+![bg2015071330](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071330-20220217230405.png)
 
 ```css
 .parent {
@@ -615,4 +615,3 @@ footer {
 ```
 
 ?> 版权声明：自由转载-非商用-非衍生-保持署名（[创意共享 3.0 许可证](https://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)）
-

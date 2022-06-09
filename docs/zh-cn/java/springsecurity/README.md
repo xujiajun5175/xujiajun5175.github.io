@@ -6,13 +6,11 @@
 
 ?> 参考地址： [一名蒟蒻的博客](https://blog.csdn.net/weixin_43738764/category_11231664.html)
 
-
-
-###  概述
+### 概述
 
 #### 核心功能
 
- **用户认证（Authentication）和用户授权（Authorization）**
+**用户认证（Authentication）和用户授权（Authorization）**
 
 #### 相关概念
 
@@ -24,8 +22,6 @@
    权限管理系统确认一个主体的身份，允许主体进入系统。简单说就是**“主体”证明自己是谁**。笼统的认为就是以前所做的登录操作。
 3. 授权 authorization
    将操作系统的“权力” “授予” “主体”，这样主体就具备了操作系统中特定功能的能力。
-
-
 
 #### 重点过滤器
 
@@ -43,11 +39,9 @@
 
    该过滤器会拦截前端提交的 POST 方式的登录表单请求，并进行身份认证（校验表单中用户名，密码）
 
-
-
 #### 重点接口
 
-1. `UserDetailsService` 
+1. `UserDetailsService`
    当什么也没有配置的时候，账号和密码是由 Spring Security 定义生成的。
 
    而在实际项目中**账号和密码都是从数据库中查询出来的。 所以我们要通过自定义逻辑控制认证逻辑。**
@@ -69,15 +63,9 @@
 
    第一个参数表示需要被解析的密码。第二个参数表示存储的密码。
    `matches` 方法：
-   表示如果解析的密码能够再次进行解析且达到更安全的结果则返回 true，否则返回false。默认返回 false。
+   表示如果解析的密码能够再次进行解析且达到更安全的结果则返回 true，否则返回 false。默认返回 false。
 
-
-
-###  **SpringSecurity Web** **权限方案**
-
-
-
-
+### **SpringSecurity Web** **权限方案**
 
 #### 设置登录账号密码
 
@@ -85,16 +73,16 @@
 
 - 调用数据库获取
 
-  - 编写自定义实现UserDetailsService接口
+  - 编写自定义实现 UserDetailsService 接口
 
     ```java
     //编写自定义类实现UserDetailsService接口
     @Service
     public class MyUserDetailsService implements UserDetailsService {
-    
+
         @Autowired
         private UsersMapper usersMapper;
-    
+
         @Override
         public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
             QueryWrapper<Users> wrapper = new QueryWrapper<>();
@@ -109,7 +97,7 @@
             return new User(users.getUsername(), users.getPassword(), auths);
         }
     }
-    
+
     ```
 
   - 配置类
@@ -119,10 +107,10 @@
     @Configuration
     @EnableWebSecurity
     public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    
+
         @Autowired
         private UserDetailsService userDetailsService;
-    
+
         @Override
         protected void configure(AuthenticationManagerBuilder auth) throws Exception {
             auth.userDetailsService(userDetailsService).passwordEncoder(new PasswordEncoder() {
@@ -130,7 +118,7 @@
                 public String encode(CharSequence charSequence) {
                     return charSequence.toString();
                 }
-    
+
                 @Override
                 public boolean matches(CharSequence charSequence, String s) {
                     return s.equals(charSequence.toString());
@@ -138,14 +126,12 @@
             });
         }
     }
-    
+
     ```
-
-
 
 #### 自定义前端页面
 
-包含登录页面、403页面、登出页面
+包含登录页面、403 页面、登出页面
 
 ```java
 @Configuration
@@ -159,7 +145,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
     	http.logout().logoutUrl("/logout").//自定义登出路径
                 logoutSuccessUrl("/test/hello").permitAll();//登出后跳转到的页面
-    
+
         //自定义403访问页面
         http.exceptionHandling().accessDeniedPage("/unauth.html");
 
@@ -179,17 +165,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ```
 
-
-
-
-
-
-
 #### 自动登录 “记住我”功能实现
 
-![image-20220329230930334](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329230930334.png)
+![image-20220329230930334](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329230930334.png)
 
-![image-20220329230948298](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329230948298.png)
+![image-20220329230948298](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329230948298.png)
 
 配置类中要注入数据源，配置操作数据库对象
 
@@ -225,7 +205,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         jdbcTokenRepository.setDataSource(dataSource);
         return jdbcTokenRepository;
     }
-    
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.logout().logoutUrl("/logout").
@@ -253,12 +233,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ```
 
-
-
-
-
-
-
 ### **基于角色或权限进行访问控制**
 
 - **hasAuthority** **方法**
@@ -270,7 +244,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 - **hasAnyAuthority** **方法**
 
-  如果当前的主体有任何提供的角色（给定的作为一个逗号分隔的字符串列表）的话，返回true
+  如果当前的主体有任何提供的角色（给定的作为一个逗号分隔的字符串列表）的话，返回 true
 
   ```java
   .antMatchers("/test/hello").hasAnyAuthority("admin,test")
@@ -294,23 +268,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   .antMatchers("/test/hello").hasAnyRole("admin,test")
   ```
 
-
-
-
-
 ### 认证授权注解使用
 
 - **@Secured**
 
   - 需要在配置类上先开启注解功能**@EnableGlobalMethodSecurity(securedEnabled=true)**
 
-  - 判断是否具有角色，另外需要注意的是**这里匹配的字符串需要添加前缀“ROLE_“**。
+  - 判断是否具有角色，另外需要注意的是**这里匹配的字符串需要添加前缀“ROLE\_“**。
 
   - ```java
     @RestController
     @RequestMapping("test")
     public class IndexController {
-    
+
         @GetMapping("hello")
         @Secured({"ROLE_role"})
         public String hello() {
@@ -329,7 +299,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @RestController
     @RequestMapping("test")
     public class IndexController {
-    
+
         @GetMapping("hello")
         @PostAuthorize("hasAnyAuthority('admin,test')")
         public String hello() {
@@ -346,14 +316,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @RestController
     @RequestMapping("test")
     public class IndexController {
-    
+
         @GetMapping("hello")
         @PreFilter(value = "filterObject.id%2==0")//只允许id为偶数的进入方法
         public String hello() {
             return "hello security";
         }
     }
-    
+
     ```
 
 - **@PostFilter**
@@ -364,24 +334,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @RestController
     @RequestMapping("test")
     public class IndexController {
-    
+
         @GetMapping("hello")
         @PostFilter("filterObject.username == 'admin1'")//只留下用户名是 admin1 的数据
         public String hello() {
             return "hello security";
         }
     }
-    
+
     ```
 
-
-
-####  **CSRF应用**
+#### **CSRF 应用**
 
 ##### 理解
 
 - 跨站请求伪造也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF
-- 是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
+- 是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
 - 跨站请求攻击，简单地说，是**攻击者通过一些技术手段欺骗用户的浏览器去访问一个自己曾经认证过的网站并运行一些操作（如发邮件，发消息，甚至财产操作如转账和购买商品）**。由于浏览器曾经认证过，所以被访问的网站会认为是真正的用户操作而去运行。
 - 利用了 web 中用户身份验证的一个漏洞：简单的身份验证只能保证请求发自某个用户的浏览器，却不能保证请求本身是用户自愿发出的
 
@@ -390,15 +358,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 - 生成 csrfToken 保存到 HttpSession 或者 Cookie 中。
 - 请求到来时，从请求中提取 csrfToken，和保存的 csrfToken 做比较，进而判断当前请求是否合法。主要通过 CsrfFilter 过滤器来完成。
 
-![image-20220329232011331](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329232011331.png)
+![image-20220329232011331](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329232011331.png)
 
 ### 前后端分离方案
 
 #### 基本原理
 
-1. 登录过程是SpringSecurity原理，然后验证成功后利用Jwt生产用户Token，用Key为Token，Value为用户信息存入Redis中完成首次登录。
-2. 之后的请求中，过滤器去判断请求中是否携带了Token，如果有就直接放行继续接下来的操作，否则无权访问需要登录。
-3. ![image-20220329232641039](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329232641039.png)
+1. 登录过程是 SpringSecurity 原理，然后验证成功后利用 Jwt 生产用户 Token，用 Key 为 Token，Value 为用户信息存入 Redis 中完成首次登录。
+2. 之后的请求中，过滤器去判断请求中是否携带了 Token，如果有就直接放行继续接下来的操作，否则无权访问需要登录。
+3. ![image-20220329232641039](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329232641039.png)
 
 #### 代码
 
@@ -445,7 +413,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler(authenticationFailureHandler)
             	//没有权限会进入这个处理器
                 .and().exceptionHandling().authenticationEntryPoint(authenticationEntryPoint);
-        		
+
         //退出的路径请求，logoutSuccessHandler表示退出成功后进入这个处理器
         http.logout().logoutUrl("user/logout").logoutSuccessHandler(logoutSuccessHandler);
 
@@ -472,9 +440,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 ```
 
-编写TokenFilter过滤器
+编写 TokenFilter 过滤器
 
-?> 验证前去过滤请求中是否包含了token，如果包含了就从Redis中获取用户信息，否则继续验证
+?> 验证前去过滤请求中是否包含了 token，如果包含了就从 Redis 中获取用户信息，否则继续验证
 
 ```java
 @Component
@@ -556,7 +524,7 @@ public class TokenFilter extends OncePerRequestFilter {
 
 ```
 
-编写Handler配置类
+编写 Handler 配置类
 
 ```java
 @Configuration
@@ -566,31 +534,31 @@ public class SecurityHandlerConfig {
     private TokenService tokenService;
 
 
-    
+
 	//登录成功后的处理器
     @Bean
     public AuthenticationSuccessHandler loginSuccsessHandler(){
         return (request, response, authentication) -> {
             //从SpringSecurity上下文中获取已经通过认证的用户对象
             LoginUser loginUser = (LoginUser) authentication.getPrincipal();
-			
+
             //登录成功的相应逻辑操作
             loginSuccessReturn(request,response,loginUser);
         };
     }
-    
+
     public void loginSuccessReturn(HttpServletRequest request, HttpServletResponse response, LoginUser loginUser) {
         //响应容器
         Map map = new HashMap();
-		
+
         //根据用户生产一个Token，并存入redis
         Token token = tokenService.saveToken(loginUser);
-        
+
         //放入加密token
         map.put("id", loginUser.getId());
         map.put("token", token.getToken());
 
-		
+
         Cookie cookie = new Cookie("token", map.get("token").toString());
         cookie.setPath("/");
         response.addCookie(cookie);
@@ -658,7 +626,7 @@ public class SecurityHandlerConfig {
 
 ```
 
-编写UserDetailsService接口实现类
+编写 UserDetailsService 接口实现类
 
 ```java
 @Service
@@ -675,7 +643,7 @@ public class MyUserDetailsService implements UserDetailsService {
             // 抛出异常后 框架会去调用 loginFailureHandler()
             throw new RuntimeException("用户名不存在");
         }
-		
+
         LoginUser loginUser = new LoginUser();
         if(user != null ){
             BeanUtils.copyProperties(user,loginUser);
@@ -702,7 +670,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
 ```
 
-编写UserDetails接口实体类
+编写 UserDetails 接口实体类
 
 ```java
 @Data
@@ -715,7 +683,7 @@ public class LoginUser extends User implements UserDetails {
     private Long loginTime;
 
     private Long expireTime;
-	
+
     private List<String> permissionValueList;
 
     private List<GrantedAuthority> authorities;
@@ -769,7 +737,7 @@ public class User {
 
 ```
 
-提供个人写的TokenService供大家参考，也可自行编写（主要逻辑是生产Token，存入Redis）
+提供个人写的 TokenService 供大家参考，也可自行编写（主要逻辑是生产 Token，存入 Redis）
 
 ```java
 @Service
@@ -787,7 +755,7 @@ public class TokenService {
      */
     @Value("${token.jwtSecret}")
     private String jwtSecret;
-    
+
     @Autowired
     private JedisClient jedisClient;
 
@@ -923,7 +891,7 @@ public class TokenService {
         }
 
         String value = jedisClient.get(key);
-        
+
         // 校验是否已过期，已过期value为null
         if (StringUtils.isNotEmpty(value)) {
             LoginUser loginUser = JSONObject.parseObject(value, LoginUser.class);
@@ -935,15 +903,9 @@ public class TokenService {
 
 ```
 
-
-
-
-
-
-
 ### 底层原理
 
-#### Spring Security过滤器链
+#### Spring Security 过滤器链
 
 SpringSecurity 采用的是责任链的设计模式，它有一条很长的过滤器链
 
@@ -1007,11 +969,9 @@ SpringSecurity 采用的是责任链的设计模式，它有一条很长的过�
 
     当用户没有登录而直接访问资源时, 从 `cookie` 里找出用户的信息, 如果 `Spring Security `能够识别出用户提供的`remember me cookie`, 用户将不必填写用户名和密码, 而是直接登录进入系统，该过滤器默认==不开启==。
 
-
-
 #### SpringSecurity 流程
 
-![640?wx_fmt=png](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/d359fe34bc7860c11a1b6e50bfd0e086-20220326172459218-20220329233535692.jpeg)
+![640?wx_fmt=png](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/d359fe34bc7860c11a1b6e50bfd0e086-20220326172459218-20220329233535692.jpeg)
 
 ##### 流程说明
 
@@ -1023,19 +983,11 @@ SpringSecurity 采用的是责任链的设计模式，它有一条很长的过�
 
 4. 当到 `FilterSecurityInterceptor` 的时候会拿到 `uri` ，根据 `uri`去找对应的鉴权管理器，鉴权管理器做鉴权工作，鉴权成功则到 `Controller` 层否则到 `AccessDeniedHandler `鉴权失败处理器处理。
 
-![image-20220329233451100](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329233451100.png)
-
-
-
-
-
-
+![image-20220329233451100](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329233451100.png)
 
 #### 认证流程 **重点**
 
-
-
-![image-20220329233820775](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329233820775.png)
+![image-20220329233820775](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329233820775.png)
 
 ##### 源码分析
 
@@ -1043,37 +995,33 @@ SpringSecurity 采用的是责任链的设计模式，它有一条很长的过�
 
 当前端提交的是一个 POST 方式的登录表单请求，就会被该过滤器拦截，并进行身份认证。
 
-该过滤器的 doFilter() 方法实现在其抽象父类**AbstractAuthenticationProcessingFilter中**
+该过滤器的 doFilter() 方法实现在其抽象父类**AbstractAuthenticationProcessingFilter 中**
 
-![image-20210824143821136](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/56d77dd06a49b1c5a8bbe1cdf903841b.png)
+![image-20210824143821136](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/56d77dd06a49b1c5a8bbe1cdf903841b.png)
 
-![image-20210824144331667](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/9e3f6832e34e7bf4525a913f5379f64b.png)
+![image-20210824144331667](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/9e3f6832e34e7bf4525a913f5379f64b.png)
 
-![image-20210824144556588](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/b264c04b22906a9f52909a0bf5cfab90.png)
+![image-20210824144556588](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/b264c04b22906a9f52909a0bf5cfab90.png)
 
-![image-20210824144718624](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/49af320d16a3a6d58335c16a85d93364.png)
+![image-20210824144718624](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/49af320d16a3a6d58335c16a85d93364.png)
 
-![image-20210824144956513](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/8cb4a997896222638ababaebb5671620.png)
+![image-20210824144956513](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/8cb4a997896222638ababaebb5671620.png)
 
 ?> 上述的 第二 过程调用了 UsernamePasswordAuthenticationFilter 的 attemptAuthentication() 方法，源码如下：
 
-![image-20210824145831124](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/d1d727949c6649b795647c4bd66ae78f.png)
+![image-20210824145831124](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/d1d727949c6649b795647c4bd66ae78f.png)
 
-![image-20210824171033872](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/7a4754b6302010f2c388949d54441ab6.png)
+![image-20210824171033872](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/7a4754b6302010f2c388949d54441ab6.png)
 
-?> **上述的（3）过程创建的** **UsernamePasswordAuthenticationToken是 Authentication 接口的实现类，该类有两个构造器，一个用于封装前端请求传入的未认证的用户信息，一个用于封装认证成功后的用户信息：**
+?> **上述的（3）过程创建的** **UsernamePasswordAuthenticationToken 是 Authentication 接口的实现类，该类有两个构造器，一个用于封装前端请求传入的未认证的用户信息，一个用于封装认证成功后的用户信息：**
 
-![image-20210824171514677](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/e606edf9e3acaea53f06f0f840ececa1.png)
+![image-20210824171514677](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/e606edf9e3acaea53f06f0f840ececa1.png)
 
-![image-20210824172407929](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/a0ba0210a6fe989afd9680c448a7241c.png)
+![image-20210824172407929](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/a0ba0210a6fe989afd9680c448a7241c.png)
 
 ?> **Authentication 接口的实现类用于存储用户认证信息，查看该接口具体定义：**
 
-![image-20210824172835092](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/6e472cb3ec0c53e54d06b8fc85ba9d73.png)
-
-
-
-
+![image-20210824172835092](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/6e472cb3ec0c53e54d06b8fc85ba9d73.png)
 
 **ProviderManager 源码**
 
@@ -1085,33 +1033,31 @@ SpringSecurity 采用的是责任链的设计模式，它有一条很长的过�
 
    在该接口的常用实现类 `ProviderManager` 内部会维护一个**`List<AuthenticationProvider>`**列表，存放多种认证方式，实际上这是`委托者模式（Delegate）`的应用。每种认证方式对应着一个 `AuthenticationProvider`，`AuthenticationManager` 根据认证方式的不同（根据传入的 `Authentication` 类型判断）委托对应的 `AuthenticationProvider` 进行用户认证。
 
-![image-20210824174402462](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/b26d178843f1dcba039ab33362a7e065.png)
+![image-20210824174402462](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/b26d178843f1dcba039ab33362a7e065.png)
 
-![image-20210825091550348](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/1b884f52c83a62f6ba80f40853c7ad44.png)
+![image-20210825091550348](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/1b884f52c83a62f6ba80f40853c7ad44.png)
 
-![image-20210825092028834](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/145b06718e9346e2a83e0d1e2850a542.png)
+![image-20210825092028834](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/145b06718e9346e2a83e0d1e2850a542.png)
 
-![image-20210825092158156](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/4a2f1651549c958c07cd1f77e8a77e78.png)
+![image-20210825092158156](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/4a2f1651549c958c07cd1f77e8a77e78.png)
 
 ?> 上述认证成功之后的**（6）过程**，调用 `CredentialsContainer` 接口定义的`eraseCredentials()` 方法去除敏感信息。<br>查看`UsernamePasswordAuthenticationToken` 实现的 `eraseCredentials() `方法，该方法实现在其父类中：
 
-![image-20210825092841825](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/edebe1482e74c6fc9ee6bbdfc9147c1f.png)
+![image-20210825092841825](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/edebe1482e74c6fc9ee6bbdfc9147c1f.png)
 
 ##### **认证成功/失败处理**
 
 上述过程就是认证流程的最核心部分，接下来重新回到**UsernamePasswordAuthenticationFilter** 过滤器的 `doFilter()` 方法，查看认证成功/失败的处理：
 
-![image-20210825093609101](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/6b899dec285972db130eec4789c346b4.png)
+![image-20210825093609101](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/6b899dec285972db130eec4789c346b4.png)
 
 ?> 查看`successfulAuthentication()`和`unsuccessfulAuthentication()`方法源码
 
-![image-20210825094307885](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/350a8de578bffb8937f1f27aee14c050.png)
-
-
+![image-20210825094307885](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/350a8de578bffb8937f1f27aee14c050.png)
 
 ##### 总体方法结构
 
-![image-20220329234713524](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329234713524.png)
+![image-20220329234713524](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329234713524.png)
 
 1. `UsernamePasswordAuthenticationFilter` 父类 `AbstractAuthenticationProcessingFilter` 的 `doFilter` 方法
 2. `UsernamePasswordAuthenticationFilter` 的 `attemptAuthentication` 方法对前端传过来的用户名和密码进行封装
@@ -1121,10 +1067,6 @@ SpringSecurity 采用的是责任链的设计模式，它有一条很长的过�
 6. `UserDetailsService`接口 的 `loadUserByUsername`方法（一般都由我们自己实现）从数据库获得用户具体数据
 7. `AbstractAuthenticationProcessingFilter` 的 `successfulAuthentication`(我们可以重写返回自定义成功)
 
-
-
-
-
 #### 权限访问流程
 
 主要是对**`ExceptionTranslationFilter`** 过滤器和 **`FilterSecurityInterceptor`** 过滤器进行介绍。
@@ -1133,48 +1075,44 @@ SpringSecurity 采用的是责任链的设计模式，它有一条很长的过�
 
 该过滤器是用于处理异常的，不需要我们配置，对于前端提交的请求会直接放行，捕获后续抛出的异常并进行处理（例如：权限访问限制）。具体源码如下：
 
-![image-20210825094732062](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/6b90a9dc81851b2d60fb7f40b216bd6a.png)
+![image-20210825094732062](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/6b90a9dc81851b2d60fb7f40b216bd6a.png)
 
 **FilterSecurityInterceptor** **过滤器**
 
 `FilterSecurityInterceptor` 是过滤器链的最后一个过滤器，该过滤器是过滤器链的最后一个过滤器，根据资源权限配置来判断当前请求是否有权限访问对应的资源。如果访问受限会抛出相关异常，最终所抛出的异常会由前一个过滤器`ExceptionTranslationFilter` 进行捕获和处理。具体源码如下：
 
-![image-20210825094939801](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/f66c02f3b0c1dd75fb2920f17c3268cd.png)
+![image-20210825094939801](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/f66c02f3b0c1dd75fb2920f17c3268cd.png)
 
-![image-20210825095108336](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/fa20c2df8399fe4791b8115e87ff39b7.png)
-
-
-
-
+![image-20210825095108336](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/fa20c2df8399fe4791b8115e87ff39b7.png)
 
 ##### **SpringSecurity 请求间共享认证信息**
 
 一般认证成功后的用户信息是通过 Session 在多个请求之间共享，那么 **Spring** **Security** 中是如何实现将已认证的用户信息对象 Authentication 与 Session 绑定的进行具体分析。
 
-![image-20220329235042174](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/image-20220329235042174.png)
+![image-20220329235042174](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/image-20220329235042174.png)
 
 在前面讲解认证成功的处理方法 successfulAuthentication() 时，有以下代码：
 
-![image-20210825095414768](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/e67bbd653999ab2e795a12bd10644f2e.png)
+![image-20210825095414768](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/e67bbd653999ab2e795a12bd10644f2e.png)
 
-查 看 SecurityContext 接 口 及 其 实 现 类 SecurityContextImpl ， 该 类 其 实 就 是 对Authentication 的封装
+查 看 SecurityContext 接 口 及 其 实 现 类 SecurityContextImpl ， 该 类 其 实 就 是 对 Authentication 的封装
 
-查 看 SecurityContextHolder 类 ， 该 类 其 实 是 对 ThreadLocal 的 封 装 ， 存 储SecurityContext 对象
+查 看 SecurityContextHolder 类 ， 该 类 其 实 是 对 ThreadLocal 的 封 装 ， 存 储 SecurityContext 对象
 
-![image-20210825095821705](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/a40e3f1955fdc987809b938e1232937b.png)
+![image-20210825095821705](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/a40e3f1955fdc987809b938e1232937b.png)
 
-![image-20210825100128004](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/386e16195eaadb74f57169ef9f07b38e.png)
+![image-20210825100128004](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/386e16195eaadb74f57169ef9f07b38e.png)
 
-![image-20210825100327759](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/3dbf3da92dc9d065ecd0963843c1a327.png)
+![image-20210825100327759](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/3dbf3da92dc9d065ecd0963843c1a327.png)
 
-![image-20210825100449178](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/41e2b47c8f47bb7a8ab0f6bfc1150442.png)
+![image-20210825100449178](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/41e2b47c8f47bb7a8ab0f6bfc1150442.png)
 
 **SecurityContextPersistenceFilter 过滤器**
 
- 在 UsernamePasswordAuthenticationFilter 过滤器认证成功之后，会在认证成功的处理方法中将已认证的用户信息对象 Authentication 封装进SecurityContext，并存入 SecurityContextHolder。
+在 UsernamePasswordAuthenticationFilter 过滤器认证成功之后，会在认证成功的处理方法中将已认证的用户信息对象 Authentication 封装进 SecurityContext，并存入 SecurityContextHolder。
 之后，响应会通过 SecurityContextPersistenceFilter 过滤器，该过滤器的位置在所有过滤器的最前面，请求到来先进它，响应返回最后一个通过它，所以在该过滤器中处理已认证的用户信息对象 Authentication 与 Session 绑定。
-认证成功的响应通过 SecurityContextPersistenceFilter 过滤器时，会从SecurityContextHolder 中取出封装了已认证用户信息对象 Authentication 的SecurityContext，放进 Session 中。当请求再次到来时，请求首先经过该过滤器，该过滤器会判断当前请求的 Session 是否存有 SecurityContext 对象，如果有则将该对象取出再次放入 SecurityContextHolder 中，之后该请求所在的线程获得认证用户信息，后续的资源访问不需要进行身份认证；当响应再次返回时，该过滤器同样从 SecurityContextHolder 取出SecurityContext 对象，放入 Session 中。具体源码如下：
+认证成功的响应通过 SecurityContextPersistenceFilter 过滤器时，会从 SecurityContextHolder 中取出封装了已认证用户信息对象 Authentication 的 SecurityContext，放进 Session 中。当请求再次到来时，请求首先经过该过滤器，该过滤器会判断当前请求的 Session 是否存有 SecurityContext 对象，如果有则将该对象取出再次放入 SecurityContextHolder 中，之后该请求所在的线程获得认证用户信息，后续的资源访问不需要进行身份认证；当响应再次返回时，该过滤器同样从 SecurityContextHolder 取出 SecurityContext 对象，放入 Session 中。具体源码如下：
 
-![image-20210825100929352](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/702b826c9c773764eb4f3bc0f772df27.png)
+![image-20210825100929352](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/702b826c9c773764eb4f3bc0f772df27.png)
 
-![image-20210825101133653](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/c0230de99b028cffd707285bc5cb22a5.png)q
+![image-20210825101133653](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/c0230de99b028cffd707285bc5cb22a5.png)q

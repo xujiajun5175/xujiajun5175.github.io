@@ -10,7 +10,7 @@
 
 在 Spring Boot 中使用 Spring Security 非常容易，引入依赖即可：
 
-![img](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/25-1.png)
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/25-1.png)
 
 pom.xml 中的 Spring Security 依赖：
 
@@ -39,7 +39,7 @@ public class HelloController {
 
 访问 `/hello` ，需要登录之后才能访问。
 
-![img](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/25-2-20220327010958476.png)
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/25-2-20220327010958476.png)
 
 当用户从浏览器发送请求访问 `/hello` 接口时，服务端会返回 `302` 响应码，让客户端重定向到 `/login` 页面，用户在 `/login` 页面登录，登陆成功之后，就会自动跳转到 `/hello` 接口。
 
@@ -52,7 +52,7 @@ public class HelloController {
 
 默认情况下，登录的用户名是 `user` ，密码则是项目启动时随机生成的字符串，可以从启动的控制台日志中看到默认密码：
 
-![img](https://gitee.com/xujiajun0319/typora_imgs/raw/master/picgo/25-4.png)
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/picgo/25-4.png)
 
 这个随机生成的密码，每次启动时都会变。
 

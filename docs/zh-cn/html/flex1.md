@@ -41,7 +41,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 
 采用 Flex 布局的元素，称为 Flex 容器（flex container），简称"容器"。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称"项目"。
 
-![img](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071004-20220217170402.png)
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071004-20220217170402.png)
 
 容器默认存在两根轴：
 
@@ -78,7 +78,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071005](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071005-20220217171247.png)
+![bg2015071005](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071005-20220217171247.png)
 
 ##### `flex-wrap`
 
@@ -90,15 +90,15 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 
   - `nowrap`（默认）：不换行。
 
-    ![bg2015071007](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071007-20220217171539.png)
+    ![bg2015071007](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071007-20220217171539.png)
 
   - `wrap`：换行，第一行在上方。
 
-    ![bg2015071008](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071008-20220217171616.jpg)
+    ![bg2015071008](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071008-20220217171616.jpg)
 
   - `wrap-reverse`：换行，第一行在下方。
 
-    ![bg2015071009](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071009-20220217171614.jpg)
+    ![bg2015071009](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071009-20220217171614.jpg)
 
 ```css
 .box {
@@ -106,7 +106,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071006](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071006-20220217171516.png)
+![bg2015071006](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071006-20220217171516.png)
 
 ##### `flex-flow`
 
@@ -138,7 +138,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071010](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071010-20220217172005-20220217172021.png)
+![bg2015071010](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071010-20220217172005-20220217172021.png)
 
 ##### `align-items`
 
@@ -160,7 +160,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071011](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071011-20220217172208-20220217172216.png)
+![bg2015071011](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071011-20220217172208-20220217172216.png)
 
 ##### `align-content`
 
@@ -184,7 +184,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071012](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071012-20220217172347.png)
+![bg2015071012](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071012-20220217172347.png)
 
 #### 项目属性
 
@@ -202,7 +202,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071013](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071013-20220217172650.png)
+![bg2015071013](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071013-20220217172650.png)
 
 ##### flex-grow
 
@@ -216,7 +216,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071014](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071014-20220217172806.png)
+![bg2015071014](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071014-20220217172806.png)
 
 !> 如果所有项目的`flex-grow`属性都为 1，则它们将等分剩余空间（如果有的话）。
 
@@ -234,7 +234,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071015](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071015-20220217173015.jpg)
+![bg2015071015](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071015-20220217173015.jpg)
 
 !> 如果所有项目的`flex-shrink`属性都为 1，当空间不足时，都将等比例缩小。
 
@@ -287,7 +287,7 @@ Webkit 内核的浏览器，必须加上`-webkit`前缀。
 }
 ```
 
-![bg2015071016](https://gitee.com/xujiajun0319/typora_imgs/raw/master/uPic/bg2015071016-20220217173447.png)
+![bg2015071016](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/bg2015071016-20220217173447.png)
 
 !> 该属性可能取 6 个值，除了`auto`，其他都与[`align-items`](#align-items)属性完全一致。
 
