@@ -1,4 +1,8 @@
-### Java 设计模式
+### Java 设计模式 <!-- {docsify-ignore} -->
+
+**文档更新日期: {docsify-updated}**
+
+---
 
 简单记录 Java 中 23 种设计模式的应用
 
@@ -53,9 +57,9 @@ class Application {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/H56Sn7.png)
 
-可以看到，客户端Application并未依赖具体的水果类型，只关心FruitFactory的入参，这就是客户端和具体产品解耦的体现，
+可以看到，客户端 Application 并未依赖具体的水果类型，只关心 FruitFactory 的入参，这就是客户端和具体产品解耦的体现，
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/eI4maK.png)
 
@@ -65,8 +69,8 @@ class Application {
 
 - 定义：定义创建对象的接口，让实现这个接口的类来决定实例化哪个类，工厂方法让类的实例化推迟到了子类进行。
 - 优点:
-    - 具体产品从客户端代码中抽离出来，解耦。
-    - 加入新的类型时，只需添加新的工厂方法（无需修改旧的工厂方法代码），符合开闭原则。
+  - 具体产品从客户端代码中抽离出来，解耦。
+  - 加入新的类型时，只需添加新的工厂方法（无需修改旧的工厂方法代码），符合开闭原则。
 - 缺点：类的个数容易过多，增加复杂度。
 
 **举例**
@@ -115,11 +119,11 @@ class Application {
 **结果**
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/xtWOcy.png)
 
-?> 现在要新增Banana类型的水果，只需要新增Banana类型的工厂类即可，无需修改现有的AppleFruitFactory代码，符合开闭原则。
+?> 现在要新增 Banana 类型的水果，只需要新增 Banana 类型的工厂类即可，无需修改现有的 AppleFruitFactory 代码，符合开闭原则。
 
 !> 但是这种模式的缺点也显而易见，就是类的个数容易过多，增加复杂度。
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/wwzVVI.png)
 
@@ -128,8 +132,9 @@ class Application {
 抽象工厂模式（Abstract factory pattern）提供了一系列相关或者相互依赖的对象的接口，关键字是“一系列”。
 
 - 优点：
-    1. 具体产品从客户端代码中抽离出来，解耦。
-    2. 将一个系列的产品族统一到一起创建。
+
+  1. 具体产品从客户端代码中抽离出来，解耦。
+  2. 将一个系列的产品族统一到一起创建。
 
 - 缺点：拓展新的功能困难，需要修改抽象工厂的接口；
 
@@ -205,11 +210,11 @@ class Application {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/KGgVJn.png)
 
-?> 客户端只需要通过创建AppleFruitFactory就可以获得苹果这个产品族的所有内容，包括苹果对象，苹果价格。要新建🍌的产品族，只需要实现FruitFactory、Price和Fruit接口即可。
+?> 客户端只需要通过创建 AppleFruitFactory 就可以获得苹果这个产品族的所有内容，包括苹果对象，苹果价格。要新建 🍌 的产品族，只需要实现 FruitFactory、Price 和 Fruit 接口即可。
 
 !> 这种模式的缺点和工厂方法差不多，就是类的个数容易过多，增加复杂度。
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/efwVMS.png)
 
@@ -225,13 +230,15 @@ class Application {
 2. 想将复杂对象的创建和使用分离。
 
 - 优点：
-    - 封装性好，创建和使用分离
-    - 拓展性好，建造类之间独立，一定程度上解耦。
+  - 封装性好，创建和使用分离
+  - 拓展性好，建造类之间独立，一定程度上解耦。
 - 缺点：
-    - 产生多余的Builder对象；
-    - 产品内部发生变化，建造者需要更改，成本较大。
+  - 产生多余的 Builder 对象；
+  - 产品内部发生变化，建造者需要更改，成本较大。
 
-**举例**
+<!-- tabs:start -->
+
+###### **举例 1**
 
 ```java
 package com.xujiajun.creation.builder;
@@ -335,13 +342,11 @@ class Application {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/Xl32qZ.png)
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/ASt7iw.png)
 
-**另一个例子**
-
-**举例**
+###### **举例 2**
 
 ```java
 package com.xujiajun.creation.builder;
@@ -404,24 +409,28 @@ class Application2 {
 
 ```
 
-?> 这种用法和Lombok的@Builder注解效果是一样的
+?> 这种用法和 Lombok 的@Builder 注解效果是一样的
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/GRKJW8.png)
+
+<!-- tabs:end -->
 
 ##### 1.5.单例模式
 
 单例模式目的是为了一个类只有一个实例。
 
 - 优点：
-    - 内存中只有一个实例，减少了内存开销；
-    - 可以避免对资源的多重占用；
-    - 设置全局访问点，严格控制访问。
+  - 内存中只有一个实例，减少了内存开销；
+  - 可以避免对资源的多重占用；
+  - 设置全局访问点，严格控制访问。
 - 缺点：
-    - 没有接口，拓展困难。
+  - 没有接口，拓展困难。
 
-**懒汉模式**
+<!-- tabs:start -->
+
+###### **懒汉模式**
 
 !> 懒汉模式下的单例写法是最简单的，但它是线程不安全的：
 
@@ -464,9 +473,9 @@ public class LazySingleton {
 }
 ```
 
-!> 但是同步锁锁的是整个类，比较消耗资源，并且即使运行内存中已经存在LazySingleton，调用其`getInstance`还是会上锁，所以这种写法也不是很好。<br>参考"双重同步锁单例模式"
+!> 但是同步锁锁的是整个类，比较消耗资源，并且即使运行内存中已经存在 LazySingleton，调用其`getInstance`还是会上锁，所以这种写法也不是很好。<br>参考"双重同步锁单例模式"
 
-**双重同步锁单例模式**
+###### **双重同步锁单例模式**
 
 ```java
 package com.xujiajun.creation.singleton;
@@ -492,9 +501,9 @@ public class LazyDoubleCheckSingleton {
 
 ```
 
-!> 上面例子虽然加了同步锁，但它还是线程不安全的。虽然上面的例子不会出现多次初始化LazyDoubleCheckSingleton实例的情况，但是由于指令重排的原因，某些线程可能会获取到空对象，后续对该对象的操作将触发空指针异常。
+!> 上面例子虽然加了同步锁，但它还是线程不安全的。虽然上面的例子不会出现多次初始化 LazyDoubleCheckSingleton 实例的情况，但是由于指令重排的原因，某些线程可能会获取到空对象，后续对该对象的操作将触发空指针异常。
 
-?> 要修复这个问题，只需要阻止指令重排即可，所以可以给instance属性加上volatile关键字：
+?> 要修复这个问题，只需要阻止指令重排即可，所以可以给 instance 属性加上 volatile 关键字：
 
 ```java
 package com.xujiajun.creation.singleton;
@@ -520,9 +529,9 @@ public class LazyDoubleCheckSingleton {
 
 ```
 
-?> 上面这种写法是不但确保了线程安全，并且当LazyDoubleCheckSingleton实例创建好后，后续再调用其getInstance方法不会上锁。
+?> 上面这种写法是不但确保了线程安全，并且当 LazyDoubleCheckSingleton 实例创建好后，后续再调用其 getInstance 方法不会上锁。
 
-**静态内部类单例模式**
+###### **静态内部类单例模式**
 
 ```java
 package com.xujiajun.creation.singleton;
@@ -550,17 +559,17 @@ public class StaticInnerClassSingleton {
 
 为什么这个例子是可行的呢？主要有两个原因：
 
-1. JVM在类的初始化阶段会加Class对象初始化同步锁，同步多个线程对该类的初始化操作；
-2. 静态内部类InnerClass的静态成员变量instance在方法区中只会有一个实例。
+1. JVM 在类的初始化阶段会加 Class 对象初始化同步锁，同步多个线程对该类的初始化操作；
+2. 静态内部类 InnerClass 的静态成员变量 instance 在方法区中只会有一个实例。
 
-在Java规范中，当以下这些情况首次发生时，A类将会立刻被初始化：
+在 Java 规范中，当以下这些情况首次发生时，A 类将会立刻被初始化：
 
-- A类型实例被创建；
-- A类中声明的静态方法被调用；
-- A类中的静态成员变量被赋值；
-- A类中的静态成员被使用（非常量）；
+- A 类型实例被创建；
+- A 类中声明的静态方法被调用；
+- A 类中的静态成员变量被赋值；
+- A 类中的静态成员被使用（非常量）；
 
-**饿汉单例模式**
+###### **饿汉单例模式**
 
 ?> “饿汉”意指在类加载的时候就初始化
 
@@ -583,9 +592,9 @@ public class HungrySingleton {
 
 但由于不是懒加载，饿汉模式不管需不需要用到实例都要去创建实例，如果创建了不使用，则会造成内存浪费。
 
-**序列化破坏单例模式**
+###### **序列化破坏单例模式**
 
-前面的单例例子在实现序列化接口后都能被序列化的方式破坏，比如HungrySingleton，让其实现序列化接口：
+前面的单例例子在实现序列化接口后都能被序列化的方式破坏，比如 HungrySingleton，让其实现序列化接口：
 
 ```java
 
@@ -623,7 +632,7 @@ class application3 {
 
 可以看到，虽然是单例模式，但却成功创建出了两个不一样的实例，单例遭到了破坏。
 
-要让反序列化后的对象和序列化前的对象是同一个对象的话，可以在HungrySingleton里加上`readResolve`方法：
+要让反序列化后的对象和序列化前的对象是同一个对象的话，可以在 HungrySingleton 里加上`readResolve`方法：
 
 ```java
 
@@ -642,12 +651,12 @@ public class HungrySingleton implements Serializable {
 
 可以看到，这种方式最终反序列化出来的对象和序列化对象是同一个对象。
 
-?> 这种方式反序列化过程内部还是会重新创建HungrySingleton实例，只不过因为HungrySingleton类定义了readResolve方法（方法内部返回instance
-引用），反序列化过程会判断目标类是否定义了readResolve该方法，是的话则通过反射调用该方法。
+?> 这种方式反序列化过程内部还是会重新创建 HungrySingleton 实例，只不过因为 HungrySingleton 类定义了 readResolve 方法（方法内部返回 instance
+引用），反序列化过程会判断目标类是否定义了 readResolve 该方法，是的话则通过反射调用该方法。
 
-**反射破坏单例模式**
+###### **反射破坏单例模式**
 
-除了序列化能破坏单例外，反射也可以，举个反射破坏HungrySingleton的例子：
+除了序列化能破坏单例外，反射也可以，举个反射破坏 HungrySingleton 的例子：
 
 ```java
 class application3 {
@@ -674,7 +683,7 @@ class application3 {
 
 可以看到，我们通过反射破坏了私有构造器权限，成功创建了新的实例。
 
-对于这种情况，饿汉模式下的例子可以在构造器中添加判断逻辑来防御（懒汉模式的就没有办法了），比如修改HungrySingleton的代码如下所示：
+对于这种情况，饿汉模式下的例子可以在构造器中添加判断逻辑来防御（懒汉模式的就没有办法了），比如修改 HungrySingleton 的代码如下所示：
 
 ```java
 public class HungrySingleton implements Serializable {
@@ -684,14 +693,14 @@ public class HungrySingleton implements Serializable {
             throw new RuntimeException("forbidden");
         }
     }
-    
+
   ......
 }
 ```
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/ZwXJQp.png)
 
-**枚举单例模式**
+###### **枚举单例模式**
 
 枚举单例模式是推荐的单例模式，它不仅可以防御序列化攻击，也可以防御反射攻击。举个枚举单例模式的代码：
 
@@ -768,11 +777,11 @@ class Application5 {
 
 ?> 可以看到序列化和反序列化后的对象是同一个。
 
-原理：跟踪ObjectInputStream#readObject源码，其中当反编译对象为枚举类型时，将调用readEnum方法：
+原理：跟踪 ObjectInputStream#readObject 源码，其中当反编译对象为枚举类型时，将调用 readEnum 方法：
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/I4nhMI.png)
 
-?> name为枚举类里的枚举常量，对于线程来说它是唯一的，存在方法区，所以通过`Enum.valueOf((Class)cl, name)`方法得到的枚举对象都是同一个。
+?> name 为枚举类里的枚举常量，对于线程来说它是唯一的，存在方法区，所以通过`Enum.valueOf((Class)cl, name)`方法得到的枚举对象都是同一个。
 
 **测试反射攻击**
 
@@ -792,13 +801,15 @@ class Application6 {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/sWRT3h.png)
 
-可以看到抛异常了，查看`Constructor`类的417行代码可以发现原因：
+可以看到抛异常了，查看`Constructor`类的 417 行代码可以发现原因：
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/F5RjbW.png)
 
-?> Java禁止通过反射创建枚举对象。
+?> Java 禁止通过反射创建枚举对象。
 
-正是因为枚举类型拥有这些天然的优势，所以用它创建单例是不错的选择，这也是Effective Java推荐的方式。
+正是因为枚举类型拥有这些天然的优势，所以用它创建单例是不错的选择，这也是 Effective Java 推荐的方式。
+
+<!-- tabs:end -->
 
 ##### 1.6.原型模式
 
@@ -810,12 +821,18 @@ class Application6 {
 - 循环体中生产大量对象的时候。
 
 - 优点：
-    - 原型模式性能比直接new一个对象性能好；
-    - 简化创建对象过程。
+
+  - 原型模式性能比直接 new 一个对象性能好；
+  - 简化创建对象过程。
 
 - 缺点：
-    - 对象必须重写Object克隆方法；
-    - 复杂对象的克隆方法写起来较麻烦（深克隆、浅克隆）
+
+  - 对象必须重写 Object 克隆方法；
+  - 复杂对象的克隆方法写起来较麻烦（深克隆、浅克隆）
+
+<!-- tabs:start  -->
+
+###### **浅拷贝(克隆)**
 
 **举例**
 
@@ -857,11 +874,14 @@ class PrototypeApplication {
 ```
 
 **结果**
+
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/BF2wmo.png)
 
-?> 这种方式会比直接在循环中创建Student性能好。
+?> 这种方式会比直接在循环中创建 Student 性能好。
 
-!> 当对象包含引用类型属性时，需要使用深克隆，比如Student包含Date属性时：
+###### **深拷贝(克隆)**
+
+!> 当对象包含引用类型属性时，需要使用深克隆，比如 Student 包含 Date 属性时：
 
 **举例**
 
@@ -885,7 +905,9 @@ public class Student implements Cloneable {
 }
 ```
 
-!> 克隆会破坏实现了Cloneable接口的单例对象
+!> 克隆会破坏实现了 Cloneable 接口的单例对象
+
+<!-- tabs:end -->
 
 #### 2.结构型模式
 
@@ -995,7 +1017,7 @@ class AppearanceApplication {
 **结果**
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/T4iAdA.png)
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/L0RlQD.png)
 
@@ -1147,7 +1169,7 @@ class DecoratorApplication2 {
 
 ?> 通过不同的装饰器自由组合，我们可以灵活的组装出各式各样的水果沙拉，这正是装饰者模式的优点，但明显可以看出代码变复杂了。
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/OkHFP3.png)
 
@@ -1170,7 +1192,9 @@ class DecoratorApplication2 {
 
 !> 分为：类适配器模式和对象适配器模式。
 
-**类适配器**
+<!-- tabs:start -->
+
+###### **类适配器**
 
 **举例**
 
@@ -1226,13 +1250,13 @@ class AdapterApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/gEHAuy.png)
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/3o3QdZ.png)
 
-**对象适配器**
+###### **对象适配器**
 
-对象适配器模式只需要将RaspberryPieAdaptor修改为：
+对象适配器模式只需要将 RaspberryPieAdaptor 修改为：
 
 ```java
 package com.xujiajun.structure.adapter.objectt;
@@ -1259,11 +1283,13 @@ class RaspberryPirAdapter implements Pie {
 
 ```
 
-?> 这种模式不直接继承被适配者，而是在适配器里创建被适配者。这种模式的UML图：
+?> 这种模式不直接继承被适配者，而是在适配器里创建被适配者。这种模式的 UML 图：
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/j2x9J8.png)
+
+<!-- tabs:end -->
 
 ##### 2.4.享元模式
 
@@ -1363,9 +1389,9 @@ class EnjoymentApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/icAl7p.png)
 
-从结果看，在10次循环中，只生产了4个对象，这很好的描述了系统有大量相似对象，需要缓冲池的场景。
+从结果看，在 10 次循环中，只生产了 4 个对象，这很好的描述了系统有大量相似对象，需要缓冲池的场景。
 
-?> JDK中的字符串常量池，数据库连接池等都是用的享元模式。
+?> JDK 中的字符串常量池，数据库连接池等都是用的享元模式。
 
 ##### 2.5.组合模式
 
@@ -1526,7 +1552,7 @@ class CombinApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/O19nBz.png)
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/9s7ZSM.png)
 
@@ -1656,7 +1682,7 @@ class BridgeApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/UB5Vnw.png)
 
-**UML图**
+**UML 图**
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/aTweeN.png)
 
@@ -1680,7 +1706,9 @@ class BridgeApplication {
 1. 造成类的数目增加，增加复杂度；
 2. 客户端和目标对象增加代理对象，会造成处理速度变慢。
 
-**静态代理**
+<!-- tabs:start -->
+
+###### **静态代理**
 
 通过在代码中显式地定义了一个代理类，在代理类中通过同名的方法对目标对象的方法进行包装，客户端通过调用代理类的方法来调用目标对象的方法。
 
@@ -1749,8 +1777,9 @@ class ProxyApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/NC7xF0.png)
 
-**动态代理**
-JDK的动态代理只能代理接口，通过接口的方法名在动态生成的代理类中调用业务实现类的同名方法。
+###### **动态代理**
+
+JDK 的动态代理只能代理接口，通过接口的方法名在动态生成的代理类中调用业务实现类的同名方法。
 
 静态代理的缺点就是每需要代理一个类，就需要手写对应的代理类。
 
@@ -1846,22 +1875,24 @@ class DynamicProxyApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/LlTy9C.png)
 
-**CGLib代理**
+###### **CGLib 代理**
 
 通过继承来实现，生成的代理类就是目标对象类的子类，通过重写业务方法来实现代理。
 
-**Spring对代理模式的拓展**
+###### **Spring 对代理模式的拓展**
 
-1. 当Bean有实现接口时，使用JDK动态代理；
-2. 当Bean没有实现接口时，使用CGLib代理。
+1. 当 Bean 有实现接口时，使用 JDK 动态代理；
+2. 当 Bean 没有实现接口时，使用 CGLib 代理。
 
-可以通过以下配置强制使用CGLib代理：
+可以通过以下配置强制使用 CGLib 代理：
 
 ```yaml
 spring:
   aop:
     proxy-target-class: true
 ```
+
+<!-- tabs:end -->
 
 #### 3.行为型模式
 
@@ -1967,7 +1998,7 @@ class TemplateApplication {
 
 ##### 3.3.策略模式
 
-策略模式定义了算法家族，分别封装起来，让它们之间可以互相替换。此模式让算法的变化不会影响到使用算法的用户。策略模式常用于消除大量的if else代码。
+策略模式定义了算法家族，分别封装起来，让它们之间可以互相替换。此模式让算法的变化不会影响到使用算法的用户。策略模式常用于消除大量的 if else 代码。
 
 适用场景：
 
@@ -2016,7 +2047,7 @@ class StrategyApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/iQkNvN.png)
 
-?> 策略模式常结合工厂模式来消除大量的if else代码，我们新建一个促销策略的创建工厂
+?> 策略模式常结合工厂模式来消除大量的 if else 代码，我们新建一个促销策略的创建工厂
 
 ```java
 class PromotionStrategyFactory {
@@ -2108,7 +2139,7 @@ class Comment {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/Jwewc4.png)
 
-!> 这些方法都是线程安全方法（加了synchronized同步锁）。
+!> 这些方法都是线程安全方法（加了 synchronized 同步锁）。
 
 ```java
 
@@ -2151,7 +2182,7 @@ class ObservableApplication {
 
 ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/rjbICW.png)
 
-?> 观察者的update方法里的逻辑最好进行异步化，这样在并发环境下可以提升程序性能
+?> 观察者的 update 方法里的逻辑最好进行异步化，这样在并发环境下可以提升程序性能
 
 ##### 3.6.备忘录模式
 
