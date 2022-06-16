@@ -1,4 +1,7 @@
-- [Java](zh-cn/java/)
+- **Java**
+
+  - [Java](zh-cn/java/)
+  - [设计模式](zh-cn/java/design-pattern.md)
 
 - **Spring**
 
