@@ -2,6 +2,10 @@
 
   - [Java](zh-cn/java/)
   - [设计模式](zh-cn/java/design-pattern.md)
+  - **Java8**
+    - [lambda 表达式](zh-cn/java/java8/01-lambda.md)
+    - [Stream 流](zh-cn/java/java8/02-stream.md)
+    - [collect 收集和处理数据](zh-cn/java/java8/03-collect.md)
 
 - **Spring**
 
