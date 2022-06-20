@@ -2,10 +2,18 @@
 
   - [Java](zh-cn/java/)
   - [设计模式](zh-cn/java/design-pattern.md)
-  - **Java8**
+  - **并发编程**
+    - [基础](zh-cn/java/basics/01-thread.md)
+  - **Java8 特性**
     - [lambda 表达式](zh-cn/java/java8/01-lambda.md)
     - [Stream 流](zh-cn/java/java8/02-stream.md)
     - [collect 收集和处理数据](zh-cn/java/java8/03-collect.md)
+    - [parallel 并行流](zh-cn/java/java8/04-parallel.md)
+    - [Optional 空(null)处理](zh-cn/java/java8/05-optional.md)
+    - [新的日期和时间 API](zh-cn/java/java8/06-localdatetime.md)
+  - **常用 API**
+    - **Java.Math 数学计算**
+      - [BigDecimal 类](zh-cn/java/api/math/01-bigdecimal.md)
 
 - **Spring**
 
