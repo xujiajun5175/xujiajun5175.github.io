@@ -1,9 +1,13 @@
 - **Java**
 
   - [Java](zh-cn/java/)
+    - [命令行指令](zh-cn/java/command.md)
   - [设计模式](zh-cn/java/design-pattern.md)
+
   - **并发编程**
+
     - [基础](zh-cn/java/basics/01-thread.md)
+
   - **Java8 特性**
     - [lambda 表达式](zh-cn/java/java8/01-lambda.md)
     - [Stream 流](zh-cn/java/java8/02-stream.md)
@@ -14,6 +18,8 @@
   - **常用 API**
     - **Java.Math 数学计算**
       - [BigDecimal 类](zh-cn/java/api/math/01-bigdecimal.md)
+  - **JVM**
+    - [JVM](zh-cn/java/jvm/01-jvm.md)
 
 - **Spring**
 
