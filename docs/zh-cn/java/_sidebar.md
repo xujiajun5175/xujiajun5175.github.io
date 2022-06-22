@@ -1,8 +1,12 @@
 - **Java**
 
   - [Java](zh-cn/java/)
+
     - [命令行指令](zh-cn/java/command.md)
+
   - [设计模式](zh-cn/java/design-pattern.md)
+  - [reflect 反射机制](zh-cn/java/basics/03-reflect.md)
+  - [annotation 自定义注解](zh-cn/java/basics/02-annotation.md)
 
   - **并发编程**
 
@@ -20,6 +24,8 @@
       - [BigDecimal 类](zh-cn/java/api/math/01-bigdecimal.md)
   - **JVM**
     - [JVM](zh-cn/java/jvm/01-jvm.md)
+    - [方法调用过程](zh-cn/java/jvm/02-method.md)
+    - [对象实例化过程](zh-cn/java/jvm/03-instance.md)
 
 - **Spring**
 
