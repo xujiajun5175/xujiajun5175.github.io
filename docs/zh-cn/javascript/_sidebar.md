@@ -1,4 +1,4 @@
-- [javascript](zh-cn/javascript/)
+- [javascript](zh-cn/javascript/01-javascript.md)
 - [ECMAScript](zh-cn/javascript/EcmaScript.md)
 - [Node.js](zh-cn/javascript/NodeJs.md)
 - [TypeScript](zh-cn/javascript/TypeScript.md)

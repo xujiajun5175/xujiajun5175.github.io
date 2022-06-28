@@ -5,6 +5,7 @@
     - [命令行指令](zh-cn/java/command.md)
 
   - [设计模式](zh-cn/java/design-pattern.md)
+  - [String 字符串详解](zh-cn/java/basics/04-String.md)
   - [reflect 反射机制](zh-cn/java/basics/03-reflect.md)
   - [annotation 自定义注解](zh-cn/java/basics/02-annotation.md)
 
