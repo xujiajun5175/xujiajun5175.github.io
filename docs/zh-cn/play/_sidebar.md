@@ -1,1 +1,1 @@
-- [天津麻将规则](zh-cn/play/天津麻将规则)
+- [天津麻将规则](zh-cn/play/mahjong-tianjin)

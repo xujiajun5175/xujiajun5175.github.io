@@ -50,7 +50,7 @@
 
 ###### **龙**
 
-同[清龙]https://baike.baidu.com/item/%E6%B8%85%E9%BE%99/4496572#viewPageContent
+同[清龙](https://baike.baidu.com/item/%E6%B8%85%E9%BE%99/4496572#viewPageContent)
 
 胡牌的四副牌中有三副正好是同一花色从一到九，称为龙。
 
