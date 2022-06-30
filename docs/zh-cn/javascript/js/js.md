@@ -2,6 +2,8 @@
 
 **文档更新日期: {docsify-updated}**
 
+---
+
 ### 1.简介
 
 #### 1.1.**JavaScript 是脚本语言**
@@ -146,13 +148,7 @@ name = person.lastName
 name = person['lastName']
 ```
 
-#### 4.4.Undefined 和 Null
-
-Undefined 这个值表示变量不含有值。
-
-可以通过将变量的值设置为 null 来清空变量。
-
-#### 4.5.声明变量类型
+#### 4.4.声明变量类型
 
 当您声明新变量时，可以使用关键词 "new" 来声明其类型：
 
@@ -347,25 +343,78 @@ function bin2dec(bin){
 
 #### 13.1.For/In 循环
 
-JavaScript for/in 语句循环遍历对象的属性
+`for...in`循环用来遍历一个对象的全部属性。
+
+- 它遍历的是对象所有可遍历（enumerable）的属性，会跳过不可遍历的属性
+- 它不仅遍历对象自身的属性，还遍历继承的属性。
+
+```js
+// name 是 Person 本身的属性
+function Person(name) {
+  this.name = name
+}
+
+// describe是Person.prototype的属性
+Person.prototype.describe = function () {
+  return 'Name: ' + this.name
+}
+
+var person = new Person('Jane')
+
+// for...in循环会遍历实例自身的属性（name），
+// 以及继承的属性（describe）
+for (var key in person) {
+  console.log(key)
+}
+// name
+// describe
+```
+
+上面代码中，`name`是对象本身的属性，`describe`是对象继承的属性，`for...in`循环的遍历会包括这两者。
+
+如果只想遍历对象本身的属性，可以使用`hasOwnProperty`方法，在循环内部判断一下是不是自身的属性。
+
+```js
+for (var key in person) {
+  if (person.hasOwnProperty(key)) {
+    console.log(key)
+  }
+}
+// name
+```
 
 ### 14.类型转换
 
 #### 14.1.typeof 操作符
 
+JavaScript 有三种方法，可以确定一个值到底是什么类型。
+
+- `typeof`运算符
+- `instanceof`运算符
+- `Object.prototype.toString`方法
+
 你可以使用 **typeof** 操作符来查看 JavaScript 变量的数据类型。
 
 ```js
-typeof 'John' // 返回 string
-typeof 3.14 // 返回 number
+//原始类型
+typeof 123 //返回 "number"
+typeof '123' //返回 "string"
+typeof false //返回 "boolean"
 typeof NaN // 返回 number
-typeof false // 返回 boolean
-typeof [1, 2, 3, 4] // 返回 object
-typeof { name: 'John', age: 34 } // 返回 object
-typeof new Date() // 返回 object
+
+//函数
+function f() {}
+typeof f // 返回"function"
 typeof function () {} // 返回 function
-typeof myCar // 返回 undefined (如果 myCar没有被实例化的话)
-typeof null // 返回 object
+
+//undefinded
+typeof undefined //返回"undefined"
+
+//其他
+typeof window // "object"
+typeof {} // "object"
+typeof [] // "object"
+typeof null // "object"
 ```
 
 !> 请注意：
@@ -375,6 +424,17 @@ typeof null // 返回 object
 - 日期(Date)的数据类型为 object
 - null 的数据类型是 object
 - 未定义变量的数据类型为 undefined
+
+既然`typeof`对数组（array）和对象（object）的显示结果都是`object`，那么怎么区分它们呢？`instanceof`运算符可以做到。
+
+```js
+<span class="kd">var</span> <span class="nx">o</span> <span class="o">=</span> <span class="p">{};</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">[];</span>
+
+<span class="nx">o</span> <span class="k">instanceof</span> <span class="nb">Array</span> <span class="c1">// false</span>
+<span class="nx">a</span> <span class="k">instanceof</span> <span class="nb">Array</span> <span class="c1">// true</span>
+
+```
 
 #### 14.2.constructor 属性
 
@@ -489,17 +549,45 @@ var x = +y // x 是一个数字 (NaN)
 
 ?> 当你尝试输出一个对象或一个变量时 JavaScript 会自动调用变量的 toString() 方法：
 
-#### 14.7.null
+#### 14.7.null && undefined
+
+> `null`的类型也是`object`，这是由于历史原因造成的。1995 年 JavaScript 语言的第一版，所有值都设计成 32 位，其中最低的 3 位用来表述数据类型，`object`对应的值是`000`。当时，只设计了五种数据类型（对象、整数、浮点数、字符串和布尔值），完全没考虑`null`，只把它当作`object`的一种特殊值，32 位全部为 0。这是`typeof null`返回`object`的根本原因。
+>
+> 为了兼容以前的代码，后来就没法修改了。这并不是说`null`就属于对象，本质上`null`是一个类似于`undefined`的特殊值。
 
 在 JavaScript 中 null 表示 "什么都没有"，是一个只有一个值的特殊类型，表示一个空对象引用。
 
 ?> 当设置为“null”时，可以用来清空对象：
 
-#### 14.8.undefined
-
 在 JavaScript 中 undefined 是一个没有设置值的变量。
 
 ?> 如果一个变量没有设置值的话，就会返回 undefined：
+
+!> JavaScript 的标识名区分大小写，所以`undefined`和`null`不同于`Undefined`和`Null`（或者其他仅仅大小写不同的词形），后者只是普通的变量名。
+
+对于`null`和`undefined`，可以大致可以像下面这样理解。
+
+`null`表示空值，即该处的值现在为空。调用函数时，某个参数未设置任何值，这时就可以传入`null`。比如，某个函数接受引擎抛出的错误作为参数，如果运行过程中未出错，那么这个参数就会传入`null`，表示未发生错误。
+
+```js
+// 变量声明了，但没有赋值
+var i
+i // undefined
+
+// 调用函数时，应该提供的参数没有提供，该参数等于undefined
+function f(x) {
+  return x
+}
+f() // undefined
+
+// 对象没有赋值的属性
+var o = new Object()
+o.p // undefined
+
+// 函数没有返回值时，默认返回undefined
+function f() {}
+f() // undefined
+```
 
 ### 15.正则表达式
 
@@ -548,39 +636,7 @@ var str = 'Visit Microsoft!'
 var res = str.replace('Microsoft', 'w3cschool')
 ```
 
-### 16.错误处理
-
-- **try** 语句测试代码块的错误。
-- **catch** 语句处理错误。
-- **throw** 语句创建自定义错误。
-
-#### 16.1.抛出（throw）错误
-
-当错误发生时，当事情出问题时，JavaScript 引擎通常会停止，并生成一个错误消息。
-
-描述这种情况的技术术语是：JavaScript 将**抛出**一个错误。
-
-#### 16.2. try 和 catch
-
-**try** 语句允许我们定义在执行时进行错误测试的代码块。
-
-**catch** 语句允许我们定义当 try 代码块发生错误时，所执行的代码块。
-
-JavaScript 语句 **try** 和 **catch** 是成对出现的。
-
-### 16.3.Throw 语句
-
-throw 语句允许我们创建自定义错误。
-
-正确的技术术语是：创建或**抛出异常**（exception）。
-
-如果把 throw 与 try 和 catch 一起使用，那么您能够控制程序流，并生成自定义的错误消息。
-
-```js
-throw exception
-```
-
-?> 异常可以是 JavaScript 字符串、数字、逻辑值或对象
+---
 
 ### 17.调试
 
@@ -856,6 +912,85 @@ var myFather = new person('John', 'Doe', 50, 'blue')
 var myMother = new person('Sally', 'Rally', 48, 'green')
 ```
 
+##### 20.1.2.原型链的理解
+
+###### `__proto__`?
+
+> 每个对象都会在其内部初始化一个属性，就是 **proto**，当我们访问一个对象的属性 时，如果这个对象内部不存在这个属性，那么他就会去**proto**里找这个属性，这个**proto**又会有自己的**proto**，于是就这样 一直找下去，也就是我们平时所说的原型链的概念。
+
+###### new 究竟做了什么？
+
+> 我们把 new 的过程拆分成以下三步：
+>
+> \1. var p={}; 也就是说，初始化一个对象 p。
+>
+> \2. p.**proto**=Person.prototype;
+>
+> \3. Person.call(p);也就是说构造 p，也可以称之为初始化 p。
+
+---
+
+##### 查看所有属性
+
+查看一个对象本身的所有属性，可以使用`Object.keys`方法。
+
+```js
+var o = {
+  key1: 1,
+  key2: 2,
+}
+
+Object.keys(o)
+// ['key1', 'key2']
+```
+
+##### delete 命令
+
+`delete`命令用于删除对象的属性，删除成功后返回`true`。
+
+```js
+var o = { p: 1 }
+Object.keys(o) // ["p"]
+
+delete o.p // true
+o.p // undefined
+Object.keys(o) // []
+```
+
+!> 删除一个不存在的属性，`delete`不报错，而且返回`true`。
+
+只有一种情况，`delete`命令会返回`false`，那就是该属性存在，且不得删除。
+
+```js
+var o = Object.defineProperty({}, 'p', {
+  value: 123,
+  configurable: false,
+})
+
+o.p // 123
+delete o.p // false
+```
+
+?> `delete`命令只能删除对象本身的属性，无法删除继承的属性
+
+```js
+var o = {}
+delete o.toString // true
+o.toString // function toString() { [native code] }
+```
+
+`toString`是对象`o`继承的属性，虽然`delete`命令返回`true`，但该属性并没有被删除，依然存在。
+
+`delete`命令不能删除`var`命令声明的变量，只能用来删除属性。
+
+```js
+var p = 1
+delete p // false
+delete window.p // false
+```
+
+`p`是`var`命令声明的变量，`delete`命令无法删除它，返回`false`。因为`var`声明的全局变量都是顶层对象的属性，而且默认不得删除。
+
 #### 20.2.Number()对象
 
 ##### 20.2.1.所有 JavaScript 数字均为 64 位
@@ -883,3 +1018,554 @@ var x = 0.2 + 0.1 // result will be 0.30000000000000004
 如果前缀为 0，则 JavaScript 会把数值常量解释为八进制数，如果前缀为 0 和 "x"，则解释为十六进制数。
 
 !> 绝不要在数字前面写零，除非您需要进行八进制转换。
+
+##### 20.2.4.无穷大（Infinity）
+
+当数字运算结果超过了 JavaScript 所能表示的数字上限（溢出），结果为一个特殊的无穷大（infinity）值，在 JavaScript 中以 Infinity 表示。同样地，当负数的值超过了 JavaScript 所能表示的负数范围，结果为负无穷大，在 JavaScript 中以-Infinity 表示。无穷大值的行为特性和我们所期望的是一致的：基于它们的加、减、乘和除运算结果还是无穷大（当然还保留它们的正负号）。
+
+##### 20.2.5.NaN - 非数字值
+
+NaN 属性是代表非数字值的特殊值。该属性用于指示某个值不是数字。可以把 Number 对象设置为该值，来指示其不是数字值。
+
+!> 除以 0 是无穷大，无穷大是一个数字:
+
+?> 在 JavaScript 中，如果参数无法被转换为数字，则返回 NaN。
+
+---
+
+`NaN`不等于任何值，包括它本身。
+
+```js
+NaN === NaN // false
+```
+
+由于数组的`indexOf`方法，内部使用的是严格相等运算符，所以该方法对`NaN`不成立。
+
+```js
+;[NaN].indexOf(NaN) // -1
+```
+
+`NaN`在布尔运算时被当作`false`。
+
+```js
+Boolean(NaN) // false
+```
+
+`NaN`与任何数（包括它自己）的运算，得到的都是`NaN`。
+
+```js
+NaN + 32 // NaN
+NaN - 32 // NaN
+NaN * 32 // NaN
+NaN / 32 // NaN
+```
+
+`isNaN`方法可以用来判断一个值是否为`NaN`。
+
+```js
+isNaN(NaN) // true
+isNaN(123) // false
+
+isNaN({}) // true
+// 等同于
+isNaN(Number({})) // true
+
+isNaN(['xzy']) // true
+// 等同于
+isNaN(Number(['xzy'])) // true
+
+isNaN([]) // false
+isNaN([123]) // false
+isNaN(['123']) // false
+```
+
+##### 20.2.6.数字属性
+
+- MAX_VALUE
+- MIN_VALUE
+- NEGATIVE_INFINITY
+- POSITIVE_INFINITY
+- NaN
+- prototype
+- constructor
+
+##### 20.2.7.数字方法
+
+- toExponential()
+- toFixed()
+- toPrecision()
+- toString()
+- valueOf()
+
+#### 20.3.字符串（String）对象
+
+##### 20.3.1.字符串转为数组
+
+字符串使用 string>split()函数转为数组:
+
+#### 20.4.Date（日期）对象
+
+#### 20.5.Array（数组）对象
+
+!> 本质上，数组属于一种特殊的对象。`typeof`运算符会返回数组的类型是`object`。
+
+数组对象的作用是：使用单独的变量名来存储一系列的值。
+
+##### 20.5.1.参数
+
+参数 size 是期望的数组元素个数。返回的数组，length 字段将被设为 size 的值。
+
+参数 `element ...; elementn` 是参数列表。当使用这些参数来调用构造函数 Array() 时，新创建的数组的元素就会被初始化为这些值。它的 length 字段也会被设置为参数的个数。
+
+##### 20.5.2.返回值
+
+返回新创建并被初始化了的数组。
+
+如果调用构造函数 Array() 时没有使用参数，那么返回的数组为空，length 字段为 0。
+
+当调用构造函数时只传递给它一个数字参数，该构造函数将返回具有指定个数、元素为 undefined 的数组。
+
+当其他参数调用 Array() 时，该构造函数将用参数指定的值**初始化数组**。
+
+当把构造函数作为函数调用，不使用 `new 运算符`时，它的行为与使用 `new 运算符`调用它时的行为完全一样。
+
+##### 20.5.3.Array 对象属性
+
+| 属性        | 描述                               |
+| :---------- | :--------------------------------- |
+| constructor | 返回对创建此对象的数组函数的引用。 |
+| length      | 设置或返回数组中元素的数目。       |
+| prototype   | 使您有能力向对象添加属性和方法。   |
+
+####
+
+##### 20.5.4.**栈方法**
+
+pop 和 push 能够让我们使用堆栈那样先入后出使用数组
+
+```js
+var a = new Array(1, 2, 3)
+a.push(4)
+console.log(a) //[1, 2, 3, 4]
+console.log(a.length) //4
+console.log(a.pop(a)) //4
+console.log(a) //[1, 2, 3]
+console.log(a.length) //3
+```
+
+##### 20.5.5.**队列方法**
+
+先入先出的队列
+
+```js
+var a = new Array(1, 2, 3)
+a.unshift(4)
+console.log(a) //[4, 1, 2, 3]
+console.log(a.length) //4
+console.log(a.shift(a)) //4
+console.log(a) //[1, 2, 3]
+console.log(a.length) //3
+```
+
+##### 20.5.6.splice 方法
+
+方法有三个参数
+
+1. 开始索引
+2. 删除元素的位移
+3. 插入的新元素，当然也可以写多个
+
+splice 方法返回一个由删除元素组成的新数组，没有删除则返回空数组
+
+```js
+var a = new Array(1, 2, 3, 4, 5)
+
+//删除
+var a = new Array(1, 2, 3, 4, 5)
+console.log(a.splice(1, 3)) //[2, 3, 4]
+console.log(a.length) //2
+console.log(a) //[1,5]
+
+//插入 替换
+//只要方法第二个参数，也就是删除动作执行的次数设为0
+var a = new Array(1, 2, 3, 4, 5)
+a.splice(1, 0, 9, 99, 999)
+console.log(a.length) //8
+console.log(a) //[1, 9, 99, 999, 2, 3, 4, 5]
+a.splice(1, 3, 8, 88, 888)
+console.log(a.length) //8
+console.log(a) //[1, 8, 88, 888, 2, 3, 4, 5]
+```
+
+#### 20.6.Boolean（布尔）对象
+
+Boolean（布尔）对象用于将非布尔值转换为布尔值（true 或者 false），是三种包装对象：Number、String 和 Boolean 中最简单的一种，它没有大量的实例属性和方法。
+
+如果布尔对象无初始值或者其值为:
+
+- 0
+- -0
+- null
+- ""
+- false
+- undefined
+- NaN
+
+那么对象的值为 false。否则，其值为 true（即使当自变量为字符串 "false" 时）！
+
+#### 20.7. Math（算数）对象
+
+Math（算数）对象的作用是：执行常见的算数任务。
+
+!> Math 对象无需在使用这个对象之前对它进行定义。
+
+!> Math 对象不能使用 new 关键字创建对象实例。直接用 “对象名.成员”的格式来访问其属性或者方法。
+
+##### 20.7.1.算数值
+
+JavaScript 提供 8 种可被 Math 对象访问的算数值：
+
+你可以参考如下 Javascript 常量使用方法：
+
+```js
+Math.E
+Math.PI
+Math.SQRT2
+Math.SQRT1_2
+Math.LN2
+Math.LN10
+Math.LOG2E
+Math.LOG10E
+```
+
+##### 20.7.2.算数方法
+
+#### 20.8.RegExp 对象
+
+RegExp：是正则表达式（regular expression）的简写。
+
+RegExp 对象用于规定在文本中检索的内容。
+
+##### 20.8.1.语法
+
+```js
+var patt = new RegExp(pattern, modifiers)
+```
+
+另一种更简单的方式：
+
+```js
+var patt=/pattern/modifiers;
+```
+
+- 模式描述了一个表达式模型。
+- 修饰符描述了检索是否是全局，区分大小写等。
+
+##### 20.8.2.RegExp 修饰符
+
+修饰符用于执行不区分大小写和全文的搜索。
+
+**i** - 修饰符是用来执行不区分大小写的匹配。
+
+**g** - 修饰符是用于执行全文的搜索（而不是在找到第一个就停止查找,而是找到所有的匹配）。
+
+##### 20.8.3.test()
+
+The test()方法搜索字符串指定的值，根据结果并返回真或假。
+
+下面的示例是从字符串中搜索字符 "e" ：
+
+```js
+var patt1 = new RegExp('e')
+document.write(patt1.test('The best things in life are free')) //true
+```
+
+##### 20.8.4.exec()
+
+exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+
+下面的示例是从字符串中搜索字符 "e" ：
+
+```js
+var patt1 = new RegExp('e')
+document.write(patt1.exec('The best things in life are free')) //e
+```
+
+#### 20.9. Window 对象
+
+Window 对象表示浏览器中打开的窗口。
+
+Window 对象表示一个浏览器窗口或一个框架。在客户端 JavaScript 中，Window 对象是全局对象，所有的表达式都在当前的环境中计算。
+
+##### 20.9.1.Window 子对象
+
+Window 的子对象主要有如下几个：
+
+1. JavaScript document 对象
+2. JavaScript frames 对象
+3. JavaScript history 对象
+4. JavaScript location 对象
+5. JavaScript navigator 对象
+6. JavaScript screen 对象
+
+##### 20.9.2.浏览器对象模型 (BOM)
+
+浏览器对象模型（**B**rowser **O**bject **M**odel (BOM)）尚无正式标准。
+
+由于现代浏览器已经（几乎）实现了 JavaScript 交互性方面的相同方法和属性，因此常被认为是 BOM 的方法和属性。
+
+##### 20.9.3.Window 尺寸
+
+有三种方法能够确定浏览器窗口的尺寸（浏览器的窗口，不包括工具栏和滚动条）。
+
+对于 Internet Explorer、Chrome、Firefox、Opera 以及 Safari：
+
+- window.innerHeight - 浏览器窗口的内部高度
+- window.innerWidth - 浏览器窗口的内部宽度
+
+##### 20.9.4.Window Screen
+
+###### 20.9.4.1.Window Screen
+
+**window.screen**对象在编写时可以不使用 window 这个前缀。
+
+一些属性：
+
+- screen.availWidth - 可用的屏幕宽度
+- screen.availHeight - 可用的屏幕高度
+
+###### 20.9.4.2.Window Screen 可用宽度
+
+screen.availWidth 属性返回访问者屏幕的宽度，以像素计，减去界面特性，比如窗口任务栏。
+
+###### 20.9.4.3.Window Screen 可用高度
+
+screen.availHeight 属性返回访问者屏幕的高度，以像素计，减去界面特性，比如窗口任务栏。
+
+##### 20.9.5.Window Location
+
+window.location 对象用于获得当前页面的地址 (URL)，并把浏览器重定向到新的页面。
+
+这种方法既可以用于具有 onclick 事件的标签，也可以用于满足某些条件进行跳转，特点是方便且灵活。
+
+**window.location** 对象在编写时可不使用 window 这个前缀。 一些例子：
+
+一些实例:
+
+- [location.hostname](https://www.w3cschool.cn/jsref/prop-loc-hostname.html) 返回 web 主机的域名
+- [location.pathname](https://www.w3cschool.cn/jsref/prop-loc-pathname.html) 返回当前页面的路径和文件名
+- [location.port](https://www.w3cschool.cn/jsref/prop-loc-port.html) 返回 web 主机的端口 （80 或 443）
+- [location.protocol](https://www.w3cschool.cn/jsref/prop-loc-protocol.html) 返回所使用的 web 协议（http:// 或 https://）
+- location.href 属性返回当前页面的 URL。
+
+##### 20.9.6.Window History
+
+window.history 对象包含浏览器的历史。
+
+**window.history**对象在编写时可不使用 window 这个前缀。
+
+为了保护用户隐私，对 JavaScript 访问该对象的方法做出了限制。
+
+一些方法：
+
+- [history.back()](https://www.w3cschool.cn/jsref/met-his-back.html) - 与在浏览器点击后退按钮相同
+- [history.forward()](https://www.w3cschool.cn/jsref/met-his-forward.html) - 与在浏览器中点击向前按钮向前相同
+
+##### 20.9.7.Window Navigator
+
+window.navigator 对象包含有关访问者浏览器的信息。
+
+**window.navigator** 对象在编写时可不使用 window 这个前缀。
+
+!> 警告!!!
+
+来自 navigator 对象的信息具有误导性，不应该被用于检测浏览器版本，这是因为：
+
+- navigator 数据可被浏览器使用者更改
+- 一些浏览器对测试站点会识别错误
+- 浏览器无法报告晚于浏览器发布的新操作系统
+
+##### 20.9.8.弹窗
+
+可以在 JavaScript 中创建三种消息框：警告框、确认框、提示框。
+
+##### 20.9.9.计时事件
+
+通过使用 JavaScript，我们有能力做到在一个设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。我们称之为计时事件。
+
+在 JavaScritp 中使用计时事件是很容易的，两个关键方法是:
+
+- [setInterval() ](https://www.w3cschool.cn/jsref/met-win-setinterval.html)- 间隔指定的毫秒数不停地执行指定的代码。
+- [setTimeout() ](https://www.w3cschool.cn/jsref/met-win-settimeout.html)- 暂停指定的毫秒数后执行指定的代码
+
+?> setInterval() 和 setTimeout() 是 HTML DOM Window 对象的两个方法
+
+##### 20.9.9.1.setInterval()方法
+
+###### 定义和用法
+
+setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+
+setInterval() 方法会不停地调用函数，直到 [clearInterval()](https://www.w3cschool.cn/jsref/met-win-clearinterval.html) 被调用或窗口被关闭。由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。
+
+**提示：** 1000 毫秒= 1 秒。
+
+```js
+setInterval(code, millisec, lang)
+
+window.clearInterval(intervalVariable) //停止执行
+```
+
+?> **window.clearInterval()** 方法可以不使用 window 前缀，直接使用函数**clearInterval()**。
+
+| 参数     | 描述                                                   |
+| :------- | :----------------------------------------------------- |
+| code     | 必需。要调用的函数或要执行的代码串。                   |
+| millisec | 必须。周期性执行或调用 code 之间的时间间隔，以毫秒计。 |
+| lang     | 可选。 JScript \| VBScript \| JavaScript               |
+
+##### 20.9.9.2.setTimeout() 方法
+
+###### 定义和用法
+
+setTimeout() 方法用于在指定的毫秒数后调用函数或计算表达式。
+
+**提示:** 1000 毫秒 = 1 秒.
+
+###### 语法
+
+```js
+setTimeout(code, millisec, lang)
+
+window.clearTimeout(timeoutVariable) //停止
+```
+
+| 参数     | 描述                                                    |
+| :------- | :------------------------------------------------------ |
+| code     | 必需。要调用的函数后要执行的 JavaScript 代码串。        |
+| millisec | 必需。在执行代码前需等待的毫秒数。                      |
+| lang     | 可选。脚本语言可以是：JScript \| VBScript \| JavaScript |
+
+##### 20.9.10.Cookies
+
+Cookies 是一些数据, 存储于你电脑上的文本文件中。
+
+当 web 服务器向浏览器发送 web 页面时，在连接关闭后，服务端不会记录用户的信息。
+
+Cookies 的作用就是用于解决 "如何记录客户端的用户信息":
+
+- 当用户访问 web 页面时，他的名字可以记录在 cookie 中。
+- 在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录。
+
+Cookies 以名/值对形式存储，如下所示:
+
+```js
+username=John Doe
+```
+
+###### 20.9.10.1.创建 Cookie
+
+JavaScript 可以使用 **document.cookie** 属性来创建 、读取、及删除 cookies。
+
+JavaScript 中，创建 cookie 如下所示：
+
+```js
+document.cookie = 'username=John Doe'
+```
+
+您还可以为 cookie 添加一个过期时间（以 UTC 或 GMT 时间）。默认情况下，cookie 在浏览器关闭时删除：
+
+```js
+document.cookie = 'username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT'
+```
+
+您可以使用 path 参数告诉浏览器 cookie 的路径。默认情况下，cookie 属于当前页面。
+
+```js
+document.cookie =
+  'username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/'
+```
+
+###### 20.9.10.2.使用 JavaScript 读取 Cookie
+
+在 JavaScript 中, 可以使用以下代码来读取 cookies：
+
+```js
+var x = document.cookie
+```
+
+?> document.cookie 将以字符串的方式返回所有的 cookies，类型格式： cookie1=value; cookie2=value; cookie3=value;
+
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/49s1PS0001470710607319368.gif)
+
+#### 20.10.execCommand 函数
+
+execCommand 方法是执行一个对当前文档，当前选择或者给出范围的命令
+
+### 21.浏览器端数据储存
+
+**Web Storage**
+
+这个 API 的作用是，使得网页可以在浏览器端储存数据。它分成两类：sessionStorage 和 localStorage。
+
+- sessionStorage 保存的数据用于浏览器的一次会话，当会话结束（通常是该窗口关闭），数据被清空；
+- localStorage 保存的数据长期存在，下一次访问该网站的时候，网页可以直接读取以前保存的数据。除了保存期限的长短不同，这两个对象的属性和方法完全一样。
+
+通过检查 window 对象是否包含 sessionStorage 和 localStorage 属性，可以确定浏览器是否支持这两个对象。
+
+```js
+function checkStorageSupport() {
+  // sessionStorage
+  if (window.sessionStorage) {
+    return true
+  } else {
+    return false
+  }
+
+  // localStorage
+  if (window.localStorage) {
+    return true
+  } else {
+    return false
+  }
+}
+```
+
+#### 21.1.操作方法
+
+```js
+//存入/读取数据
+sessionStorage.setItem('key', 'value')
+localStorage.setItem('key', 'value')
+
+//读取数据
+var valueSession = sessionStorage.getItem('key')
+var valueLocal = localStorage.getItem('key')
+
+//清除数据
+sessionStorage.removeItem('key')
+localStorage.removeItem('key')
+
+//clear方法用于清除所有保存的数据
+sessionStorage.clear()
+localStorage.clear()
+
+//storage事件
+window.addEventListener('storage', onStorageChange)
+//回调函数接受一个event对象作为参数。这个event对象的key属性，保存发生变化的键名。
+function onStorageChange(e) {
+  console.log(e.key)
+}
+```
+
+除了 key 属性，event 对象的属性还有三个：
+
+- oldValue：更新前的值。如果该键为新增加，则这个属性为 null。
+- newValue：更新后的值。如果该键被删除，则这个属性为 null。
+- url：原始触发 storage 事件的那个网页的网址。
+
+如果浏览器同时打开一个域名下面的多个页面，当其中的一个页面改变 sessionStorage 或 localStorage 的数据时，其他所有页面的 storage 事件会被触发，而原始页面并不触发 storage 事件。
+
+可以通过这种机制，实现多个窗口之间的通信。
+
+所有浏览器之中，只有 IE 浏览器除外，它会在所有页面触发 storage 事件。

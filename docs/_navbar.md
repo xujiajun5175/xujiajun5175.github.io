@@ -1,6 +1,7 @@
 - 前端
 
-  - [JavaScript](zh-cn/javascript/)
+  - [JavaScript](zh-cn/javascript/js/)
+  - [ECMAScript](zh-cn/javascript/es/)
   - [HTML](zh-cn/html/html.md)
   - [CSS](zh-cn/html/css.md)
   - [Vue](zh-cn/vue/)
@@ -49,5 +50,6 @@
 
   - [使用插件](zh-cn/plugins.md ':disabled')
   - [语录](zh-cn/social.md)
+  - [天津麻将规则](zh-cn/play/天津麻将规则)
 
 - [中文 ](zh-cn/)
