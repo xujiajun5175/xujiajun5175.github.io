@@ -12,7 +12,7 @@
 
 杠在天津麻将中是可以赢钱的，明杠为一番，暗杠为两番。
 
-天津麻将中最小胡牌为**混吊**和**没混**，
+天津麻将中最小胡牌为**混吊**和**没混(素提溜)**，
 
 #### 基本牌型
 
@@ -35,7 +35,7 @@
 
 有人打出或自己摸到九筒开杠，这时从杠底摸到任何一张与四筒凑成一付将胡牌。
 
-**番数**: 两番
+**番数**: <span style="color:red">两番</span>
 
 ##### 双混儿吊
 
@@ -47,7 +47,7 @@
 
 **牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)
 
-**番数**: 两番
+**番数**: <span style="color:red">两番</span>
 
 ?> 无论是混吊还是双混吊，在天津麻将中都是两番。
 
@@ -61,7 +61,7 @@
 
 **牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f3.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s3.png)
 
-**番数**: 两番
+**番数**: <span style="color:red">两番</span>
 
 ###### **捉五**
 
@@ -75,7 +75,7 @@
 
 **牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w6.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w5.png)**或**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
 
-**番数**: 三番
+**番数**: <span style="color:red">三番</span>
 
 ###### **杠开**
 
@@ -91,9 +91,9 @@
 
 <!-- tabs:end -->
 
-以上五种为天津麻将胡牌的基本牌型，其余的牌型都是由两种或更多的基本牌型组合而成的。
-
 #### 两种基本牌型组合
+
+以上五种为天津麻将胡牌的基本牌型，其余的牌型都是由两种或更多的基本牌型组合而成的。
 
 ?> 当多种基本牌型组合的时候，胡牌的番数是由各基本牌型的番数相剩所得
 
@@ -113,7 +113,9 @@
 
 有人打出或自己摸到九筒开杠，这时从杠底摸到任何一张与四筒凑成一付将胡牌。
 
-**番数**: 杠开混儿吊为杠开两番乘上混儿吊两番，共计四番，杠钱另算。
+**番数**: 杠开(两番) \* 混儿吊(两番) = 杠开混儿吊(<span style="color:red">四番</span>)
+
+!> 杠钱另算。
 
 ###### **双混儿捉五**
 
@@ -123,19 +125,23 @@
 
 **牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png) **胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w5.png)**或**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)
 
-**番数**: 双混吊(两番) \* 捉五(三番) = 双混儿捉五(六番)
+**番数**: 双混吊(两番) \* 捉五(三番) = 双混儿捉五(<span style="color:red">六番</span>)
 
 ###### **素捉五**
 
 **说明**: 胡捉五的牌，而且手中的牌没有混儿，就是素捉五。
 
-**番数**: 素提溜(两番) \* 捉五(三番) = 素捉五(六番)
+**混儿**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
+
+**牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w6.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w5.png)
+
+**番数**: 素提溜(两番) \* 捉五(三番) = 素捉五(<span style="color:red">六番</span>)
 
 ###### **没混儿杠开**
 
 **说明**: 胡杠开的牌，而且手中的牌没有混儿，就称为没混儿杠开或者素杠开。
 
-**番数**: 素提溜(两番) \* 杠开(两番) = 没混儿杠开(四番)
+**番数**: 素提溜(两番) \* 杠开(两番) = 没混儿杠开(<span style="color:red">四番</span>)
 
 !> 杠钱另算
 
@@ -143,7 +149,7 @@
 
 **说明**: 听捉五的牌时，别人打出或者自己摸到杠牌开杠，从牌底刚好摸上五万，称为杠开捉五。
 
-**番数**: 杠开(两番) \* 捉五(三番) = 杠开捉五(六番),
+**番数**: 杠开(两番) \* 捉五(三番) = 杠开捉五(<span style="color:red">六番</span>),
 
 !> 杠钱另算
 
@@ -165,7 +171,7 @@
 
 - ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)**或**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)
 
-**番数**: 混吊(两番) \* 龙(四番) = 混吊儿龙(八番)
+**番数**: 混吊(两番) \* 龙(四番) = 混吊儿龙(<span style="color:red">八番</span>)
 
 ###### **捉五龙**
 
@@ -180,13 +186,13 @@
 
 **牌型**: ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w6.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w5.png)**或**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)
 
-**番数**: 捉五(三番) \+ 龙(四番) = 捉五龙(七番)
+**番数**: 捉五(三番) \+ 龙(四番) = 捉五龙(<span style="color:red">七番</span>)
 
 !> 这是天津麻将中唯一相加而不是相乘的牌型。
 
 **变型**: ![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)
 
-?> 此牌型听五万和八万，如果摸上八万，那么胡的只是龙，如果摸上五万，那么胡的就是捉五龙。
+?> 此牌型听五万和八万，如果摸上八万，那么胡的只是龙，如果摸上五万，那么胡的就是捉五龙
 
 ###### **杠开龙**
 
@@ -197,7 +203,7 @@
 - 这时别人打出或自己摸的牌刚好开杠，
 - 从牌底摸上来的牌刚好可以胡龙牌，称为杠开龙。
 
-**番数**: 杠开(两番) \* 龙(四番) = 杠开龙(八番)
+**番数**: 杠开(两番) \* 龙(四番) = 杠开龙(<span style="color:red">八番</span>)
 
 !> 杠钱另算
 
@@ -205,7 +211,7 @@
 
 **说明**:胡龙牌且手中牌没有混儿，称为素龙。
 
-**番数**:龙(四番) \* 素提溜(两番) = 素龙(八番)
+**番数**:龙(四番) \* 素提溜(两番) = 素龙(<span style="color:red">八番</span>)
 
 ###### **本混儿龙**
 
@@ -227,7 +233,7 @@
 
 **说明**: 在听双混儿吊的时候，别人打出或自己摸的牌刚好开杠，从牌底摸上一张五万，称为杠开双混儿捉五
 
-**番数**: 杠开(两番) \* 混吊(两番) \* 捉五(三番) = 杠开双混儿捉五(**十二番**)
+**番数**: 杠开(两番) \* 混吊(两番) \* 捉五(三番) = 杠开双混儿捉五(<span style="color:red">十二番</span>)
 
 !> 杠钱另算。
 
@@ -235,7 +241,7 @@
 
 **说明**: 胡杠开捉五且手中没有混儿，称为杠开素捉五
 
-**番数**: 杠开(两番) \* 素提溜(两番) \* 捉五(三番) = 杠开素捉五(**十二番**)
+**番数**: 杠开(两番) \* 素提溜(两番) \* 捉五(三番) = 杠开素捉五(<span style="color:red">十二番</span>)
 
 !> 杠钱另算。
 
@@ -243,7 +249,7 @@
 
 **说明**: 在听混儿吊龙的时候，刚好可以开杠，从底牌摸上任何一张牌胡混儿吊龙，称为杠开混吊龙，
 
-**番数**: 杠开(两番) _ 混儿吊(两番) _ 龙(四番) = 杠开混儿吊龙(**十六番**)
+**番数**: 杠开(两番) _ 混儿吊(两番) _ 龙(四番) = 杠开混儿吊龙(<span style="color:red">十六番</span>)
 
 !> 杠钱另算。
 
@@ -251,19 +257,19 @@
 
 **说明**: 胡混吊龙且龙牌花色与混儿相同，称为混儿吊本混儿龙，
 
-**番数**: 混儿吊(两番) \* 本混龙(八番) = 混儿吊本混儿龙(**十六番**)。
+**番数**: 混儿吊(两番) \* 本混龙(八番) = 混儿吊本混儿龙(<span style="color:red">十六番</span>)。
 
 ###### **双混捉五龙**
 
 **说明**: 听双混儿吊龙，摸上一个五万胡牌，称为双混儿捉五龙
 
-**番数**: 混儿吊(两番) \* 捉五龙(七番) = 双混捉五龙(**十四番**)。
+**番数**: 混儿吊(两番) \* 捉五龙(七番) = 双混捉五龙(<span style="color:red">十四番</span>)。
 
 ###### **杠开捉五龙**
 
 **说明**: 听捉五龙，这时刚好开杠，从底牌摸上五万胡牌，称为杠开捉五龙
 
-**番数**: 杠开(两番) \* 捉五龙(七番) = 杠开捉五龙(**十四番**)
+**番数**: 杠开(两番) \* 捉五龙(七番) = 杠开捉五龙(<span style="color:red">十四番</span>)
 
 !> 杠钱另算。
 
@@ -271,7 +277,7 @@
 
 **说明**: 开杠后从底牌摸牌胡本混儿龙，称为杠开本混儿龙
 
-**番数**: 杠开(两番) \* 本混儿龙(八番) = 杠开本混龙(**十六番**)
+**番数**: 杠开(两番) \* 本混儿龙(八番) = 杠开本混龙(<span style="color:red">十六番</span>)
 
 !> 杠钱另算。
 
@@ -279,7 +285,7 @@
 
 **说明**: 开杠后从底牌摸牌胡本混儿龙，称为杠开本混儿龙
 
-**番数**: 杠开(两番) \* 素龙(八番) = 杠开本混龙(**十六番**)
+**番数**: 杠开(两番) \* 素龙(八番) = 杠开本混龙(<span style="color:red">十六番</span>)
 
 !> 杠钱另算。
 
@@ -287,13 +293,13 @@
 
 **说明**: 胡捉五龙且没有混儿，称为素捉五龙
 
-**番数**: 素提溜(两番) \* 捉五龙(七番) = 杠开本混龙(**十四番**)
+**番数**: 素提溜(两番) \* 捉五龙(七番) = 杠开本混龙(<span style="color:red">十四番</span>)
 
 ###### **本混捉五龙**
 
 **说明**: 胡捉五龙且龙牌的花色与混儿相同，称为本混捉五龙
 
-**番数**: 本混(两番) \* 捉五龙(七番) = 杠开本混龙(**十四番**)
+**番数**: 本混(两番) \* 捉五龙(七番) = 杠开本混龙(<span style="color:red">十四番</span>)
 
 !> 捉五可以是在万字的龙牌里差五万，也可以是做为龙牌以外的第四个副，所以不一定非要万字做混儿时才能胡此牌型。
 
@@ -301,7 +307,7 @@
 
 **说明**: 开杠胡混吊本混儿龙，称为杠开混儿吊本混儿龙
 
-**番数**: 杠开(两番) \* 混儿吊(两番) \* 本混龙(八番) = 杠开混儿吊本混儿龙(**三十二番**)
+**番数**: 杠开(两番) \* 混儿吊(两番) \* 本混龙(八番) = 杠开混儿吊本混儿龙(<span style="color:red">三十二番</span>)
 
 !> 杠钱另算。
 
@@ -309,13 +315,13 @@
 
 **说明**: 胡双混捉五龙且是本混儿，称为双混儿捉五本混龙
 
-**番数**: 本混(两番) \* 混儿吊(两番) \* 捉五龙(七番) = 双混儿捉五本混龙(**二十八番**)
+**番数**: 本混(两番) \* 混儿吊(两番) \* 捉五龙(七番) = 双混儿捉五本混龙(<span style="color:red">二十八番</span>)
 
 ###### **杠开素捉五龙**
 
 **说明**: 杠开捉五龙且没混儿，称为杠开素捉五龙
 
-**番数**: 杠开(两番) \* 素提溜(两番) \* 捉五龙(七番) = 双混儿捉五本混龙(**二十八番**)
+**番数**: 杠开(两番) \* 素提溜(两番) \* 捉五龙(七番) = 双混儿捉五本混龙(<span style="color:red">二十八番</span>)
 
 !> 杠钱另算。
 
@@ -323,13 +329,15 @@
 
 **说明**: 杠开胡本混捉五龙，称为杠开本混捉五龙
 
-**番数**: 杠开(两番) \* 本混(两番) \* 捉五龙(七番) = 双混儿捉五本混龙(**二十八番**)
+**番数**: 杠开(两番) \* 本混(两番) \* 捉五龙(七番) = 双混儿捉五本混龙(<span style="color:red">二十八番</span>)
 
 !> 杠钱另算。
 
 <!-- tabs:end -->
 
 ### 输赢的计算
+
+---
 
 天津麻将由于都是自摸胡牌，所以每一局基本都是一家赢另外三家（有杠的情况除外）。
 
