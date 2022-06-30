@@ -22,27 +22,62 @@
 
 分为单混儿吊和双混儿吊两种：
 
-1. 单混儿吊（或混吊）：手中的牌已经成了四副，还富裕一个混，这时摸上任何一张牌都可以与这个混儿凑成一付将胡牌，这种牌型就叫混儿吊。
+##### 单混儿吊
 
-2. 双混儿吊：手中的牌已经成了三副和一付将，还剩下两张混儿，这时摸上任何一张牌都可以与这两张混儿构成一副而胡牌，这种牌型就叫双混儿吊。
+**说明**:
+
+- 手中的牌已经成了四副，还富裕一个混，这时摸上任何一张牌都可以与这个混儿凑成一付将胡牌，这种牌型就叫混儿吊。
+- 又称混儿吊
+
+**混儿**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
+
+**牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)
+
+有人打出或自己摸到九筒开杠，这时从杠底摸到任何一张与四筒凑成一付将胡牌。
+
+**番数**: 两番
+
+##### 双混儿吊
+
+**说明**:
+
+- 手中的牌已经成了三副和一付将，还剩下两张混儿，这时摸上任何一张牌都可以与这两张混儿构成一副而胡牌，这种牌型就叫双混儿吊。
+
+**混儿**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
+
+**牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)
+
+**番数**: 两番
 
 ?> 无论是混吊还是双混吊，在天津麻将中都是两番。
 
 ###### **素提溜（没混儿）**
 
-即使不能构成特殊牌弄，如果没有混，也是可以胡提溜牌的，称为素提溜。
+**说明**:
 
-?> 素提溜为两番。
+- 即不能构成特殊牌弄，如果没有混，也是可以胡提溜牌的，称为素提溜。
+
+**混儿**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
+
+**牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f3.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s3.png)
+
+**番数**: 两番
 
 ###### **捉五**
 
-手中的牌已经成了三副和一付将，还剩四万和六万没有形成一副，这时候摸上一个五万胡牌，称为捉五。
+**说明**:
 
-要求必须是四六万捉五万（当然混儿也可以）
+- 手中的牌已经成了三副和一付将，还剩四万和六万没有形成一副，这时候摸上一个五万胡牌，称为捉五。
 
-?> 捉五为三番。
+!> 要求必须是四六万捉五万（当然混儿也可以）
 
-###### 杠开
+**混儿**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
+
+**牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f5.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w6.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w5.png)**或**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
+
+**番数**: 三番
+
+###### **杠开**
 
 同[杠上开花](https://baike.baidu.com/item/%E6%9D%A0%E4%B8%8A%E5%BC%80%E8%8A%B1/78113?fr=aladdin)
 
@@ -74,7 +109,7 @@
 
 **混儿**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
 
-**牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)**胡**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)
+**牌型**:![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w1.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/w3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t6.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t7.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t8.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s2.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s3.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/s4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)**杠**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t9.png)**开**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/f4.png)**或**![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t4.png)![](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/majiang/t5.png)
 
 有人打出或自己摸到九筒开杠，这时从杠底摸到任何一张与四筒凑成一付将胡牌。
 
