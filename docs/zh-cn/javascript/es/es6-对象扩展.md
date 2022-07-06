@@ -669,3 +669,365 @@ Object.assign(obj, null) === obj // true
 **（1）浅拷贝**
 
 `Object.assign`方法实行的是`浅拷贝`，而不是深拷贝。也就是说，如果源对象某个属性的值是对象，那么目标对象拷贝得到的是这个对象的引用。
+
+!> 注意，`Object.assign`可以用来处理数组，但是会把数组视为对象
+
+##### 常见用途
+
+**（1）为对象添加属性**
+
+```javascript
+class Point {
+  constructor(x, y) {
+    Object.assign(this, {x, y});
+  }
+}
+```
+
+上面方法通过`Object.assign`方法，将`x`属性和`y`属性添加到`Point`类的对象实例。
+
+**（2）为对象添加方法**
+
+```javascript
+Object.assign(SomeClass.prototype, {
+  someMethod(arg1, arg2) {
+    ···
+  },
+  anotherMethod() {
+    ···
+  }
+});
+
+// 等同于下面的写法
+SomeClass.prototype.someMethod = function (arg1, arg2) {
+  ···
+};
+SomeClass.prototype.anotherMethod = function () {
+  ···
+};
+```
+
+上面代码使用了对象属性的简洁表示法，直接将两个函数放在大括号中，再使用assign方法添加到SomeClass.prototype之中。
+
+**（3）克隆对象**
+
+```javascript
+function clone(origin) {
+  return Object.assign({}, origin);
+}
+```
+
+上面代码将原始对象拷贝到一个空对象，就得到了原始对象的克隆。
+
+不过，采用这种方法克隆，只能克隆原始对象自身的值，不能克隆它继承的值。如果想要保持继承链，可以采用下面的代码。
+
+```javascript
+function clone(origin) {
+  let originProto = Object.getPrototypeOf(origin);
+  return Object.assign(Object.create(originProto), origin);
+}
+```
+
+**（4）合并多个对象**
+
+将多个对象合并到某个对象。
+
+```javascript
+const merge =
+  (target, ...sources) => Object.assign(target, ...sources);
+```
+
+如果希望合并后返回一个新对象，可以改写上面函数，对一个空对象合并。
+
+```javascript
+const merge =
+  (...sources) => Object.assign({}, ...sources);
+```
+
+**（5）为属性指定默认值**
+
+```javascript
+const DEFAULTS = {
+  logLevel: 0,
+  outputFormat: 'html'
+};
+
+function processContent(options) {
+  let options = Object.assign({}, DEFAULTS, options);
+}
+```
+
+上面代码中，`DEFAULTS`对象是默认值，`options`对象是用户提供的参数。`Object.assign`方法将`DEFAULTS`和`options`合并成一个新对象，如果两者有同名属性，则`option`的属性值会覆盖`DEFAULTS`的属性值。
+
+!> 注意，由于存在深拷贝的问题，`DEFAULTS`对象和`options`对象的所有属性的值，都只能是简单类型，而不能指向另一个对象。否则，将导致`DEFAULTS`对象的该属性不起作用
+
+#### 属性的可枚举性
+
+`Object.assign()`，会忽略`enumerable`为`false`的属性，只拷贝对象自身的可枚举的属性。
+
+四个操作会忽略`enumerable`为`false`的属性。
+
+- `for...in`循环：只遍历对象自身的和继承的可枚举的属性
+- `Object.keys()`：返回对象自身的所有可枚举的属性的键名
+- `JSON.stringify()`：只串行化对象自身的可枚举的属性
+- `Object.assign()`
+
+!> ES6规定，所有Class的原型的方法都是不可枚举的
+
+```js
+Object.getOwnPropertyDescriptor(class {foo() {}}.prototype, 'foo').enumerable
+// false
+```
+
+?> 操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。所以，尽量不要用`for...in`循环，而用`Object.keys()`代替。
+
+#### 属性的遍历
+
+ES6一共有5种方法可以遍历对象的属性。
+
+**（1）for...in**
+
+`for...in`循环遍历对象自身的和继承的可枚举属性（不含Symbol属性）。
+
+**（2）Object.keys(obj)**
+
+`Object.keys`返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含Symbol属性）。
+
+**（3）Object.getOwnPropertyNames(obj)**
+
+`Object.getOwnPropertyNames`返回一个数组，包含对象自身的所有属性（不含Symbol属性，但是包括不可枚举属性）。
+
+**（4）Object.getOwnPropertySymbols(obj)**
+
+`Object.getOwnPropertySymbols`返回一个数组，包含对象自身的所有Symbol属性。
+
+**（5）Reflect.ownKeys(obj)**
+
+`Reflect.ownKeys`返回一个数组，包含对象自身的所有属性，不管是属性名是Symbol或字符串，也不管是否可枚举。
+
+以上的5种方法遍历对象的属性，都遵守同样的属性遍历的次序规则。
+
+- 首先遍历所有属性名为数值的属性，按照数字排序。
+- 其次遍历所有属性名为字符串的属性，按照生成时间排序。
+- 最后遍历所有属性名为Symbol值的属性，按照生成时间排序。
+
+```javascript
+Reflect.ownKeys({ [Symbol()]:0, b:0, 10:0, 2:0, a:0 })
+// ['2', '10', 'b', 'a', Symbol()]
+```
+
+上面代码中，`Reflect.ownKeys`方法返回一个数组，包含了参数对象的所有属性。这个数组的属性次序是这样的，首先是数值属性`2`和`10`，其次是字符串属性`b`和`a`，最后是Symbol属性。
+
+#### `__proto__`属性，Object.setPrototypeOf()，Object.getPrototypeOf()
+
+**（1）`__proto__`属性**
+
+`__proto__`属性（前后各两个下划线），用来读取或设置当前对象的`prototype`对象。
+
+目前，所有浏览器（包括IE11）都部署了这个属性。
+
+```javascript
+// es6的写法
+var obj = {
+  method: function() { ... }
+};
+obj.__proto__ = someOtherObj;
+
+// es5的写法
+var obj = Object.create(someOtherObj);
+obj.method = function() { ... };
+```
+
+该属性没有写入ES6的正文，而是写入了附录，原因是`__proto__`前后的双下划线，说明它本质上是一个内部属性，而不是一个正式的对外的API，只是由于浏览器广泛支持，才被加入了ES6。标准明确规定，只有浏览器必须部署这个属性，其他运行环境不一定需要部署，而且新的代码最好认为这个属性是不存在的。因此，无论从语义的角度，还是从兼容性的角度，都不要使用这个属性
+
+在实现上，`__proto__`调用的是`Object.prototype.__proto__`，具体实现如下
+
+```js
+Object.defineProperty(Object.prototype, '__proto__', {
+  get() {
+    let _thisObj = Object(this);
+    return Object.getPrototypeOf(_thisObj);
+  },
+  set(proto) {
+    if (this === undefined || this === null) {
+      throw new TypeError();
+    }
+    if (!isObject(this)) {
+      return undefined;
+    }
+    if (!isObject(proto)) {
+      return undefined;
+    }
+    let status = Reflect.setPrototypeOf(this, proto);
+    if (!status) {
+      throw new TypeError();
+    }
+  },
+});
+function isObject(value) {
+  return Object(value) === value;
+}
+```
+
+如果一个对象本身部署了`__proto__`属性，则该属性的值就是对象的原型。
+
+Object.getPrototypeOf({ __proto__: null }) // null
+
+
+
+**（2）Object.setPrototypeOf()**
+
+`Object.setPrototypeOf`方法的作用与`__proto__`相同，用来设置一个对象的`prototype`对象。它是ES6正式推荐的设置原型对象的方法。
+
+```js
+// 格式
+Object.setPrototypeOf(object, prototype)
+
+// 用法
+var o = Object.setPrototypeOf({}, null);
+
+//等同于下面的函数。
+
+function (obj, proto) {
+  obj.__proto__ = proto;
+  return obj;
+}
+```
+
+#### Object.values()，Object.entries()
+
+##### Object.keys()
+
+ES5引入了`Object.keys`方法，返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键名。
+
+```javascript
+var obj = { foo: "bar", baz: 42 };
+Object.keys(obj)
+// ["foo", "baz"]
+```
+
+目前，ES7有一个[提案](https://github.com/tc39/proposal-object-values-entries)，引入了跟`Object.keys`配套的`Object.values`和`Object.entries`。
+
+```javascript
+let {keys, values, entries} = Object;
+let obj = { a: 1, b: 2, c: 3 };
+
+for (let key of keys(obj)) {
+  console.log(key); // 'a', 'b', 'c'
+}
+
+for (let value of values(obj)) {
+  console.log(value); // 1, 2, 3
+}
+
+for (let [key, value] of entries(obj)) {
+  console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
+}
+```
+
+##### Object.values()
+
+`Object.values`方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值。
+
+?> 返回数组的成员顺序，与本章的《属性的遍历》部分介绍的排列规则一致。
+
+**`Object.values`只返回对象自身的可遍历属性**。
+
+```javascript
+var obj = Object.create({}, {p: {value: 42}});
+Object.values(obj) // []
+```
+
+上面代码中，`Object.create`方法的第二个参数添加的对象属性（属性`p`），如果不显式声明，默认是不可遍历的。`Object.values`不会返回这个属性。
+
+**`Object.values`会过滤属性名为Symbol值的属性**。
+
+```javascript
+Object.values({ [Symbol()]: 123, foo: 'abc' });
+// ['abc']
+```
+
+**如果`Object.values`方法的参数是一个字符串，会返回各个字符组成的一个数组**。
+
+```javascript
+Object.values('foo')
+// ['f', 'o', 'o']
+```
+
+?> 如果参数不是对象，`Object.values`会先将其转为对象。
+
+?> 由于数值和布尔值的包装对象，都不会为实例添加非继承的属性。所以，`Object.values`会返回空数组
+
+```js
+Object.values(42) // []
+Object.values(true) // []
+```
+
+##### Object.entries()
+
+`Object.entries`方法返回一个数组，成员是参数对象自身的（不含继承的）所有可遍历（enumerable）属性的键值对数组。
+
+```js
+var obj = { foo: 'bar', baz: 42 };
+Object.entries(obj)
+// [ ["foo", "bar"], ["baz", 42] ]
+```
+
+?> 如果原对象的属性名是一个Symbol值，该属性会被省略。
+
+`Object.entries`方法的一个用处是，将对象转为真正的`Map`结构。
+
+```js
+var obj = { foo: 'bar', baz: 42 };
+var map = new Map(Object.entries(obj));
+map // Map { foo: "bar", baz: 42 }
+```
+
+自己实现`Object.entries`方法，非常简单。
+
+```javascript
+// Generator函数的版本
+function* entries(obj) {
+  for (let key of Object.keys(obj)) {
+    yield [key, obj[key]];
+  }
+}
+
+// 非Generator函数的版本
+function entries(obj) {
+  let arr = [];
+  for (let key of Object.keys(obj)) {
+    arr.push([key, obj[key]]);
+  }
+  return arr;
+}
+```
+
+#### 对象的扩展运算符
+
+目前，ES7有一个[提案](https://github.com/sebmarkbage/ecmascript-rest-spread)，将Rest解构赋值/扩展运算符（...）引入对象。Babel转码器已经支持这项功能。
+
+**（1）Rest解构赋值**
+
+对象的Rest解构赋值用于从一个对象取值，相当于将所有可遍历的、但尚未被读取的属性，分配到指定的对象上面。所有的键和它们的值，都会拷贝到新对象上面。
+
+```javascript
+let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+x // 1
+y // 2
+z // { a: 3, b: 4 }
+```
+
+由于Rest解构赋值要求等号右边是一个对象，所以如果等号右边是`undefined`或`null`，就会报错，因为它们无法转为对象。
+
+```javascript
+let { x, y, ...z } = null; // 运行时错误
+let { x, y, ...z } = undefined; // 运行时错误
+```
+
+Rest解构赋值必须是最后一个参数，否则会报错。
+
+```javascript
+let { ...x, y, z } = obj; // 句法错误
+let { x, ...y, ...z } = obj; // 句法错误
+```

@@ -1,7 +1,13 @@
-- [ES6 解构赋值](zh-cn/javascript/es/es6-解构赋值.md)
-- [ES6 数组扩展](zh-cn/javascript/es/es6-数组扩展.md)
-- [ES6 对象扩展](zh-cn/javascript/es/es6-对象扩展.md)
-- [ES6 字符串扩展](zh-cn/javascript/es/es6-字符串扩展.md)
-- [ES6 Symbol](zh-cn/javascript/es/es6-字符串扩展.md)
+- **ESMAScript 基础**
+  - [ 原始值和引用值](zh-cn/javascript/es/es6-原始值和引用值.md)
+  - [ 原始类型](zh-cn/javascript/es/es6-原始类型.md)
+  - [ 引用类型](zh-cn/javascript/es/es6-引用类型.md)
+- **ESMAScript 函数**
+  - [ arguments 对象](zh-cn/javascript/es/es6-arguments.md)
+  - [ Function 对象](zh-cn/javascript/es/es6-function.md)
+  - [ 闭包](zh-cn/javascript/es/es6-闭包.md)
+- [ 数组扩展](zh-cn/javascript/es/es6-数组扩展.md)
+- [ 对象扩展](zh-cn/javascript/es/es6-对象扩展.md)
+- [ 字符串扩展](zh-cn/javascript/es/es6-字符串扩展.md)
+- [ Symbol](zh-cn/javascript/es/es6-字符串扩展.md)
 - [ECMAScript](zh-cn/javascript/EcmaScript.md)
-
