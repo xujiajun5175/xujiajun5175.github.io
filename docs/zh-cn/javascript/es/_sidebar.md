@@ -10,7 +10,7 @@
   - [ 对象类型](zh-cn/javascript/es/es6-对象类型.md)
   - [ 对象作用域](zh-cn/javascript/es/es6-对象作用域.md)
   - [ 定义类或对象](zh-cn/javascript/es/es6-定义类或对象.md)
-- **ES6**
+- **ESMAScript 6**
   - [ 简介](zh-cn/javascript/es/es6-简介.md)
   - [ let 和 const](zh-cn/javascript/es/es6-let&const.md)
   - [ 变量的解构赋值](zh-cn/javascript/es/es6-变量的解构赋值.md)
@@ -22,4 +22,5 @@
   - [ Symbol](zh-cn/javascript/es/es6-symbol.md)
   - [ Proxy 和 Reflect](zh-cn/javascript/es/es6-proxy&reflect.md)
   - [ Set 和 Map 数据结构](zh-cn/javascript/es/es6-Set和Map数据结构.md)
+  - [ Iterator 和 for...of 循环](zh-cn/javascript/es/es6-Iterator和for...of循环.md)
 - [ECMAScript](zh-cn/javascript/EcmaScript.md)
