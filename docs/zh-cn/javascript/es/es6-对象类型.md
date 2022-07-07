@@ -1,6 +1,22 @@
-### 闭包 <!-- {docsify-ignore} -->
+### 对象 <!-- {docsify-ignore} -->
 
 **文档更新日期: {docsify-updated}**
+
+
+
+
+
+#### 对象的构成
+
+---
+
+在 ECMAScript 中，对象由特性（attribute）构成，特性可以是原始值，也可以是引用值。如果特性存放的是函数，它将被看作对象的方法（method），否则该特性被看作对象的属性（property）。
+
+
+
+
+
+---
 
 **在 ECMAScript 中，所有对象并非同等创建的。**
 
