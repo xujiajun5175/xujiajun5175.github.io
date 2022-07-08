@@ -23,4 +23,7 @@
   - [ Proxy 和 Reflect](zh-cn/javascript/es/es6-proxy&reflect.md)
   - [ Set 和 Map 数据结构](zh-cn/javascript/es/es6-Set和Map数据结构.md)
   - [ Iterator 和 for...of 循环](zh-cn/javascript/es/es6-Iterator和for...of循环.md)
+  - [ Generator 函数 ](zh-cn/javascript/es/es6-Generator函数.md)
+  - [ Promise 对象 ](zh-cn/javascript/es/es6-Promise对象.md)
+  - [ 异步操作和 Async 函数 ](zh-cn/javascript/es/es6-异步操作和Async函数.md)
 - [ECMAScript](zh-cn/javascript/EcmaScript.md)
