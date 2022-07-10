@@ -47,9 +47,9 @@
   - [docsify](zh-cn/docsify/)
   - [docsify-tabs](zh-cn/docsify/docsify-tabs)
   - [git](zh-cn/git/git.md)
-
   - [使用插件](zh-cn/plugins.md ':disabled')
   - [语录](zh-cn/social.md)
-  - [天津麻将规则](zh-cn/play/天津麻将规则)
+
+- [娱乐](zh-cn/play/mahjong-tianjin)
 
 - [中文 ](zh-cn/)
