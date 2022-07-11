@@ -1,4 +1,3 @@
-- [Node.js](zh-cn/javascript/NodeJs.md)
-- [TypeScript](zh-cn/javascript/TypeScript.md)
-- [js 模块化](zh-cn/javascript/JsModule.md)
-- [echarts](zh-cn/javascript/Echarts.md)
+- [JavaScript](zh-cn/javascript/js/)
+- [TypeScript](zh-cn/javascript/ts/)
+- [ECMAScript](zh-cn/javascript/es/)

@@ -1,13 +1,13 @@
 - 前端
 
-  - [JavaScript](zh-cn/javascript/js/)
-  - [ECMAScript](zh-cn/javascript/es/)
+  - [JavaScript](zh-cn/javascript/)
+  <!-- - [ECMAScript](zh-cn/javascript/es/) -->
   - [HTML](zh-cn/html/html.md)
   - [CSS](zh-cn/html/css.md)
   - [Vue](zh-cn/vue/)
-  - [uni-app](zh-cn/uni-app/)
-  - [uni-cloud](zh-cn/uni-app/uni-cloud)
-  - [微信小程序](zh-cn/wechat/)
+    <!-- - [uni-app](zh-cn/uni-app/) -->
+    <!-- - [uni-cloud](zh-cn/uni-app/uni-cloud) -->
+    <!-- - [微信小程序](zh-cn/wechat/) -->
 
 - 后端
 

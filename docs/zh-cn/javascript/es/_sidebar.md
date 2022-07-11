@@ -27,3 +27,8 @@
   - [ Promise 对象 ](zh-cn/javascript/es/es6-Promise对象.md)
   - [ 异步操作和 Async 函数 ](zh-cn/javascript/es/es6-异步操作和Async函数.md)
   - [ Class ](zh-cn/javascript/es/es6-Class.md)
+  - [ 修饰器 ](zh-cn/javascript/es/es6-decorator.md)
+  - [ Module ](zh-cn/javascript/es/es6-module.md)
+  - [ 编程风格 ](zh-cn/javascript/es/es6-编程风格.md)
+  - [ 读懂 ECMAScript 规格 ](zh-cn/javascript/es/读懂ECMAScript规格.md)
+  - [ 参考链接 ](zh-cn/javascript/es/参考链接.md)
