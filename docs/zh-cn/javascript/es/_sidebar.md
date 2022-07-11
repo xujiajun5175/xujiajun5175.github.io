@@ -27,4 +27,3 @@
   - [ Promise 对象 ](zh-cn/javascript/es/es6-Promise对象.md)
   - [ 异步操作和 Async 函数 ](zh-cn/javascript/es/es6-异步操作和Async函数.md)
   - [ Class ](zh-cn/javascript/es/es6-Class.md)
-- [ECMAScript](zh-cn/javascript/EcmaScript.md)

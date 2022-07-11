@@ -6,6 +6,6 @@
 
 2. [阿里云数据可视化平台](http://datav.aliyun.com/portal)
 
-   地图数据data
+   地图数据 data
 
-3. 
+3.

@@ -6,6 +6,7 @@
   - [CSS](zh-cn/html/css.md)
   - [Vue](zh-cn/vue/)
   - [uni-app](zh-cn/uni-app/)
+  - [uni-cloud](zh-cn/uni-app/uni-cloud)
   - [微信小程序](zh-cn/wechat/)
 
 - 后端
@@ -42,14 +43,14 @@
 
 - 其他
 
-  - [常用工具网站](zh-cn/webUtils.md)
-  - [markdown](zh-cn/docsify/markdown)
+  - [常用工具网站](zh-cn/webUtils/)
+  - [markdown](zh-cn/other/markdown)
   - [docsify](zh-cn/docsify/)
   - [docsify-tabs](zh-cn/docsify/docsify-tabs)
   - [git](zh-cn/git/git.md)
   - [使用插件](zh-cn/plugins.md ':disabled')
-  - [语录](zh-cn/social.md)
+  - [语录](zh-cn/othersocial.md)
 
 - [娱乐](zh-cn/play/mahjong-tianjin)
 
-- [中文 ](zh-cn/)
+- [中文]()
