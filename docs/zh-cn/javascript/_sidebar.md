@@ -1,0 +1,3 @@
+- [JavaScript](zh-cn/javascript/js/)
+- [TypeScript](zh-cn/javascript/ts/)
+- [ECMAScript](zh-cn/javascript/es/)
