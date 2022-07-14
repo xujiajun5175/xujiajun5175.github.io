@@ -1,4 +1,6 @@
-# MyBatis-Plus
+# MyBatis-Plus <!-- {docsify-ignore} -->
+
+**文档更新日期: {docsify-updated}**
 
 ### 代码生成器(新)
 

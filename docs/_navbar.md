@@ -12,13 +12,13 @@
 
 - 后端
 
-  - [Java](zh-cn/java/)
-  - [Spring](zh-cn/java/spring/)
-  - [Spring Boot](zh-cn/java/springboot/01.md)
-  - [Spring Security](zh-cn/java/springsecurity/springsecurity.md)
-  - [Mybatis](zh-cn/java/mybatis/mybatis.md)
-  - [Mybatis-PLus](zh-cn/java/mybatis/mybatisPlus.md)
-  - [MySQL](zh-cn/mysql/)
+  - [Java](zh-cn/server-side/java/basics/)
+  - [Spring](zh-cn/server-side/java/spring/)
+  - [Spring Boot](zh-cn/jserver-side/ava/springboot/01.md)
+  - [Spring Security](zh-cn/server-side/java/springsecurity/springsecurity.md)
+  - [Mybatis](zh-cn/server-side/java/mybatis/mybatis.md)
+  - [Mybatis-PLus](zh-cn/server-side/java/mybatis/mybatisPlus.md)
+  - [MySQL](zh-cn/server-side/mysql/)
 
 - 示例
 
