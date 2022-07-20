@@ -1,157 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <!-- 引入 css -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <!-- 引入 css -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/themes/vue.css">
+  <body>
+    <!-- Development -->
+    <script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- 引入 script -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.js"></script>
+    <!-- 引入 emoji -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
 
-</head>
-
-<body>
-  <!-- Development -->
-  <script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <!-- 引入 script -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.js"></script>
-  <!-- 引入 emoji -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
-
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: "xujiajun\'s doc",
-      repo: 'https://github.com/18626428291/18626428291.github.io.git',
-      loadSidebar: true,
-      alias: {
-        '/zh-cn/java/.*/_sidebar.md': '/zh-cn/java/_sidebar.md'
-      },
-      subMaxLevel: 5,
-      vueGlobalOptions: {
-        data() {
-          return {
-            count: 11110,
-            version:window.Docsify.version
-          };
+    <div id="app"></div>
+    <script>
+      window.$docsify = {
+        name: "xujiajun's doc",
+        repo: 'https://github.com/18626428291/18626428291.github.io.git',
+        loadSidebar: true,
+        alias: {
+          '/zh-cn/java/.*/_sidebar.md': '/zh-cn/java/_sidebar.md',
         },
-      },
-      loadNavbar: true,
-      coverpage: true,
-      onlyCover:true,
-      auto2top: true,
-      mergeNavbar: true,
-      executeScript: true,
-      topMargin: 300,
-      notFoundPage: true,
-      homepage: '/zh-cn/README.md',
-      search: {
-        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
-        paths: 'auto', // or 'auto'
-        placeholder: {
-          '/zh-cn/': '搜索',
-          '/': 'Type to search'
+        subMaxLevel: 5,
+        vueGlobalOptions: {
+          data() {
+            return {
+              count: 11110,
+              version: window.Docsify.version,
+            }
+          },
         },
-        noData: {
-          '/zh-cn/': '找不到结果',
-          '/': 'No Results'
+        loadNavbar: true,
+        coverpage: true,
+        onlyCover: true,
+        auto2top: true,
+        mergeNavbar: true,
+        executeScript: true,
+        topMargin: 300,
+        notFoundPage: true,
+        homepage: '/zh-cn/README.md',
+        search: {
+          maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+          paths: 'auto', // or 'auto'
+          placeholder: {
+            '/zh-cn/': '搜索',
+            '/': 'Type to search',
+          },
+          noData: {
+            '/zh-cn/': '找不到结果',
+            '/': 'No Results',
+          },
+          depth: 4,
+          hideOtherSidebarContent: false,
         },
-        depth: 4,
-        hideOtherSidebarContent: false,
-      },
-      copyCode: {
-        buttonText: {
-          '/zh-cn/': '点击复制',
-          // '/ru/': 'Скопировать в буфер обмена',
-          // '/de-de/': 'Klicken Sie zum Kopieren',
-          // '/es/': 'Haga clic para copiar',
-          '/': 'Copy to clipboard'
+        copyCode: {
+          buttonText: {
+            '/zh-cn/': '点击复制',
+            // '/ru/': 'Скопировать в буфер обмена',
+            // '/de-de/': 'Klicken Sie zum Kopieren',
+            // '/es/': 'Haga clic para copiar',
+            '/': 'Copy to clipboard',
+          },
+          errorText: {
+            '/zh-cn/': '复制失败',
+            // '/ru/': 'ошибка',
+            '/': 'Error',
+          },
+          successText: {
+            '/zh-cn/': '复制成功',
+            // '/ru/': 'Скопировано',
+            // '/de-de/': 'Kopiert',
+            // '/es/': 'Copiado',
+            '/': 'Copied',
+          },
         },
-        errorText: {
-          '/zh-cn/': '复制失败',
-          // '/ru/': 'ошибка',
-          '/': 'Error'
+        count: {
+          countable: true,
+          position: 'top',
+          margin: '10px',
+          float: 'right',
+          fontsize: '0.9em',
+          color: 'rgb(90,90,90)',
+          language: 'chinese',
+          localization: {
+            words: '',
+            minute: '',
+          },
+          isExpected: true,
         },
-        successText: {
-          '/zh-cn/': '复制成功',
-          // '/ru/': 'Скопировано',
-          // '/de-de/': 'Kopiert',
-          // '/es/': 'Copiado',
-          '/': 'Copied'
+        tabs: {
+          persist: true, // default
+          sync: true, // default
+          theme: 'classic', // default
+          tabComments: true, // default
+          tabHeadings: true, // default
         },
-      },
-      count: {
-        countable: true,
-        position: 'top',
-        margin: '10px',
-        float: 'right',
-        fontsize: '0.9em',
-        color: 'rgb(90,90,90)',
-        language: 'chinese',
-        localization: {
-          words: "",
-          minute: ""
+        formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
+        footer: {
+          copy: '<span>Acme &copy; 2022</span>',
+          auth: 'by xujiajun',
+          pre: '<hr/>',
+          style: 'text-align: right;',
+          class: 'className',
         },
-        isExpected: true
-      },
-      tabs: {
-        persist: true,      // default
-        sync: true,      // default
-        theme: 'classic', // default
-        tabComments: true,      // default
-        tabHeadings: true       // default
-      },
-      formatUpdated: '{YYYY}/{MM}/{DD} {HH}:{mm}',
-      footer: {
-      copy: '<span>Acme &copy; 2022</span>',
-      auth: 'by xujiajun',
-      pre: '<hr/>',
-      style: 'text-align: right;',
-      class: 'className',
-    },
+      }
+    </script>
+    <!-- 引入 搜索 插件-->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- 引入 外链脚本 插件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
+    <!-- 引入 图片缩放 插件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- 引入 复制到剪贴板 插件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+    <!-- 引入 分页 插件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <!-- 引入 字数统计 插件 -->
+    <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+    <!-- 引入 markdown tab 插件 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+    <!-- 引入 代码高亮 java -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
 
+    <!-- 引入 代码高亮 json -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
 
-
-
-
+    <!-- 引入 代码高亮 yaml -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
+    <!-- 引入 代码高亮 bash -->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <!-- 引入 页脚 插件 -->
+    <script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
+    <!-- 引入 侧边栏折叠 插件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  </body>
+  <style>
+    :root {
+      --docsifytabs-border-color: #ededed;
+      --docsifytabs-tab-highlight-color: green;
     }
-  </script>
-  <!-- 引入 搜索 插件-->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <!-- 引入 外链脚本 插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
-  <!-- 引入 图片缩放 插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
-  <!-- 引入 复制到剪贴板 插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
-  <!-- 引入 分页 插件 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <!-- 引入 字数统计 插件 -->
-  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <!-- 引入 markdown tab 插件 -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <!-- 引入 代码高亮 java -->
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
 
-  <!-- 引入 代码高亮 json -->
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
-
-  <!-- 引入 代码高亮 yaml -->
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-yaml.min.js"></script>
-  <!-- 引入 代码高亮 bash -->
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-<!-- 引入 页脚 插件 -->
-<script src="//unpkg.com/docsify-footer-enh/dist/docsify-footer-enh.min.js"></script>
-<!-- 引入 侧边栏折叠 插件 -->
-<script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
-</body>
-<style>
-  :root {
-    --docsifytabs-border-color: #ededed;
-    --docsifytabs-tab-highlight-color: green;
-  }
-</style>
-
+    .tab-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(35%, -45%);
+      padding: 0.25em 0.35em;
+      border-radius: 3px;
+      background: red;
+      color: white;
+      font-family: sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    .tab-badge-2 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(35%, -45%);
+      padding: 0.25em 0.35em;
+      border-radius: 3px;
+      background: yellowgreen;
+      color: white;
+      font-family: sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+    }
+  </style>
 </html>

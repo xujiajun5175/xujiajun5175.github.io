@@ -5,6 +5,7 @@
   - [HTML](zh-cn/browser-side/html/)
   - [CSS](zh-cn/browser-side/css/)
   - [Vue](zh-cn/browser-side/vue/)
+  - [面试题](zh-cn/browser-side/面试题)
     <!-- - [uni-app](zh-cn/uni-app/) -->
     <!-- - [uni-cloud](zh-cn/uni-app/uni-cloud) -->
     <!-- - [微信小程序](zh-cn/wechat/) -->
