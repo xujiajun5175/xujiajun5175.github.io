@@ -1,6 +1,0 @@
-- [test](zh-cn/javascript/test.html)
-- [javascript](zh-cn/javascript/js/js.md)
-- [错误处理机制](zh-cn/javascript/js/js-error.md)
-- [Object 对象](zh-cn/javascript/js/js-object.md)
-- [Object 属性描述对象](zh-cn/javascript/js/js-object-attribute.md)
-- [Promise 对象](zh-cn/javascript/js/js-promise.md)

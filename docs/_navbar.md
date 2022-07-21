@@ -1,14 +1,10 @@
 - 前端
 
-  - [JavaScript](zh-cn/javascript/)
-  <!-- - [ECMAScript](zh-cn/javascript/es/) -->
   - [HTML](zh-cn/browser-side/html/)
   - [CSS](zh-cn/browser-side/css/)
+  - [JavaScript](zh-cn/browser-side/javascript/)
   - [Vue](zh-cn/browser-side/vue/)
   - [面试题](zh-cn/browser-side/面试题)
-    <!-- - [uni-app](zh-cn/uni-app/) -->
-    <!-- - [uni-cloud](zh-cn/uni-app/uni-cloud) -->
-    <!-- - [微信小程序](zh-cn/wechat/) -->
 
 - 后端
 
@@ -26,11 +22,8 @@
   - [vue](zh-cn/demo/vuejs.md)
   - [java](zh-cn/demo/java.md)
 
-- 插件文档
-
-  - [vuex](zh-cn/vue/vuex.md)
-  - [vue-router](zh-cn/vue/router.md)
-  - [echarts](zh-cn/javascript/Echarts.md)
+- 开发工具
+  - [git](zh-cn/dev-utils/git/)
 
 - 项目
 
@@ -42,16 +35,8 @@
   - [ICMS 系统](zh-cn/project/icms.md)
   - [电商管理后台](zh-cn/project/lvyang.md)
 
-- 其他
+- [其他](zh-cn/other/)
 
-  - [常用工具网站](zh-cn/webUtils/)
-  - [markdown](zh-cn/other/markdown)
-  - [docsify](zh-cn/docsify/)
-  - [docsify-tabs](zh-cn/docsify/docsify-tabs)
-  - [git](zh-cn/git/git.md)
-  - [使用插件](zh-cn/plugins.md ':disabled')
-  - [语录](zh-cn/othersocial.md)
-
-- [娱乐](zh-cn/play/mahjong-tianjin)
+- [娱乐](zh-cn/other/play/)
 
 - [中文]()

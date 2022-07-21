@@ -1,66 +1,53 @@
-### Promise对象 <!-- {docsify-ignore} -->
+## Promise对象 <!-- {docsify-ignore} -->
 
 **文档更新日期: {docsify-updated}**
 
 
 
-#### Promise的含义
+### 含义
 
----
+Promise是异步编程的一种解决方案。
 
-Promise是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。
+简单说就是一个容器
 
-所谓`Promise`，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。
+从语法上说，Promise是一个对象
 
-从语法上说，Promise是一个对象，从它可以获取异步操作的消息。
+##### **Promise对象有三个状态:**
 
-Promise提供统一的API，各种异步操作都可以用同样的方法进行处理。
+- `Pending`（进行中）
+- `Resolved`（已完成，又称Fulfilled）
+- `Rejected`（已失败）
 
-`Promise`对象有以下两个特点。
+##### **Promise对象的状态改变，只有两种可能：**
 
-1. 对象的状态不受外界影响。`Promise`对象代表一个异步操作，有三种状态：
+- 从`Pending`变为`Resolved`
+- 从`Pending`变为`Rejected`。
 
-   - `Pending`（进行中）
-   - `Resolved`（已完成，又称Fulfilled）
-   - `Rejected`（已失败）。
+##### **Promise对象有以下两个特点。**
 
-   只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。
-
-   这也是`Promise`这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。
+1. 对象的状态不受外界影响。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。
 
 2. 一旦状态改变，就不会再变，任何时候都可以得到这个结果。
 
-   `Promise`对象的状态改变，只有两种可能：
 
-   - 从`Pending`变为`Resolved`
-   - 从`Pending`变为`Rejected`。
-
-   只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果。
-
-   就算改变已经发生了，你再对`Promise`对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是:如果你错过了它，再去监听，是得不到结果的。
-
-
-
-##### 缺点
+##### **缺点**
 
 - 无法取消`Promise`，一旦新建它就会立即执行，无法中途取消。
 - 如果不设置回调函数，`Promise`内部抛出的错误，不会反应到外部。
 - 当处于`Pending`状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
-如果某些事件不断地反复发生，一般来说，使用`stream`模式是比部署`Promise`更好的选择。
-
-
-
-#### 基本用法
+?> 如果某些事件不断地反复发生，一般来说，使用`stream`模式是比部署`Promise`更好的选择。
 
 ---
 
-ES6规定，Promise对象是一个构造函数，用来生成Promise实例。
 
 
+### 基本用法
+
+ES6规定，**Promise对象是一个构造函数**，用来生成Promise实例。
 
 ```javascript
-var promise = new Promise(function(resolve, reject) {
+const promise = new Promise(function(resolve, reject) {
   // ... some code
 
   if (/* 异步操作成功 */){
@@ -69,7 +56,6 @@ var promise = new Promise(function(resolve, reject) {
     reject(error);
   }
 });
-
 
 promise.then(function(value) {
   // success
@@ -80,10 +66,8 @@ promise.then(function(value) {
 
 Promise构造函数接受一个函数作为参数，该函数的两个参数分别是`resolve`和`reject`。它们是两个函数，由JavaScript引擎提供，不用自己部署。
 
-
-
-- `resolve`函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从Pending变为Resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；
-- `reject`函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从Pending变为Rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。
+- `resolve`函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从Pending变为Resolved），在异步操作成功时调用，并**将异步操作的结果，作为参数传递出去**；
+- `reject`函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从Pending变为Rejected），在异步操作失败时调用，并**将异步操作报出的错误，作为参数传递出去**。
 
 
 
@@ -96,7 +80,7 @@ Promise实例生成以后，可以用`then`方法分别指定`Resolved`状态和
 
 其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。
 
-Promise新建后就会立即执行。
+**Promise新建后就会立即执行。**
 
 ```javascript
 let promise = new Promise(function(resolve, reject) {

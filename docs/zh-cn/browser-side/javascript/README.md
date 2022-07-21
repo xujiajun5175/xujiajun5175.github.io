@@ -1,137 +1,50 @@
-# JavaScript
+- [JavaScript](zh-cn/browser-side/javascript/js/)
+  - [JavaScript 简介](zh-cn/javascript/js/js.md)
+  - [JavaScript  错误处理机制](zh-cn/javascript/js/js-error.md)
+  - [JavaScript  Object 对象](zh-cn/javascript/js/js-object.md)
+  - [JavaScript  Object 属性描述对象](zh-cn/javascript/js/js-object-attribute.md)
+  - [JavaScript Promise 对象](zh-cn/javascript/js/js-promise.md)
+  - [JavaScript 单线程模型](zh-cn/javascript/js/js-单线程.md)
 
-**文档更新日期: {docsify-updated}**
+- ECMAScript
+  - ESMAScript 基础
+    - [原始值和引用值](zh-cn/browser-side/javascript/es/es6-原始值和引用值.md)
+    - [原始类型](zh-cn/browser-side/javascript/es/es6-原始类型.md)
+    - [引用类型](zh-cn/browser-side/javascript/es/es6-引用类型.md)
+  - ESMAScript 函数
+    - [arguments 对象](zh-cn/browser-side/javascript/es/es6-arguments.md)
+    - [Function 对象](zh-cn/browser-side/javascript/es/es6-function.md)
+    - [闭包](zh-cn/browser-side/javascript/es/es6-闭包.md)
+  - ESMAScript 对象
+    - [对象类型](zh-cn/browser-side/javascript/es/es6-对象类型.md)
+    - [对象作用域](zh-cn/browser-side/javascript/es/es6-对象作用域.md)
+    - [定义类或对象](zh-cn/browser-side/javascript/es/es6-定义类或对象.md)
+  - ESMAScript 6
+    - [简介](zh-cn/browser-side/javascript/es/es6-简介.md)
+    - [let 和 const](zh-cn/browser-side/javascript/es/es6-let&const.md)
+    - [变量的解构赋值](zh-cn/browser-side/javascript/es/es6-变量的解构赋值.md)
+    - [字符串的扩展](zh-cn/browser-side/javascript/es/es6-字符串的扩展.md)
+    - [数值的扩展](zh-cn/browser-side/javascript/es/es6-数值的扩展.md)
+    - [数组的扩展](zh-cn/browser-side/javascript/es/es6-数组的扩展.md)
+    - [函数的扩展](zh-cn/browser-side/javascript/es/es6-函数的扩展.md)
+    - [对象的扩展](zh-cn/browser-side/javascript/es/es6-对象的扩展.md)
+    - [Symbol](zh-cn/browser-side/javascript/es/es6-symbol.md)
+    - [Proxy 和 Reflect](zh-cn/browser-side/javascript/es/es6-proxy&reflect.md)
+    - [Set 和 Map 数据结构](zh-cn/browser-side/javascript/es/es6-Set和Map数据结构.md)
+    - [Iterator 和 for...of 循环](zh-cn/browser-side/javascript/es/es6-Iterator和for...of循环.md)
+    - [Generator 函数](zh-cn/browser-side/javascript/es/es6-Generator函数.md)
+    - [Promise 对象](zh-cn/browser-side/javascript/es/es6-Promise对象.md)
+    - [异步操作和 Async 函数](zh-cn/browser-side/javascript/es/es6-异步操作和Async函数.md)
+    - [Class](zh-cn/browser-side/javascript/es/es6-Class.md)
+    - [修饰器](zh-cn/browser-side/javascript/es/es6-decorator.md)
+    - [Module](zh-cn/browser-side/javascript/es/es6-module.md)
+    - [编程风格](zh-cn/browser-side/javascript/es/es6-编程风格.md)
+    - [读懂 ECMAScript 规格](zh-cn/browser-side/javascript/es/读懂ECMAScript规格.md)
+    - [参考链接](zh-cn/browser-side/javascript/es/参考链接.md)
 
-1. https://developer.mozilla.org/zh-CN/
+- [TypeScript](zh-cn/browser-side/javascript/ts/)
 
-2. 方法中没有 return,返回默认的是 undefind
+- js库
+  - [ECharts](zh-cn/browser-side/javascript/other/echarts/)
 
-3. event.reventDefault() 阻止默认操作
-
-4. 组件懒加载
-
-   component: resolve => require(["../components/causeAnalyse.vue"], resolve)
-
-### Array 对象及常用方法
-
-#### 循环语句
-
-**`for...of...`遍历**
-
-- 遍历数组 Array
-
-  - 不带索引
-
-    ```js
-    for (const item of list.entries()) {
-      console.log(item);
-    }
-    ```
-
-  - 带索引
-
-    ```js
-    for (const [index, value] of list.entries()) {
-      console.log(value);
-      console.log(index);
-    }
-    ```
-
-    
-
-#### 对象数组相同项合并(分组)
-
-> 参考文档 https://blog.csdn.net/weixin_34248118/article/details/91404807
-
-```js
-for (let i = 0; i < dataList.length; i++) {
-        var ai = dataList[i];
-        if (!tempMap[ai.companyCode]) {
-          let temp = {};
-          temp.companyCode = ai.companyCode;
-          temp.gdp = ai.gdp;
-          temp.companyLabel = ai.companyLabel;
-          temp[`module${ai.moduleName}`] = ai.rating;
-          result.push(temp);
-          tempMap[ai.companyCode] = ai;
-        } else {
-          for (let j = 0; j < result.length; j++) {
-            let rj = result[j];
-            if (rj.companyCode === ai.companyCode) {
-              rj[`module${ai.moduleName}`] = ai.rating;
-              break;
-            }
-          }
-        }
-      }
-```
-
-
-#### 三级对象数组转树形结构数组
-
-!> 需要数据形式一致 
-?> [参考地址](https://blog.csdn.net/jianjun2114/article/details/107041423)
-```js
-handleCityOptions(data) {
-            var code1 = "-1";
-            var code2 = "-1";
-            var root1 = [];
-            var rootData1 = {};
-            var tmp1 = -1;
-            var tmp2 = -1;
-            for (var info of data) {
-                if (code1 != info.provinceCode) {
-                    rootData1 = {
-                        label: info.province,
-                        value: info.provinceCode,
-                        children: [
-                            {
-                                label: info.city,
-                                value: info.cityCode,
-                                children: [
-                                    {
-                                        label: info.district,
-                                        value:  info.cityId,
-                                    },
-                                ],
-                            },
-                        ],
-                    };
-                    root1.push(rootData1);
-                    code1 = info.provinceCode;
-                    code2 = info.cityCode;
-                    tmp1++;
-                    tmp2 = 0;
-                } else {
-                    var children = root1[tmp1].children;
-                    if (code2 == info.cityCode) {
-                        var children2 = children[tmp2].children;
-                        children2.push({
-                            label: info.district,
-                            value:  info.cityId,
-                        });
-                        children[tmp2].children = children2;
-                    } else {
-                        children.push({
-                            label: info.city,
-                            value: info.cityCode,
-                            children: [
-                                {
-                                    label: info.district,
-                                    value: info.cityId,
-                                },
-                            ],
-                        });
-                        rootData1.children = children;
-                        root1[tmp1] = rootData1;
-                        tmp2++;
-                    }
-                    code2 = info.cityCode;
-                    code1 = info.provinceCode;
-                }
-            }
-            // console.log("1312312321321",root1)
-            this.cityOptions =  root1;
-        },
-```
-
+- [奇技淫巧](zh-cn/browser-side/javascript/js/奇技淫巧)

@@ -1,2 +1,0 @@
-- [uni-app](zh-cn/uni-app/)
-- [uni-cloud](zh-cn/uni-app/uni-cloud)

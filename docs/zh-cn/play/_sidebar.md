@@ -1,7 +1,0 @@
-- **麻将**
-  - [天津麻将规则](zh-cn/play/mahjong-tianjin)
-- **DNF 地下城与勇士**
-  - [110 版本 鬼泣](zh-cn/play/dnf/dnf-110-鬼泣)
-  - [110 版本 流浪武士](zh-cn/play/dnf/dnf-110-流浪武士)
-  - [110 版本 刃影](zh-cn/play/dnf/dnf-110-刃影)
-  - [110 版本 气功师(女)](<zh-cn/play/dnf/dnd-110-气功师(女)>)
