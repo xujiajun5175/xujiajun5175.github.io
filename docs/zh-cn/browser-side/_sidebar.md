@@ -65,8 +65,8 @@
 
 - **vue**
   - [Vue2](zh-cn/browser-side/vue/vue2/)
-  - [vuex](zh-cn/vue/vuex)
-  - [vue-router](zh-cn/vue/vue-router)
+  - [vuex](zh-cn/browser-side/vue/vue2/vuex/)
+  - [vue-router](zh-cn/browser-side/vue/vue2/vue-router/)
   - [Vue3](zh-cn/browser-side/vue/vue3/)
 - **JS 库**
 
@@ -75,3 +75,4 @@
 - [奇技淫巧](zh-cn/browser-side/javascript/js/奇技淫巧)
 
 - [面试题](zh-cn/browser-side/interview/)
+- [示例 DEMO](zh-cn/browser-side/demo/)

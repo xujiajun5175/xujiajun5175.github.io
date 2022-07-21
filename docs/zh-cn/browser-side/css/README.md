@@ -55,15 +55,23 @@ CSS 规则由两个主要的部分构成：选择器，以及一条或多条声�
 在描述颜色的时候，除了使用英文单词 red，我们还可以使用十六进制的颜色值 #ff0000：
 
 ```css
-p { color: #ff0000; }
-或者
-p { color: #f00; }
+p {
+  color: #ff0000;
+}
+或者 p {
+  color: #f00;
+}
 ```
 
 还可以通过两种方法使用 RGB 值：
 
 ```css
-p { color: rgb(255,0,0); } p { color: rgb(100%,0%,0%); }
+p {
+  color: rgb(255, 0, 0);
+}
+p {
+  color: rgb(100%, 0%, 0%);
+}
 ```
 
 !> **提示：**当使用 RGB 百分比时，即使当值为 0 时也要写百分比符号。但是在其他的情况下就不需要这么做了。比如说，当尺寸为 0 像素时，0 之后不需要使用 px 单位。
@@ -74,7 +82,7 @@ p { color: rgb(255,0,0); } p { color: rgb(100%,0%,0%); }
 
 注释是用来解释你的代码，并且可以随意编辑它，浏览器会忽略它。
 
-CSS注释以 "`/*`" 开始, 以 "`*/`" 结束
+CSS 注释以 "`/*`" 开始, 以 "`*/`" 结束
 
 ## 2.CSS 选择器
 
@@ -97,7 +105,9 @@ CSS注释以 "`/*`" 开始, 以 "`*/`" 结束
 标签在（文档的）头部
 
 ```html
-<head> <link rel="stylesheet" type="text/css" href="mystyle.css"> </head>
+<head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css" />
+</head>
 ```
 
 浏览器会从文件 mystyle.css 中读到样式声明，并根据它来格式文档
@@ -108,17 +118,19 @@ CSS注释以 "`/*`" 开始, 以 "`*/`" 结束
 
 ```html
 <head>
+  <style>
+    hr {
+      color: sienna;
+    }
 
-<style>
+    p {
+      margin-left: 20px;
+    }
 
-hr {color:sienna;}
-
-p {margin-left:20px;}
-
-body {background-image:url("images/back40.gif");}
-
-</style>
-
+    body {
+      background-image: url('images/back40.gif');
+    }
+  </style>
 </head>
 ```
 
@@ -159,7 +171,7 @@ body {background-image:url("images/back40.gif");}
 
 下列是一份优先级逐级增加的选择器列表，其中数字 7 拥有最高的优先权：
 
-1. 通用选择器（*）
+1. 通用选择器（\*）
 2. 元素(类型)选择器
 3. 类选择器
 4. 属性选择器
@@ -221,7 +233,9 @@ CSS 属性定义背景效果：
 `background-color` 属性定义了元素的背景颜色。
 
 ```css
-body {background-color:#b0c4de;}
+body {
+  background-color: #b0c4de;
+}
 ```
 
 ?> **提示：**`background-color` 不能继承，其默认值是`transparent`。如果一个元素没有指定背景色，那么背景就是透明的，这样其父元素的背景才可见。
@@ -247,16 +261,18 @@ body {background-color:#b0c4de;}
 一些图像如果在水平方向与垂直方向平铺，这样看起来很不协调，如下所示:
 
 ```css
-body
-{background-image:url('gradient2.png'); }
+body {
+  background-image: url('gradient2.png');
+}
 ```
 
-如果图像只在水平方向平铺` (repeat-x) `, 页面背景会更好些:
+如果图像只在水平方向平铺`(repeat-x)`, 页面背景会更好些:
 
 ```css
-body
-{background-image:url('gradient2.png');
-background-repeat:repeat-x;}
+body {
+  background-image: url('gradient2.png');
+  background-repeat: repeat-x;
+}
 ```
 
 #### 4.2.3.设置定位与不平铺
@@ -268,9 +284,10 @@ background-repeat:repeat-x;}
 如果你不想让图像平铺，你可以使用 `background-repeat` 属性:
 
 ```css
-body
-{background-image:url('img_tree.png');
-background-repeat:no-repeat;}
+body {
+  background-image: url('img_tree.png');
+  background-repeat: no-repeat;
+}
 ```
 
 以上实例中，背景图像与文本显示在同一个位置，为了让页面排版更加合理，不影响文本的阅读，我们可以改变图像的位置。
@@ -278,11 +295,11 @@ background-repeat:no-repeat;}
 可以利用 `background-position` 属性改变图像在背景中的位置:
 
 ```css
-
-body
-{background-image:url('img_tree.png');
-background-repeat:no-repeat;
-background-position:right top;}
+body {
+  background-image: url('img_tree.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+}
 ```
 
 ?> **提示：**为 `background-position` 属性提供值有很多方法。首先，可以使用一些关键字：`top`、`bottom`、`left`、`right` 和 `center`；<br>其次，可以使用长度值，如 100px 或 5cm；<br>最后也可以使用百分数值。<br>不同类型的值对于背景图像的放置稍有差异。
@@ -310,13 +327,13 @@ background-position:right top;}
 百分数值的表现方式更为复杂。假设你希望用百分数值将图像在其元素中居中，你可以按照下面的代码进行设置：
 
 ```css
-body
+body {
+  background-image: url('img_tree.png');
 
-{background-image:url('img_tree.png');
+  background-repeat: no-repeat;
 
-background-repeat:no-repeat;
-
-background-position:50% 50%;}
+  background-position: 50% 50%;
+}
 ```
 
 ##### 长度值
@@ -326,13 +343,13 @@ background-position:50% 50%;}
 比如，如果设置值为 50px 100px，图像的左上角将在元素内边距区左上角向右 50 像素、向下 100 像素的位置上：
 
 ```css
-body
+body {
+  background-image: url('img_tree.png');
 
-{background-image:url('img_tree.png');
+  background-repeat: no-repeat;
 
-background-repeat:no-repeat;
-
-background-position:50px 100px;}
+  background-position: 50px 100px;
+}
 ```
 
 !> 注意，这一点与百分数值不同，因为偏移只是从一个左上角到另一个左上角。也就是说，图像的左上角与 `background-position` 声明中的指定的点对齐。
@@ -348,8 +365,9 @@ background-position:50px 100px;}
 背景颜色的简写属性为 "background":
 
 ```css
-body {background:#ffffff url('img_tree.png') no-repeat right top;}
-
+body {
+  background: #ffffff url('img_tree.png') no-repeat right top;
+}
 ```
 
 当使用简写属性时，属性值的顺序为：:
@@ -370,10 +388,10 @@ body {background:#ffffff url('img_tree.png') no-repeat right top;}
 
 ### 文本颜色
 
-颜色是通过CSS最经常的指定：
+颜色是通过 CSS 最经常的指定：
 
 - 十六进制值 - 如"＃FF0000"
-- 一个RGB值 - "RGB（255,0,0）"
+- 一个 RGB 值 - "RGB（255,0,0）"
 - 颜色的名称 - 如"红"
 
 参阅 [CSS 颜色值](#CSS颜色名称) 查看完整的颜色值。
@@ -389,9 +407,15 @@ body {background:#ffffff url('img_tree.png') no-repeat right top;}
 当 `text-align`设置为`justify`，每一行被展开为宽度相等，左，右外边距是对齐（如杂志和报纸）。
 
 ```css
-h1 {text-align:center;}
-p.date {text-align:right;}
-p.main {text-align:justify;}
+h1 {
+  text-align: center;
+}
+p.date {
+  text-align: right;
+}
+p.main {
+  text-align: justify;
+}
 ```
 
 ?> **提示：**如果想把一个行内元素的第一行“缩进”，可以用左内边距或外边距创造这种效果。
@@ -405,18 +429,26 @@ p.main {text-align:justify;}
 从设计的角度看 `text-decoration` 属性主要是用来删除链接的下划线：
 
 ```css
-a {text-decoration:none;}
+a {
+  text-decoration: none;
+}
 ```
 
 也可以这样装饰文字：
 
 ```css
-h1 {text-decoration:overline;}
-h2 {text-decoration:line-through;}
-h3 {text-decoration:underline;}
+h1 {
+  text-decoration: overline;
+}
+h2 {
+  text-decoration: line-through;
+}
+h3 {
+  text-decoration: underline;
+}
 ```
 
-!>  不建议强调指出不是链接的文本，因为这常常混淆用户。
+!> 不建议强调指出不是链接的文本，因为这常常混淆用户。
 
 ---
 
@@ -427,10 +459,15 @@ h3 {text-decoration:underline;}
 可用于所有字句变成大写或小写字母，或每个单词的首字母大写。
 
 ```css
-p.uppercase {text-transform:uppercase;}
-p.lowercase {text-transform:lowercase;}
-p.capitalize {text-transform:capitalize;}
-
+p.uppercase {
+  text-transform: uppercase;
+}
+p.lowercase {
+  text-transform: lowercase;
+}
+p.capitalize {
+  text-transform: capitalize;
+}
 ```
 
 ---
@@ -444,7 +481,9 @@ CSS 提供了 `text-indent` 属性，该属性可以方便地实现文本缩进�
 通过使用 `text-indent` 属性，所有元素的第一行都可以缩进一个给定的长度。
 
 ```css
-p {text-indent:50px;}
+p {
+  text-indent: 50px;
+}
 ```
 
 ---
@@ -453,34 +492,33 @@ p {text-indent:50px;}
 
 `word-spacing` 属性可以改变字（单词）之间的标准间隔。其默认值 `normal`与设置值为 0 是一样的。
 
-指定段字之间的空间，应该是30像素：
+指定段字之间的空间，应该是 30 像素：
 
 ```css
-p
-{
-word-spacing:30px;
+p {
+  word-spacing: 30px;
 }
 ```
 
 ---
 
-### 所有CSS文本属性
+### 所有 CSS 文本属性
 
-| 属性                                                         | 描述                     |
-| :----------------------------------------------------------- | :----------------------- |
-| [color](zh-cn/browser-side/css/css3-属性#color)  | 设置文本颜色             |
-| [direction](zh-cn/browser-side/css/css3-属性#direction) | 设置文本方向。           |
-| [letter-spacing](zh-cn/browser-side/css/css3-属性#letter-spacing) | 设置字符间距             |
-| [line-height](zh-cn/browser-side/css/css3-属性#line-height) | 设置行高                 |
-| [text-align](zh-cn/browser-side/css/css3-属性#text-align) | 对齐元素中的文本         |
+| 属性                                                                | 描述                     |
+| :------------------------------------------------------------------ | :----------------------- |
+| [color](zh-cn/browser-side/css/css3-属性#color)                     | 设置文本颜色             |
+| [direction](zh-cn/browser-side/css/css3-属性#direction)             | 设置文本方向。           |
+| [letter-spacing](zh-cn/browser-side/css/css3-属性#letter-spacing)   | 设置字符间距             |
+| [line-height](zh-cn/browser-side/css/css3-属性#line-height)         | 设置行高                 |
+| [text-align](zh-cn/browser-side/css/css3-属性#text-align)           | 对齐元素中的文本         |
 | [text-decoration](zh-cn/browser-side/css/css3-属性#text-decoration) | 向文本添加修饰           |
-| [text-indent](zh-cn/browser-side/css/css3-属性#text-indent) | 缩进元素中文本的首行     |
-| [text-shadow](zh-cn/browser-side/css/css3-属性#text-shadow) | 设置文本阴影             |
-| [text-transform](zh-cn/browser-side/css/css3-属性#text-transform) | 控制元素中的字母         |
-| [unicode-bidi](zh-cn/browser-side/css/css3-属性#unicode-bidi) | 设置或返回文本是否被重写 |
-| [vertical-align](zh-cn/browser-side/css/css3-属性#vertical-align) | 设置元素的垂直对齐       |
-| [white-space](zh-cn/browser-side/css/css3-属性#white-space) | 设置元素中空白的处理方式 |
-| [word-spacing](zh-cn/browser-side/css/css3-属性#word-spacing) | 设置字间距               |
+| [text-indent](zh-cn/browser-side/css/css3-属性#text-indent)         | 缩进元素中文本的首行     |
+| [text-shadow](zh-cn/browser-side/css/css3-属性#text-shadow)         | 设置文本阴影             |
+| [text-transform](zh-cn/browser-side/css/css3-属性#text-transform)   | 控制元素中的字母         |
+| [unicode-bidi](zh-cn/browser-side/css/css3-属性#unicode-bidi)       | 设置或返回文本是否被重写 |
+| [vertical-align](zh-cn/browser-side/css/css3-属性#vertical-align)   | 设置元素的垂直对齐       |
+| [white-space](zh-cn/browser-side/css/css3-属性#white-space)         | 设置元素中空白的处理方式 |
+| [word-spacing](zh-cn/browser-side/css/css3-属性#word-spacing)       | 设置字间距               |
 
 ## CSS 字体
 
@@ -502,11 +540,18 @@ word-spacing:30px;
 - `a:active` - 链接被点击的那一刻
 
 ```css
-a:link {color:#FF0000;}      /* 未访问链接*/
-a:visited {color:#00FF00;}  /* visited link */
-a:hover {color:#FF00FF;}  /* mouse over link */
-a:active {color:#0000FF;}  /* selected link */
-
+a:link {
+  color: #ff0000;
+} /* 未访问链接*/
+a:visited {
+  color: #00ff00;
+} /* visited link */
+a:hover {
+  color: #ff00ff;
+} /* mouse over link */
+a:active {
+  color: #0000ff;
+} /* selected link */
 ```
 
 当设置为若干链路状态的样式，也有一些顺序规则：
@@ -514,7 +559,7 @@ a:active {color:#0000FF;}  /* selected link */
 - `a:hover` 必须跟在`a:link` 和 `a:visited` 后面
 - `a:active` 必须跟在 `a:hover` 后面
 
-> 参考:[link选择器](zh-cn/browser-side/css/css3/css3-选择器#link选择器),[hover选择器](zh-cn/browser-side/css/css3/css3-选择器#hover选择器),[visited选择器](zh-cn/browser-side/css/css3/css3-选择器#visited选择器),[active选择器](zh-cn/browser-side/css/css3/css3-选择器#active选择器)
+> 参考:[link 选择器](zh-cn/browser-side/css/css3/css3-选择器#link选择器),[hover 选择器](zh-cn/browser-side/css/css3/css3-选择器#hover选择器),[visited 选择器](zh-cn/browser-side/css/css3/css3-选择器#visited选择器),[active 选择器](zh-cn/browser-side/css/css3/css3-选择器#active选择器)
 
 ---
 
@@ -525,10 +570,18 @@ a:active {color:#0000FF;}  /* selected link */
 `text-decoration` 属性主要用于删除链接中的下划线：
 
 ```css
-a:link {text-decoration:none;}
-a:visited {text-decoration:none;}
-a:hover {text-decoration:underline;}
-a:active {text-decoration:underline;}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  text-decoration: underline;
+}
 ```
 
 ##### 背景颜色
@@ -536,10 +589,18 @@ a:active {text-decoration:underline;}
 背景颜色属性指定链接背景色：
 
 ```css
-a:link {background-color:#B2FF99;}
-a:visited {background-color:#FFFF85;}
-a:hover {background-color:#FF704D;}
-a:active {background-color:#FF704D;}
+a:link {
+  background-color: #b2ff99;
+}
+a:visited {
+  background-color: #ffff85;
+}
+a:hover {
+  background-color: #ff704d;
+}
+a:active {
+  background-color: #ff704d;
+}
 ```
 
 ##### 鼠标形状
@@ -556,13 +617,10 @@ a:active {background-color:#FF704D;}
 | crosshair | 鼠标呈现十字状     |
 
 ```css
-
 a:hover {
+  color: green;
 
-    color: green;
-
-    cursor: crosshair;
-
+  cursor: crosshair;
 }
 ```
 
@@ -575,42 +633,103 @@ a:hover {
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>W3Cschool教程(w3cschool.cn)</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>W3Cschool教程(w3cschool.cn)</title>
     <style>
-    a.one:link {color:#ff0000;}
-    a.one:visited {color:#0000ff;}
-    a.one:hover {color:#ffcc00;}
+      a.one:link {
+        color: #ff0000;
+      }
+      a.one:visited {
+        color: #0000ff;
+      }
+      a.one:hover {
+        color: #ffcc00;
+      }
 
-    a.two:link {color:#ff0000;}
-    a.two:visited {color:#0000ff;}
-    a.two:hover {font-size:150%;}
+      a.two:link {
+        color: #ff0000;
+      }
+      a.two:visited {
+        color: #0000ff;
+      }
+      a.two:hover {
+        font-size: 150%;
+      }
 
-    a.three:link {color:#ff0000;}
-    a.three:visited {color:#0000ff;}
-    a.three:hover {background:#66ff66;}
+      a.three:link {
+        color: #ff0000;
+      }
+      a.three:visited {
+        color: #0000ff;
+      }
+      a.three:hover {
+        background: #66ff66;
+      }
 
-    a.four:link {color:#ff0000;}
-    a.four:visited {color:#0000ff;}
-    a.four:hover {font-family:monospace;}
+      a.four:link {
+        color: #ff0000;
+      }
+      a.four:visited {
+        color: #0000ff;
+      }
+      a.four:hover {
+        font-family: monospace;
+      }
 
-    a.five:link {color:#ff0000;text-decoration:none;}
-    a.five:visited {color:#0000ff;text-decoration:none;}
-    a.five:hover {text-decoration:underline;}
-</style>
-</head>
+      a.five:link {
+        color: #ff0000;
+        text-decoration: none;
+      }
+      a.five:visited {
+        color: #0000ff;
+        text-decoration: none;
+      }
+      a.five:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
 
-<body>
-<p>将鼠标移至链接上改变样式.</p>
+  <body>
+    <p>将鼠标移至链接上改变样式.</p>
 
-    <p><b><a class="one" href="/css/" target="_blank">这个链接会改变字体颜色</a></b></p>
-    <p><b><a class="two" href="/css/" target="_blank">这个链接会改变字体大小</a></b></p>
-    <p><b><a class="three" href="/css/" target="_blank">这个链接会改变背景颜色</a></b></p>
-    <p><b><a class="four" href="/css/" target="_blank">这个链接会改变字体样式</a></b></p>
-    <p><b><a class="five" href="/css/" target="_blank">这个链接会改变下划线</a></b></p>
-</body>
-
+    <p>
+      <b
+        ><a class="one" href="/css/" target="_blank"
+          >这个链接会改变字体颜色</a
+        ></b
+      >
+    </p>
+    <p>
+      <b
+        ><a class="two" href="/css/" target="_blank"
+          >这个链接会改变字体大小</a
+        ></b
+      >
+    </p>
+    <p>
+      <b
+        ><a class="three" href="/css/" target="_blank"
+          >这个链接会改变背景颜色</a
+        ></b
+      >
+    </p>
+    <p>
+      <b
+        ><a class="four" href="/css/" target="_blank"
+          >这个链接会改变字体样式</a
+        ></b
+      >
+    </p>
+    <p>
+      <b
+        ><a class="five" href="/css/" target="_blank"
+          >这个链接会改变下划线</a
+        ></b
+      >
+    </p>
+  </body>
 </html>
 ```
 
@@ -619,31 +738,31 @@ a:hover {
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>W3Cschool教程(w3cschool.cn)</title>
-<style>
-    a:link,a:visited
-    {
-    display:block;
-    font-weight:bold;
-    color:#FFFFFF;
-    background-color:#98bf21;
-    width:120px;
-    text-align:center;
-    padding:4px;
-    text-decoration:none;
-    }
-    a:hover,a:active
-    {
-    background-color:#7A991A;
-    }
-</style>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>W3Cschool教程(w3cschool.cn)</title>
+    <style>
+      a:link,
+      a:visited {
+        display: block;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #98bf21;
+        width: 120px;
+        text-align: center;
+        padding: 4px;
+        text-decoration: none;
+      }
+      a:hover,
+      a:active {
+        background-color: #7a991a;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     <a href="/css/" target="_blank">This is a link</a>
-</body>
+  </body>
 </html>
 ```
 
@@ -666,7 +785,7 @@ CSS 列表属性作用如下：
 - 无序列表 - 列表项的标记使用特殊图形（如小黑点、小方框等）
 - 有序列表 - 列表项的标记使用数字或字母
 
-使用CSS，可以列出进一步的样式，并可用图像作列表项标记。
+使用 CSS，可以列出进一步的样式，并可用图像作列表项标记。
 
 ---
 
@@ -675,11 +794,19 @@ CSS 列表属性作用如下：
 `list-style-type` 属性指定列表项标记的类型是：
 
 ```css
-ul.a {list-style-type: circle;}
-ul.b {list-style-type: square;}
+ul.a {
+  list-style-type: circle;
+}
+ul.b {
+  list-style-type: square;
+}
 
-ol.c {list-style-type: upper-roman;}
-ol.d {list-style-type: lower-alpha;}
+ol.c {
+  list-style-type: upper-roman;
+}
+ol.d {
+  list-style-type: lower-alpha;
+}
 ```
 
 一些值是无序列表，以及有些是有序列表。
@@ -696,25 +823,24 @@ ol.d {list-style-type: lower-alpha;}
 - `lower-roman`：小写罗马数字
 - `upper-roman`：大写罗马数字
 
-------
+---
 
 #### 作为列表项标记的图像
 
 要指定列表项标记的图像，使用列表样式图像属性：
 
 ```css
-ul
-{
-list-style-image: url('sqpurple.gif');
+ul {
+  list-style-image: url('sqpurple.gif');
 }
 ```
 
 上面的例子在各大主流浏览器中的显示有所差异，IE 和 Opera 显示图像标记比火狐（ Firefox ），Chrome 和 Safari 更高一点点。
 
->提示：
+> 提示：
 >
->- 利用 `list-style-position` 可以确定标志出现在列表项内容之外还是内容内部。
->- 如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，方法如下。**
+> - 利用 `list-style-position` 可以确定标志出现在列表项内容之外还是内容内部。
+> - 如果你想在所有的浏览器放置同样的形象标志，就应使用浏览器兼容性解决方案，方法如下。\*\*
 
 ---
 
@@ -725,34 +851,31 @@ list-style-image: url('sqpurple.gif');
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>W3Cschool教程(w3cschool.cn)</title>
-<style>
-    ul
-    {
-     list-style-type:none;
-     padding:0px;
-     margin:0px;
-    }
-    ul li
-    {
-     background-image:url("/statics/images/w3c/sqpurple.gif");
-     background-repeat:no-repeat;
-     background-position:0px 5px;
-     padding-left:14px;
-    }
-</style>
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>W3Cschool教程(w3cschool.cn)</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+      }
+      ul li {
+        background-image: url('/statics/images/w3c/sqpurple.gif');
+        background-repeat: no-repeat;
+        background-position: 0px 5px;
+        padding-left: 14px;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
     <ul>
-        <li>咖啡</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>咖啡</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ul>
-</body>
-
+  </body>
 </html>
 ```
 
@@ -776,14 +899,14 @@ list-style-image: url('sqpurple.gif');
 
 ```css
 ul {
- list-style: square url("sqpurple.gif");
+  list-style: square url('sqpurple.gif');
 }
 ```
 
 如果使用缩写属性值的顺序是：
 
 1. `list-style-type`
-2. `list-style-position` (有关说明，请参见下面的CSS属性表)
+2. `list-style-position` (有关说明，请参见下面的 CSS 属性表)
 3. `list-style-image`
 
 在简写属性时，如果上述值丢失一个，其余仍在指定的顺序，就没关系。
@@ -797,182 +920,224 @@ ul {
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>W3Cschool教程(w3cschool.cn)</title>
-<style>
-    ul.a {list-style-type:circle;}
-    ul.b {list-style-type:disc;}
-    ul.c {list-style-type:square;}
+  <head>
+    <meta charset="utf-8" />
+    <title>W3Cschool教程(w3cschool.cn)</title>
+    <style>
+      ul.a {
+        list-style-type: circle;
+      }
+      ul.b {
+        list-style-type: disc;
+      }
+      ul.c {
+        list-style-type: square;
+      }
 
-    ol.d {list-style-type:armenian;}
-    ol.e {list-style-type:cjk-ideographic;}
-    ol.f {list-style-type:decimal;}
-    ol.g {list-style-type:decimal-leading-zero;}
-    ol.h {list-style-type:georgian;}
-    ol.i {list-style-type:hebrew;}
-    ol.j {list-style-type:hiragana;}
-    ol.k {list-style-type:hiragana-iroha;}
-    ol.l {list-style-type:katakana;}
-    ol.m {list-style-type:katagana-iroha;}
-    ol.n {list-style-type:lower-alpha;}
-    ol.o {list-style-type:lower-greek;}
-    ol.p {list-style-type:lower-latin;}
-    ol.q {list-style-type:lower-roman;}
-    ol.r {list-style-type:upper-alpha;}
-    ol.s {list-style-type:upper-latin;}
-    ol.t {list-style-type:upper-roman;}
+      ol.d {
+        list-style-type: armenian;
+      }
+      ol.e {
+        list-style-type: cjk-ideographic;
+      }
+      ol.f {
+        list-style-type: decimal;
+      }
+      ol.g {
+        list-style-type: decimal-leading-zero;
+      }
+      ol.h {
+        list-style-type: georgian;
+      }
+      ol.i {
+        list-style-type: hebrew;
+      }
+      ol.j {
+        list-style-type: hiragana;
+      }
+      ol.k {
+        list-style-type: hiragana-iroha;
+      }
+      ol.l {
+        list-style-type: katakana;
+      }
+      ol.m {
+        list-style-type: katagana-iroha;
+      }
+      ol.n {
+        list-style-type: lower-alpha;
+      }
+      ol.o {
+        list-style-type: lower-greek;
+      }
+      ol.p {
+        list-style-type: lower-latin;
+      }
+      ol.q {
+        list-style-type: lower-roman;
+      }
+      ol.r {
+        list-style-type: upper-alpha;
+      }
+      ol.s {
+        list-style-type: upper-latin;
+      }
+      ol.t {
+        list-style-type: upper-roman;
+      }
 
-    ol.u {list-style-type:none;}
-    ol.v {list-style-type:inherit;}
+      ol.u {
+        list-style-type: none;
+      }
+      ol.v {
+        list-style-type: inherit;
+      }
+    </style>
+  </head>
 
-</style>
-</head>
-
-<body>
+  <body>
     <ul class="a">
-        <li>Circle 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Circle 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ul>
 
     <ul class="b">
-        <li>Disc 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Disc 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ul>
 
     <ul class="c">
-        <li>Square 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Square 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ul>
 
     <ol class="d">
-        <li>Armenian 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Armenian 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="e">
-        <li>Cjk-ideographic 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Cjk-ideographic 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="f">
-        <li>Decimal 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Decimal 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="g">
-        <li>Decimal-leading-zero 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Decimal-leading-zero 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="h">
-        <li>Georgian 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Georgian 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="i">
-        <li>Hebrew 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Hebrew 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="j">
-        <li>Hiragana 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Hiragana 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="k">
-        <li>Hiragana-iroha 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Hiragana-iroha 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="l">
-        <li>Katakana 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Katakana 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="m">
-        <li>Katakana-iroha 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Katakana-iroha 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="n">
-        <li>Lower-alpha 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Lower-alpha 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="o">
-        <li>Lower-greek 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Lower-greek 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="p">
-        <li>Lower-latin 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Lower-latin 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="q">
-        <li>Lower-roman 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Lower-roman 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="r">
-        <li>Upper-alpha 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Upper-alpha 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="s">
-        <li>Upper-latin 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Upper-latin 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="t">
-        <li>Upper-roman 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>Upper-roman 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="u">
-        <li>None 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>None 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
 
     <ol class="v">
-        <li>inherit 样式</li>
-        <li>茶</li>
-        <li>可口可乐</li>
+      <li>inherit 样式</li>
+      <li>茶</li>
+      <li>可口可乐</li>
     </ol>
-
-</body>
+  </body>
 </html>
 ```
 
 ---
 
-#### 所有的CSS列表属性
+#### 所有的 CSS 列表属性
 
-| 属性                                                         | 描述                                               |
-| :----------------------------------------------------------- | :------------------------------------------------- |
-| [list-style](zh-cn/browser-side/css/css3-属性#list-style) | 简写属性。用于把所有用于列表的属性设置于一个声明中 |
-| [list-style-image](zh-cn/browser-side/css/css3-属性#list-style-image) | 将图象设置为列表项标志。                           |
+| 属性                                                                        | 描述                                               |
+| :-------------------------------------------------------------------------- | :------------------------------------------------- |
+| [list-style](zh-cn/browser-side/css/css3-属性#list-style)                   | 简写属性。用于把所有用于列表的属性设置于一个声明中 |
+| [list-style-image](zh-cn/browser-side/css/css3-属性#list-style-image)       | 将图象设置为列表项标志。                           |
 | [list-style-position](zh-cn/browser-side/css/css3-属性#list-style-position) | 设置列表中列表项标志的位置。                       |
-| [list-style-type](zh-cn/browser-side/css/css3-属性#list-style-type) | 设置列表项标志的类型。                             |
+| [list-style-type](zh-cn/browser-side/css/css3-属性#list-style-type)         | 设置列表项标志的类型。                             |

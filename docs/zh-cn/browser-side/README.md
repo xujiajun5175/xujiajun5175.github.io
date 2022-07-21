@@ -75,3 +75,4 @@
 - [奇技淫巧](zh-cn/browser-side/javascript/js/奇技淫巧)
 
 - [面试题](zh-cn/browser-side/interview/)
+- [示例 DEMO](zh-cn/browser-side/demo/)

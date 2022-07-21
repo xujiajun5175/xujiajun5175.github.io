@@ -1,5 +1,4 @@
-# vue-router  <!-- {docsify-ignore} -->
-
+# vue-router <!-- {docsify-ignore} -->
 
 **文档更新日期: {docsify-updated}**
 
