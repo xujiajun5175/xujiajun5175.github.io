@@ -1,20 +1,6 @@
-- 前端
+- [前端](zh-cn/browser-side/)
 
-  - [HTML](zh-cn/browser-side/html/)
-  - [CSS](zh-cn/browser-side/css/)
-  - [JavaScript](zh-cn/browser-side/javascript/)
-  - [Vue](zh-cn/browser-side/vue/)
-  - [面试题](zh-cn/browser-side/面试题)
-
-- 后端
-
-  - [Java](zh-cn/server-side/java/basics/)
-  - [Spring](zh-cn/server-side/java/spring/)
-  - [Spring Boot](zh-cn/jserver-side/ava/springboot/01.md)
-  - [Spring Security](zh-cn/server-side/java/springsecurity/springsecurity.md)
-  - [Mybatis](zh-cn/server-side/java/mybatis/mybatis.md)
-  - [Mybatis-PLus](zh-cn/server-side/java/mybatis/mybatisPlus.md)
-  - [MySQL](zh-cn/server-side/mysql/)
+- [后端](zh-cn/server-side/)
 
 - 示例
 
@@ -23,6 +9,7 @@
   - [java](zh-cn/demo/java.md)
 
 - 开发工具
+
   - [git](zh-cn/dev-utils/git/)
 
 - 项目

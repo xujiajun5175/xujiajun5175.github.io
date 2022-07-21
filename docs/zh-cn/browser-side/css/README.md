@@ -78,7 +78,7 @@ CSS注释以 "`/*`" 开始, 以 "`*/`" 结束
 
 ## 2.CSS 选择器
 
-参考[CSS3 选择器](zh-cn/browser-side/css/css3-选择器)
+参考[CSS3 选择器](zh-cn/browser-side/css/css3/css3-选择器)
 
 ## 3.CSS 创建
 
