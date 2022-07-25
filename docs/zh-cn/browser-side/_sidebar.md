@@ -13,6 +13,8 @@
     - [Flex 布局 基础](zh-cn/browser-side/css/flex/flex1)
     - [Flex 布局 实例](zh-cn/browser-side/css/flex/flex2)
 
+  - **扩展**
+    - [CSS 盒子模型](zh-cn/browser-side/css/other/CSS-盒子模型)
 - **JavaScript**
 
   - [JavaScript 简介](zh-cn/browser-side/javascript/js/)

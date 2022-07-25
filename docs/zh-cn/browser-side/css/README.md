@@ -524,7 +524,7 @@ p {
 
 ## CSS 链接
 
-#### 链接样式
+### 链接样式
 
 不同的链接可以有不同的样式。
 
@@ -563,9 +563,9 @@ a:active {
 
 ---
 
-#### 常见的链接样式
+### 常见的链接样式
 
-##### 文本修饰
+#### 文本修饰
 
 `text-decoration` 属性主要用于删除链接中的下划线：
 
@@ -584,7 +584,7 @@ a:active {
 }
 ```
 
-##### 背景颜色
+#### 背景颜色
 
 背景颜色属性指定链接背景色：
 
@@ -603,7 +603,7 @@ a:active {
 }
 ```
 
-##### 鼠标形状
+#### 鼠标形状
 
 常用鼠标形状如下所示：
 
@@ -626,7 +626,7 @@ a:hover {
 
 ---
 
-#### 实例
+### 实例
 
 [添加不同样式的超链接](https://www.w3cschool.cn/tryrun/showhtml/trycss_link2)
 
@@ -770,16 +770,6 @@ a:hover {
 
 ## CSS 列表
 
-CSS 列表属性作用如下：
-
-- 设置不同的列表项标记为有序列表
-- 设置不同的列表项标记为无序列表
-- 设置列表项标记为图像
-
----
-
-#### 列表
-
 在 HTML 中，有两种类型的列表:
 
 - 无序列表 - 列表项的标记使用特殊图形（如小黑点、小方框等）
@@ -789,7 +779,7 @@ CSS 列表属性作用如下：
 
 ---
 
-#### 不同的列表项标记
+### 不同的列表项标记
 
 `list-style-type` 属性指定列表项标记的类型是：
 
@@ -825,7 +815,7 @@ ol.d {
 
 ---
 
-#### 作为列表项标记的图像
+### 作为列表项标记的图像
 
 要指定列表项标记的图像，使用列表样式图像属性：
 
@@ -844,7 +834,7 @@ ul {
 
 ---
 
-#### 浏览器兼容性解决方案
+### 浏览器兼容性解决方案
 
 同样在所有的浏览器，下面的例子会显示的图像标记：
 
@@ -891,7 +881,7 @@ ul {
 
 ---
 
-#### 列表 -简写属性
+### 列表 -简写属性
 
 在单个属性中可以指定所有的列表属性。这就是所谓的简写属性。
 
@@ -913,7 +903,7 @@ ul {
 
 ---
 
-#### 实例
+### 实例
 
 所有不同的列表标记
 
@@ -1133,7 +1123,7 @@ ul {
 
 ---
 
-#### 所有的 CSS 列表属性
+### 所有属性
 
 | 属性                                                                        | 描述                                               |
 | :-------------------------------------------------------------------------- | :------------------------------------------------- |
@@ -1141,3 +1131,566 @@ ul {
 | [list-style-image](zh-cn/browser-side/css/css3-属性#list-style-image)       | 将图象设置为列表项标志。                           |
 | [list-style-position](zh-cn/browser-side/css/css3-属性#list-style-position) | 设置列表中列表项标志的位置。                       |
 | [list-style-type](zh-cn/browser-side/css/css3-属性#list-style-type)         | 设置列表项标志的类型。                             |
+
+---
+
+## CSS 表格
+
+### 表格边框
+
+指定 CSS 表格边框，使用 `border` 属性。
+
+下面的例子指定了一个表格的 `th` 和 `td` 元素的黑色边框：
+
+```css
+table, th, td
+{ border: 1px solid black; }
+```
+
+!> 请注意，在上面的例子中的表格有双边框。这是因为表和 `th / td` 元素有独立的边界。<br>为了显示一个表的单个边框，使用 `border-collapse`属性。
+
+---
+
+### 折叠边框
+
+`border-collapse` 属性设置表格的边框是否被折叠成一个单一的边框或隔开：
+
+```css
+table
+{ border-collapse:collapse; }
+table,th, td { border: 1px solid black; }
+```
+
+---
+
+### 表格宽度和高度
+
+`width` 和`height` 属性定义表格的宽度和高度。
+
+下面的例子是设置 100％ 的宽度，50 像素的 th 元素的高度的表格：
+
+```css
+table
+{ width:100%; }
+th { height:50px; }
+```
+
+---
+
+### 表格文字对齐
+
+表格中的文本对齐和垂直对齐属性。
+
+text-align 属性设置水平对齐方式，像左，右，或中心：
+
+```css
+td
+{ text-align:right; }
+```
+
+垂直对齐属性设置垂直对齐，比如顶部，底部或中间：
+
+```css
+td
+{ height:50px; vertical-align:bottom; }
+```
+
+---
+
+### 表格填充
+
+如果在表的内容中控制空格之间的边框，应使用 td 和 th 元素的填充属性：
+
+```css
+td
+{ padding:15px; }
+```
+
+---
+
+#### 表格颜色
+
+下面的例子指定边框的颜色，和 th 元素的文本和背景颜色：
+
+```css
+table, td, th
+{ border:1px solid green; }
+th
+{ background-color:green; color:white; }
+```
+
+---
+
+### 更多实例
+
+[制作一个个性表格](https://www.w3cschool.cn/tryrun/showhtml/trycss_table_fancy)
+这个例子演示了如何创建一个个性的表格。
+
+[设置表格标题的位置](https://www.w3cschool.cn/tryrun/showhtml/trycss_table_caption-side)
+这个例子演示了如何定位表格标题。
+
+[指定表格的宽度和高度](https://www.w3cschool.cn/tryrun/showhtml/trycss_table_width)
+
+这个例子演示了如何指定表格的高度与宽度。
+
+---
+
+## CSS 盒子模型
+
+**CSS Box Model (盒子模型)**
+
+**所有 HTML 元素可以看作盒子，在 CSS 中，"box model "这一术语是用来设计和布局时使用。**
+
+CSS 盒模型本质上是一个盒子，封装周围的 HTML 元素，它包括：边距，边框，填充，和实际内容。
+
+盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。
+
+下面的图片说明了盒子模型 (Box Model)：
+
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/WsaSki000box-model.gif)
+
+不同部分的说明：
+
+- **[Margin(外边距)](#css-外边距)** - 清除边框区域。Margin 没有背景颜色，它是完全透明
+- **[Border（边框）](#css-边框)** - 边框周围的填充和内容。边框是受到盒子的背景颜色影响
+- **[Padding（内边距）](css-内边距)** - 清除内容周围的区域。会受到框中填充的背景颜色影响
+- **Content（内容）** - 盒子的内容，显示文本和图像
+
+?> **提示：**在盒模型中，外边距可以是负值，而且在很多情况下都要使用负值的外边距。
+
+> 扩展: [CSS盒子模型](zh-cn/browser-side/css/other/CSS-盒子模型.md)
+
+---
+
+## CSS 边框
+
+CSS 边框 (border) 可以是围绕元素内容和内边距的一条或多条线，对于这些线条，您可以自定义它们的样式、宽度以及颜色。使用 CSS 边框属性，我们可以创建出比 HTML 中更加优秀的效果。
+
+<div style="width:93%;border:10px groove #98bf21;padding:8px">
+     <h2>CSS 边框属性</h2>
+    <p>CSS边框属性允许你指定一个元素边框的样式和颜色。</p>
+</div>
+
+---
+
+### 边框样式
+
+边框样式属性指定要显示什么样的边界。
+
+**border-style**属性用来定义边框的样式
+
+#### border-style 值
+
+<p style="border: 1px none #000000;padding:3px">none: 默认无边框</p>
+
+<p style="border: 1px dotted #000000;padding:3px">dotted: 定义一个点线框</p>
+
+<p style="border: 1px dashed #000000;padding:3px">dashed: 定义一个虚线框</p>
+
+<p style="border: 1px solid #000000;padding:3px">solid: 定义实线边界</p>
+
+<p style="border: 3px double #000000;padding:3px">double: 定义两个边界。 两个边界的宽度和border-width的值相同</p>
+
+<p style="border: 5px groove #98bf21;padding:3px">groove: 定义3D沟槽边界。效果取决于边界的颜色值</p>
+
+<p style="border: 5px ridge #98bf21;padding:3px">ridge: 定义3D脊边界。效果取决于边界的颜色值</p>
+
+<p style="border: 5px inset #98bf21;padding:3px">inset:定义一个3D的嵌入边框。效果取决于边界的颜色值</p>
+
+<p style="border: 5px outset #98bf21;padding:3px">outset: 定义一个3D突出边框。 效果取决于边界的颜色值</p>
+
+```css
+<style>
+    p.none {border-style:none;}
+    p.dotted {border-style:dotted;}
+    p.dashed {border-style:dashed;}
+    p.solid {border-style:solid;}
+    p.double {border-style:double;}
+    p.groove {border-style:groove;}
+    p.ridge {border-style:ridge;}
+    p.inset {border-style:inset;}
+    p.outset {border-style:outset;}
+    p.hidden {border-style:hidden;}
+</style>
+```
+
+---
+
+### 边框宽度
+
+您可以通过 border-width 属性为边框指定宽度。
+
+为边框指定宽度有两种方法：可以指定长度值，比如 2px 或 0.1em；或者使用 3 个关键字之一，它们分别是 thin 、medium（默认值） 和 thick。
+
+!> **注意：**CSS 没有定义 3 个关键字的具体宽度，所以一个用户代理可能把 thin 、medium 和 thick 分别设置为等于 5px、3px 和 2px，而另一个用户代理则分别设置为 3px、2px 和 1px。
+
+```css
+p.one
+{
+border-style:solid;
+border-width:5px;
+}
+p.two
+{
+border-style:solid;
+border-width:medium;
+}
+```
+
+!> **注意:** "border-width" 属性 如果单独使用则不起作用. 要先使用 "border-style" 属性来设置 borders .
+
+---
+
+### 边框颜色
+
+border-color 属性用于设置边框的颜色，它一次可以接受最多 4 个颜色值。可以设置的颜色：
+
+- name - 指定颜色的名称，如 "red"
+- RGB - 指定 RGB 值, 如 "rgb(255,0,0)"
+- Hex - 指定16进制值, 如 "#ff0000"
+
+您还可以设置边框的颜色为"transparent"。
+
+!> **注意：** border-color 单独使用是不起作用的，必须得先使用 border-style 来设置边框样式。
+
+```css
+p.one
+{
+border-style:solid;
+border-color:red;
+}
+p.two
+{
+border-style:solid;
+border-color:#98bf21;
+}
+```
+
+---
+
+### 边框-单独设置各边
+
+在 CSS 中，可以指定不同的侧面不同的边框：
+
+```css
+p
+{
+border-top-style:dotted;
+border-right-style:solid;
+border-bottom-style:dotted;
+border-left-style:solid;
+}
+```
+
+等价于
+
+```css
+border-style:dotted solid;
+```
+
+border-style 属性可以有 1-4 个值：
+
+- border-style:dotted solid double dashed;
+  - 上边框是 dotted
+  - 右边框是 solid
+  - 底边框是 double
+  - 左边框是 dashed
+- border-style:dotted solid double;
+  - 上边框是 dotted
+  - 左、右边框是 solid
+  - 底边框是 double
+- border-style:dotted solid;
+  - 上、底边框是 dotted
+  - 左、右边框是 solid
+- border-style:dotted;
+  - 四面边框是 dotted
+
+上面的例子用了 border-style。然而，它也可以和 border-width 、 border-color 一起使用。
+
+---
+
+### 透明边框
+
+CSS2 引入了边框颜色值 transparent，这个值用于创建有宽度的不可见边框。
+
+透明样式的定义如下：
+
+```css
+a:link, a:visited {
+
+border-style: solid; border-width: 5px; border-color: transparent;
+
+} a:hover {border-color: gray;}
+```
+
+利用 transparent，使用边框就像是额外的内边距一样；此外还有一个好处，就是能在你需要的时候使其可见。这种透明边框相当于内边距，因为元素的背景会延伸到边框区域（如果有可见背景的话）。
+
+---
+
+### 边框-简写属性
+
+上面的例子用了很多属性来设置边框。
+
+你也可以在一个属性中设置边框。
+
+你可以在"border"属性中设置：
+
+- border-width
+- border-style (required)
+- border-color
+
+```css
+border:5px solid red;
+```
+
+---
+
+### 更多实例
+
+[所有边框属性在一个声明之中](https://www.w3cschool.cn/tryrun/showhtml/trycss_border-top)
+本例演示用简写属性来将所有四个边框属性设置于同一声明中。
+
+[设置下边框的样式](https://www.w3cschool.cn/tryrun/showhtml/trycss_border-bottom-style)
+本例演示如何设置下边框的样式。
+
+[设置左边框的宽度](https://www.w3cschool.cn/tryrun/showhtml/trycss_border-left-width)
+本例演示如何设置左边框的宽度。
+
+[设置四个边框的颜色](https://www.w3cschool.cn/tryrun/showhtml/trycss_border-color)
+本例演示如何设置四个边框的颜色。可以设置一到四个颜色。
+
+[设置右边框的颜色](https://www.w3cschool.cn/tryrun/showhtml/trycss_border-right-color)
+本例演示如何设置右边框的颜色。
+
+---
+
+### CSS 边框属性
+
+| 属性                                                         | 描述                                                         |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [border](zh-cn/browser-side/css/css3-属性#border)     | 简写属性，用于把针对四个边的属性设置在一个声明。             |
+| [border-style](zh-cn/browser-side/css/css3-属性#border-style) | 用于设置元素所有边框的样式，或者单独地为各边设置边框样式。   |
+| [border-width](zh-cn/browser-side/css/css3-属性#border-width) | 简写属性，用于为元素的所有边框设置宽度，或者单独地为各边边框设置宽度。 |
+| [border-color](zh-cn/browser-side/css/css3-属性#border-color) | 简写属性，设置元素的所有边框中可见部分的颜色，或为 4 个边分别设置颜色。 |
+| [border-bottom](zh-cn/browser-side/css/css3-属性#border-bottom) | 简写属性，用于把下边框的所有属性设置到一个声明中。           |
+| [border-bottom-color](zh-cn/browser-side/css/css3-属性#border-bottom-color) | 设置元素的下边框的颜色。                                     |
+| [border-bottom-style](zh-cn/browser-side/css/css3-属性#border-bottom-style) | 设置元素的下边框的样式。                                     |
+| [border-bottom-width](zh-cn/browser-side/css/css3-属性#border-bottom-width) | 设置元素的下边框的宽度。                                     |
+| [border-left](zh-cn/browser-side/css/css3-属性#border-left) | 简写属性，用于把左边框的所有属性设置到一个声明中。           |
+| [border-left-color](zh-cn/browser-side/css/css3-属性#border-left-color) | 设置元素的左边框的颜色。                                     |
+| [border-left-style](zh-cn/browser-side/css/css3-属性#border-left-style) | 设置元素的左边框的样式。                                     |
+| [border-left-width](zh-cn/browser-side/css/css3-属性#border-left-width) | 设置元素的左边框的宽度。                                     |
+| [border-right](zh-cn/browser-side/css/css3-属性#border-right) | 简写属性，用于把右边框的所有属性设置到一个声明中。           |
+| [border-right-color](zh-cn/browser-side/css/css3-属性#border-right-color) | 设置元素的右边框的颜色。                                     |
+| [border-right-style](zh-cn/browser-side/css/css3-属性#border-right-style) | 设置元素的右边框的样式。                                     |
+| [border-right-width](zh-cn/browser-side/css/css3-属性#border-right-width) | 设置元素的右边框的宽度。                                     |
+| [border-top](zh-cn/browser-side/css/css3-属性#border-top) | 简写属性，用于把上边框的所有属性设置到一个声明中。           |
+| [border-top-color](zh-cn/browser-side/css/css3-属性#border-top-color) | 设置元素的上边框的颜色。                                     |
+| [border-top-style](zh-cn/browser-side/css/css3-属性#border-top-style) | 设置元素的上边框的样式。                                     |
+| [border-top-width](zh-cn/browser-side/css/css3-属性#border-top-width) | 设置元素的上边框的宽度。                                     |
+
+---
+
+## CSS 轮廓
+
+### **Outlines**
+
+轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+
+轮廓（outline）属性指定了样式，颜色和外边框的宽度。
+
+轮廓（outline）属性的位置让它不像边框那样参与到文档流中，因此轮廓出现或消失时不会影响文档流，即不会导致文档的重新显示。
+
+---
+
+### 轮廓（outline）实例
+
+[在元素周围画线](https://www.w3cschool.cn/tryrun/showhtml/trycss_outline)
+本例演示使用outline属性在元素周围画一条线。.
+
+[设置轮廓的样式](https://www.w3cschool.cn/tryrun/showhtml/trycss_outline-style)
+本例演示如何设置轮廓的样式。
+
+[设置轮廓的颜色](https://www.w3cschool.cn/tryrun/showhtml/trycss_outline-color)
+本例演示如何设置轮廓的颜色。
+
+[设置轮廓的宽度](https://www.w3cschool.cn/tryrun/showhtml/trycss_outline-width)
+本例演示如何设置轮廓的宽度。
+
+---
+
+### CSS 轮廓（outline）
+
+轮廓（outline）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+
+CSS outline 属性规定元素轮廓的样式、颜色和宽度。
+
+![Outline](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/jKGZPf000box_outline.gif)
+
+---
+
+### 所有 CSS 轮廓（outline）属性
+
+"CSS" 列中的数字表示哪个 CSS 版本定义了该属性 ( CSS1 或者 CSS2 )。
+
+| 属性                                                         | 说明                             | 值                                                           | CSS  |
+| :----------------------------------------------------------- | :------------------------------- | :----------------------------------------------------------- | :--- |
+| [outline](zh-cn/browser-side/css/css3-属性#outline) | 在一个声明中设置所有的外边框属性 | *outline-color outline-style outline-width*inherit          | 2    |
+| [outline-offset](zh-cn/browser-side/css/css3-属性#outline-offset) | outline-offset属性设置轮廓框架在 border 边缘外的偏移 | *length* inherit          | 2    |
+| [outline-color](zh-cn/browser-side/css/css3-属性#outline-color) | 设置外边框的颜色                 | *color-name hex-number rgb-number*invert inherit            | 2    |
+| [outline-style](zh-cn/browser-side/css/css3-属性#outline-style) | 设置外边框的样式                 | none dotted dashed solid double groove ridge inset outset inherit | 2    |
+| [outline-width](zh-cn/browser-side/css/css3-属性#outline-width) | 设置外边框的宽度                 | thin medium thick *length*inherit                           | 2    |
+
+---
+
+## CSS 外边距
+
+### CSS Margin(外边距)
+
+CSS Margin (外边距)属性定义元素周围的空间。
+
+CSS Margin 属性接受任何长度单位、百分数值甚至负值。
+
+---
+
+### Margin
+
+margin 清除周围的元素（外边框）的区域。margin 没有背景颜色，是完全透明的
+
+margin 可以单独改变元素的上，下，左，右边距。也可以一次改变所有的属性。
+
+### 可能的值
+
+| 值       | 说明                                        |
+| :------- | :------------------------------------------ |
+| auto     | 设置浏览器边距。 这样做的结果会依赖于浏览器 |
+| *length* | 定义一个固定的margin（使用像素，pt，em等）  |
+| *%*      | 定义一个使用百分比的边距                    |
+
+---
+
+## CSS 内边距
+
+### CSS Padding（填充/内边距）
+
+CSS Padding（填充）属性定义元素边框与元素内容之间的空间。
+
+------
+
+### Padding（填充/内边距）
+
+当元素的 Padding（填充）（内边距）被清除时，所"释放"的区域将会受到元素背景颜色的填充。
+
+单独使用填充属性可以改变上下左右的填充。缩写填充属性也可以使用，一旦改变一切都改变。
+
+### 可能的值
+
+| 值     | 说明                                |
+| :----- | :---------------------------------- |
+| length | 定义一个固定的填充(像素, pt, em,等) |
+| %      | 使用百分比值定义一个填充            |
+
+!> **提示：**CSS padding 属性可以使用长度值或百分比值，但与 margin 属性不同，它不允许使用负值。
+
+---
+
+### 内边距的百分比数值
+
+CSS padding 属性的百分比数值是相对于其父元素的 width 计算的，如果改变了父元素的 width，则它们也会改变。
+
+以下是将段落的内边距设置为父元素 width 的 20% 的示例：
+
+```css
+p {padding: 20%;}
+```
+
+假设一个段落的父元素是 div 元素，那么它的 padding 的 width 计算是根据 div 进行的：
+
+!> **注意：**上下内边距与左右内边距一致，即上下内边距的百分数会相对于父元素宽度设置，而不是相对于高度。
+
+---
+
+### 填充- 单边内边距属性
+
+在CSS中，它可以指定不同的侧面不同的填充：
+
+```css
+p.padding
+{
+ padding-top:25px;
+ padding-bottom:25px;
+ padding-right:50px;
+ padding-left:50px;
+}
+```
+
+---
+
+### 填充 - 简写属性
+
+为了缩短代码，它可以在一个属性中指定的所有填充属性。
+
+这就是所谓的缩写属性。所有的填充属性的缩写属性是"padding":
+
+```css
+padding:25px 50px;
+```
+
+Padding 属性，可以有一到四个值。
+
+**padding:25px 50px 75px 100px;**
+
+- 上填充为25px
+- 右填充为50px
+- 下填充为75px
+- 左填充为100px
+
+**padding:25px 50px 75px;**
+
+- 上填充为25px
+- 左右填充为50px
+- 下填充为75px
+
+**padding:25px 50px;**
+
+- 上下填充为25px
+- 左右填充为50px
+
+**padding:25px;**
+
+- 所有的填充都是25px
+
+---
+
+### 更多实例
+
+[在一个声明中的所有填充属性](https://www.w3cschool.cn/tryrun/showhtml/trycss_padding)
+这个例子演示了使用缩写属性设置在一个声明中的所有填充属性，可以有一到四个值。
+
+[设置左部填充](https://www.w3cschool.cn/tryrun/showhtml/trycss_padding-left)
+这个例子演示了如何设置元素左填充。
+
+[设置右部填充](https://www.w3cschool.cn/tryrun/showhtml/trycss_padding-right)
+这个例子演示了如何设置元素右填充。.
+
+[设置上部填充](https://www.w3cschool.cn/tryrun/showhtml/trycss_padding-top)
+这个例子演示了如何设置元素上填充。
+
+[设置下部填充](https://www.w3cschool.cn/tryrun/showhtml/trycss_padding-bottom)
+这个例子演示了如何设置元素下填充。
+
+---
+
+### 所有的CSS填充属性
+
+| 属性                                                         | 说明                                       |
+| :----------------------------------------------------------- | :----------------------------------------- |
+| [padding](zh-cn/browser-side/css/css3-属性#padding)          | 使用缩写属性设置在一个声明中的所有填充属性 |
+| [padding-bottom](zh-cn/browser-side/css/css3-属性#padding-bottom) | 设置元素的底部填充                         |
+| [padding-left](zh-cn/browser-side/css/css3-属性#padding-left) | 设置元素的左部填充                         |
+| [padding-right](zh-cn/browser-side/css/css3-属性#padding-right) | 设置元素的右部填充                         |
+| [padding-top](zh-cn/browser-side/css/css3-属性#padding-top) | 设置元素的顶部填充                         |
+
+---
+
+## CSS 分组和嵌套

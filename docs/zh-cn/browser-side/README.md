@@ -13,6 +13,8 @@
     - [Flex 布局 基础](zh-cn/browser-side/css/flex/flex1)
     - [Flex 布局 实例](zh-cn/browser-side/css/flex/flex2)
 
+  - **扩展**
+    - [CSS 盒子模型](zh-cn/browser-side/css/other/CSS-盒子模型)
 - **JavaScript**
 
   - [JavaScript 简介](zh-cn/browser-side/javascript/js/)
@@ -65,8 +67,8 @@
 
 - **vue**
   - [Vue2](zh-cn/browser-side/vue/vue2/)
-  - [vuex](zh-cn/vue/vuex)
-  - [vue-router](zh-cn/vue/vue-router)
+  - [vuex](zh-cn/browser-side/vue/vue2/vuex/)
+  - [vue-router](zh-cn/browser-side/vue/vue2/vue-router/)
   - [Vue3](zh-cn/browser-side/vue/vue3/)
 - **JS 库**
 
