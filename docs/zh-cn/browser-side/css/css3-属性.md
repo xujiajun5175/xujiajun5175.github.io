@@ -2107,6 +2107,251 @@ CSS 教程: [CSS Text](zh-cn/browser-side/css/README#CSS-文本)
 
 ---
 
+### outline
+
+#### 属性定义及使用说明
+
+outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
+
+outline简写属性在一个声明中设置所有的轮廓属性。
+
+可以设置的属性分别是（按顺序）：outline-color, outline-style, outline-width
+
+如果不设置其中的某个值，也不会出问题，比如 outline:solid #ff0000; 也是允许的。
+
+| 默认值：          | invert none medium                           |
+| :---------------- | -------------------------------------------- |
+| 继承：            | no                                           |
+| 版本：            | CSS2                                         |
+| JavaScript 语法： | *object*.style.outline="#0000FF dotted thin" |
+
+---
+
+#### 属性值
+
+| 值              | 描述                                                         |
+| :-------------- | :----------------------------------------------------------- |
+| *outline-color* | 规定边框的颜色。参阅：[outline-color](https://www.w3cschool.cn/cssref/pr-outline-color.html) 中可能的值。 |
+| *outline-style* | 规定边框的样式。参阅：[outline-style](https://www.w3cschool.cn/cssref/pr-outline-style.html) 中可能的值。 |
+| *outline-width* | 规定边框的宽度。参阅：[outline-width](https://www.w3cschool.cn/cssref/pr-outline-width.html) 中可能的值。 |
+| inherit         | 规定应该从父元素继承 outline 属性的设置。                    |
+
+---
+
+#### 相关文章
+
+CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
+
+---
+
+### outline-color
+
+#### 属性定义及使用说明
+
+outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围。
+
+outline-color属性指定轮廓颜色。
+
+**注意：** 请始终在 outline-color 属性之前声明 outline-style 属性。元素只有获得轮廓以后才能改变其轮廓的颜色。
+
+| 默认值：          | invert                                |
+| :---------------- | ------------------------------------- |
+| 继承：            | no                                    |
+| 版本：            | CSS2                                  |
+| JavaScript 语法： | *object*.style.outlineColor="#00FF00" |
+
+---
+
+#### 属性值
+
+| 值      | 描述                                                         |      |
+| :------ | :----------------------------------------------------------- | ---- |
+| *color* | 指定轮廓颜色。在[CSS颜色值](https://www.w3cschool.cn/cssref/css-colors-legal.html)寻找颜色值的完整列表。 |      |
+| invert  | 默认。执行颜色反转（逆向的颜色）。可使轮廓在不同的背景颜色中都是可见。 |      |
+| inherit | 规定应该从父元素继承轮廓颜色的设置。                         |      |
+
+---
+
+#### 相关文章
+
+CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
+
+---
+
+### outline-offset
+
+#### 属性定义及使用说明
+
+outline-offset属性设置轮廓框架在 border 边缘外的偏移
+
+Outlines在两个方面不同于边框：
+
+- Outlines 不占用空间
+- Outlines 可能非矩形
+
+| 默认值：          | 0                                   |
+| :---------------- | ----------------------------------- |
+| 继承：            | no                                  |
+| 版本：            | CSS3                                |
+| JavaScript 语法： | *object*.style.outlineOffset="15px" |
+
+---
+
+#### 语法
+
+```
+outline-offset: length|inherit:
+```
+
+| 值       | 描述                                         |
+| :------- | :------------------------------------------- |
+| *length* | 轮廓与边框边缘的距离。                       |
+| inherit  | 规定应从父元素继承 outline-offset 属性的值。 |
+
+---
+
+#### 相关文章
+
+CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓),[CSS3 用户界面](zh-cn/browser-side/css/css3/css3-用户界面)
+
+---
+
+### outline-style
+
+
+
+#### 属性定义及使用说明
+
+outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围。
+
+outline-style属性指定outline的样式。
+
+| 默认值：          | none                                 |
+| :---------------- | ------------------------------------ |
+| 继承：            | no                                   |
+| 版本：            | CSS2                                 |
+| JavaScript 语法： | *object*.style.outlineStyle="dotted" |
+
+---
+
+#### 提示和注释
+
+outline是围绕元素。它是围绕元素的边距。但是，它是来自不同的边框属性。
+
+!> outline不是元素尺寸的一部分，因此元素的宽度和高度属性不包含轮廓的宽度。
+
+------
+
+#### 属性值
+
+| 值      | 描述                                                |
+| :------ | :-------------------------------------------------- |
+| none    | 默认。定义无轮廓。                                  |
+| dotted  | 定义点状的轮廓。                                    |
+| dashed  | 定义虚线轮廓。                                      |
+| solid   | 定义实线轮廓。                                      |
+| double  | 定义双线轮廓。双线的宽度等同于 outline-width 的值。 |
+| groove  | 定义 3D 凹槽轮廓。此效果取决于 outline-color 值。   |
+| ridge   | 定义 3D 凸槽轮廓。此效果取决于 outline-color 值。   |
+| inset   | 定义 3D 凹边轮廓。此效果取决于 outline-color 值。   |
+| outset  | 定义 3D 凸边轮廓。此效果取决于 outline-color 值。   |
+| inherit | 规定应该从父元素继承轮廓样式的设置。                |
+
+---
+
+#### 更多实例
+
+[设置outline的样式](https://www.w3cschool.cn/tryrun/showhtml/trycss_outline-style)
+这个例子演示了如何设置outline的样式。
+
+------
+
+#### 相关文章
+
+CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
+
+---
+
+### outline-width
+
+#### 属性定义及使用说明
+
+outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围。
+
+outline-width指定轮廓的宽度。
+
+**注意：** 请始终在outline-wicth属性之前声明outline-style属性。元素只有获得轮廓以后才能改变其轮廓的宽度。
+
+| 默认值：          | medium                             |
+| :---------------- | ---------------------------------- |
+| 继承：            | no                                 |
+| 版本：            | CSS2                               |
+| JavaScript 语法： | *object*.style.outlineWidth="thin" |
+
+---
+
+#### 提示和注释
+
+outline是围绕元素。它是围绕元素的边距。但是，它是来自不同的边框属性。
+
+outline不是元素尺寸的一部分，因此元素的宽度和高度属性不包含轮廓的宽度。
+
+---
+
+
+
+#### 属性值
+
+| 值       | 描述                                 |
+| :------- | :----------------------------------- |
+| thin     | 规定细轮廓。                         |
+| medium   | 默认。规定中等的轮廓。               |
+| thick    | 规定粗的轮廓。                       |
+| *length* | 允许您规定轮廓粗细的值。             |
+| inherit  | 规定应该从父元素继承轮廓宽度的设置。 |
+
+---
+
+#### 相关文章
+
+CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
+
+---
+
+### padding
+
+//todo
+
+---
+
+#### 相关文章
+
+CSS 教程: [CSS 内边距](zh-cn/browser-side/css/README#CSS-内边距)
+
+---
+
+### padding-bottom
+
+### padding-left
+
+### padding-right
+
+### padding-top
+
+//todo
+
+---
+
+#### 相关文章
+
+CSS 教程: [CSS 内边距](zh-cn/browser-side/css/README#CSS-内边距)
+
+---
+
+### 
+
+
+
 ### text-decoration
 
 #### 属性定义及使用说明
@@ -2275,217 +2520,6 @@ text-transform 属性控制文本的大小写。
 #### 相关文章
 
 CSS 教程: [CSS Text](zh-cn/browser-side/css/README#CSS-文本)
-
----
-
-### outline
-
-#### 属性定义及使用说明
-
-outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用。
-
-outline简写属性在一个声明中设置所有的轮廓属性。
-
-可以设置的属性分别是（按顺序）：outline-color, outline-style, outline-width
-
-如果不设置其中的某个值，也不会出问题，比如 outline:solid #ff0000; 也是允许的。
-
-| 默认值：          | invert none medium                           |
-| :---------------- | -------------------------------------------- |
-| 继承：            | no                                           |
-| 版本：            | CSS2                                         |
-| JavaScript 语法： | *object*.style.outline="#0000FF dotted thin" |
-
----
-
-#### 属性值
-
-| 值              | 描述                                                         |
-| :-------------- | :----------------------------------------------------------- |
-| *outline-color* | 规定边框的颜色。参阅：[outline-color](https://www.w3cschool.cn/cssref/pr-outline-color.html) 中可能的值。 |
-| *outline-style* | 规定边框的样式。参阅：[outline-style](https://www.w3cschool.cn/cssref/pr-outline-style.html) 中可能的值。 |
-| *outline-width* | 规定边框的宽度。参阅：[outline-width](https://www.w3cschool.cn/cssref/pr-outline-width.html) 中可能的值。 |
-| inherit         | 规定应该从父元素继承 outline 属性的设置。                    |
-
----
-
-#### 相关文章
-
-CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
-
----
-
-### outline-color
-
-#### 属性定义及使用说明
-
-outline （轮廓）是绘制于元素周围的一条线，位于边框边缘的外围。
-
-outline-color属性指定轮廓颜色。
-
-**注意：** 请始终在 outline-color 属性之前声明 outline-style 属性。元素只有获得轮廓以后才能改变其轮廓的颜色。
-
-| 默认值：          | invert                                |
-| :---------------- | ------------------------------------- |
-| 继承：            | no                                    |
-| 版本：            | CSS2                                  |
-| JavaScript 语法： | *object*.style.outlineColor="#00FF00" |
-
----
-
-#### 属性值
-
-| 值      | 描述                                                         |      |
-| :------ | :----------------------------------------------------------- | ---- |
-| *color* | 指定轮廓颜色。在[CSS颜色值](https://www.w3cschool.cn/cssref/css-colors-legal.html)寻找颜色值的完整列表。 |      |
-| invert  | 默认。执行颜色反转（逆向的颜色）。可使轮廓在不同的背景颜色中都是可见。 |      |
-| inherit | 规定应该从父元素继承轮廓颜色的设置。                         |      |
-
----
-
-#### 相关文章
-
-CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
-
----
-
-## outline-offset
-
-#### 属性定义及使用说明
-
-outline-offset属性设置轮廓框架在 border 边缘外的偏移
-
-Outlines在两个方面不同于边框：
-
-- Outlines 不占用空间
-- Outlines 可能非矩形
-
-| 默认值：          | 0                                   |
-| :---------------- | ----------------------------------- |
-| 继承：            | no                                  |
-| 版本：            | CSS3                                |
-| JavaScript 语法： | *object*.style.outlineOffset="15px" |
-
----
-
-#### 语法
-
-```
-outline-offset: length|inherit:
-```
-
-| 值       | 描述                                         |
-| :------- | :------------------------------------------- |
-| *length* | 轮廓与边框边缘的距离。                       |
-| inherit  | 规定应从父元素继承 outline-offset 属性的值。 |
-
----
-
-#### 相关文章
-
-CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓),[CSS3 用户界面](zh-cn/browser-side/css/css3/css3-用户界面)
-
----
-
-### outline-style
-
-
-
-#### 属性定义及使用说明
-
-outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围。
-
-outline-style属性指定outline的样式。
-
-| 默认值：          | none                                 |
-| :---------------- | ------------------------------------ |
-| 继承：            | no                                   |
-| 版本：            | CSS2                                 |
-| JavaScript 语法： | *object*.style.outlineStyle="dotted" |
-
----
-
-#### 提示和注释
-
-outline是围绕元素。它是围绕元素的边距。但是，它是来自不同的边框属性。
-
-!> outline不是元素尺寸的一部分，因此元素的宽度和高度属性不包含轮廓的宽度。
-
-------
-
-#### 属性值
-
-| 值      | 描述                                                |
-| :------ | :-------------------------------------------------- |
-| none    | 默认。定义无轮廓。                                  |
-| dotted  | 定义点状的轮廓。                                    |
-| dashed  | 定义虚线轮廓。                                      |
-| solid   | 定义实线轮廓。                                      |
-| double  | 定义双线轮廓。双线的宽度等同于 outline-width 的值。 |
-| groove  | 定义 3D 凹槽轮廓。此效果取决于 outline-color 值。   |
-| ridge   | 定义 3D 凸槽轮廓。此效果取决于 outline-color 值。   |
-| inset   | 定义 3D 凹边轮廓。此效果取决于 outline-color 值。   |
-| outset  | 定义 3D 凸边轮廓。此效果取决于 outline-color 值。   |
-| inherit | 规定应该从父元素继承轮廓样式的设置。                |
-
----
-
-#### 更多实例
-
-[设置outline的样式](https://www.w3cschool.cn/tryrun/showhtml/trycss_outline-style)
-这个例子演示了如何设置outline的样式。
-
-------
-
-#### 相关文章
-
-CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
-
----
-
-### outline-width
-
-#### 属性定义及使用说明
-
-outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围。
-
-outline-width指定轮廓的宽度。
-
-**注意：** 请始终在outline-wicth属性之前声明outline-style属性。元素只有获得轮廓以后才能改变其轮廓的宽度。
-
-| 默认值：          | medium                             |
-| :---------------- | ---------------------------------- |
-| 继承：            | no                                 |
-| 版本：            | CSS2                               |
-| JavaScript 语法： | *object*.style.outlineWidth="thin" |
-
----
-
-#### 提示和注释
-
-outline是围绕元素。它是围绕元素的边距。但是，它是来自不同的边框属性。
-
-outline不是元素尺寸的一部分，因此元素的宽度和高度属性不包含轮廓的宽度。
-
----
-
-
-
-#### 属性值
-
-| 值       | 描述                                 |
-| :------- | :----------------------------------- |
-| thin     | 规定细轮廓。                         |
-| medium   | 默认。规定中等的轮廓。               |
-| thick    | 规定粗的轮廓。                       |
-| *length* | 允许您规定轮廓粗细的值。             |
-| inherit  | 规定应该从父元素继承轮廓宽度的设置。 |
-
----
-
-#### 相关文章
-
-CSS 教程: [CSS 轮廓](zh-cn/browser-side/css/README#CSS-轮廓)
 
 ---
 
