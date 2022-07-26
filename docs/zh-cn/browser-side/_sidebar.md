@@ -7,6 +7,7 @@
   - [CSS](zh-cn/browser-side/css/)
   - [CSS3](zh-cn/browser-side/css/css3/)
     - [CSS3 选择器](zh-cn/browser-side/css/css3/css3-选择器)
+    - [CSS3 用户界面](zh-cn/browser-side/css/css3/css3-用户界面)
   - [CSS 属性](zh-cn/browser-side/css/css3-属性)
 
   - **Flex 布局**
@@ -15,6 +16,7 @@
 
   - **扩展**
     - [CSS 盒子模型](zh-cn/browser-side/css/other/CSS-盒子模型)
+    - [CSS 伪元素和伪类](zh-cn/browser-side/css/other/CSS-伪元素和伪类)
 - **JavaScript**
 
   - [JavaScript 简介](zh-cn/browser-side/javascript/js/)

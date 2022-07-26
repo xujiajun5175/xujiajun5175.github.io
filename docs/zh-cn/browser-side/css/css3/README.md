@@ -9,7 +9,7 @@ CSS3被拆分为"模块"。旧规范已拆分成小块，还增加了新的规�
 
 一些最重要CSS3模块如下：
 
-- [选择器](zh-cn/browser-side/css/css3-选择器)
+- [选择器](zh-cn/browser-side/css/css3/css3-选择器)
 
 - 盒模型
 
@@ -23,4 +23,4 @@ CSS3被拆分为"模块"。旧规范已拆分成小块，还增加了新的规�
 
 - 多列布局
 
-- 用户界面
+- [用户界面](zh-cn/browser-side/css/css3/css3-用户界面)

@@ -1569,15 +1569,17 @@ margin 可以单独改变元素的上，下，左，右边距。也可以一次�
 
 ---
 
-//todo
+### 所有的CSS填充属性
+
+| 属性                                                         | 说明                                       |
+| :----------------------------------------------------------- | :----------------------------------------- |
+| [margin](zh-cn/browser-side/css/css3-属性#margin)          | 设置所有外边距属性 |
+| [margin-bottom](zh-cn/browser-side/css/css3-属性#margin-bottom) | 设置元素的下边距                         |
+| [margin-left](zh-cn/browser-side/css/css3-属性#margin-left) | 设置元素的左边距                         |
+| [margin-right](zh-cn/browser-side/css/css3-属性#margin-right) | 设置元素的右边距                         |
+| [margin-top](zh-cn/browser-side/css/css3-属性#margin-top) | 设置元素的上部边距                         |
 
 ---
-
-
-
-
-
-
 
 ## CSS 内边距
 
@@ -1703,4 +1705,644 @@ Padding 属性，可以有一到四个值。
 
 ---
 
-## CSS 分组和嵌套
+## CSS 尺寸
+
+CSS 尺寸 (Dimension) 属性允许你控制元素的高度和宽度。同样，它允许你增加行间距。
+
+### 更多实例
+
+[设置元素的高度](https://www.w3cschool.cn/tryrun/showhtml/trycss_dim_height)
+
+这个例子演示了如何设置不同元素的高度。
+
+[使用百分比设置图像的高度](https://www.w3cschool.cn/tryrun/showhtml/trycss_dim_height_percent)
+
+这个例子演示了如何使用百分比值设置元素的高度。
+
+[使用像素值来设置元素的宽度](https://www.w3cschool.cn/tryrun/showhtml/trycss_dim_width)
+
+本例演示如何使用像素值来设置元素的宽度。
+
+[设置元素的最大高度](https://www.w3cschool.cn/tryrun/showhtml/trycss_dim_max_height)
+
+此示例演示如何设置元素的最大高度。
+
+[使用百分比来设置元素的最大宽度](https://www.w3cschool.cn/tryrun/showhtml/trycss_dim_max-width_percent)
+
+本例演示如何使用百分比值来设置元素的最大宽度。
+
+[设置元素的最低高度](https://www.w3cschool.cn/tryrun/showhtml/trycss_dim_min-height)
+
+此示例演示如何设置元素的最小高度。
+
+[使用像素值设置元素的最小宽度](https://www.w3cschool.cn/tryrun/showhtml/trycss_dim_min-width)
+
+这个例子演示了如何使用像素值设置元素的最小宽度。
+
+---
+
+### 所有CSS 尺寸 (Dimension)属性
+
+| 属性                                                         | 描述                 |
+| :----------------------------------------------------------- | :------------------- |
+| [height](zh-cn/browser-side/css/css3-属性#height) | 设置元素的高度。     |
+| [line-height](zh-cn/browser-side/css/css3-属性#line-height) | 设置行高。           |
+| [max-height](zh-cn/browser-side/css/css3-属性#max-height) | 设置元素的最大高度。 |
+| [max-width](zh-cn/browser-side/css/css3-属性#max-width) | 设置元素的最大宽度。 |
+| [min-height](zh-cn/browser-side/css/css3-属性#min-height) | 设置元素的最小高度。 |
+| [min-width](zh-cn/browser-side/css/css3-属性#min-width) | 设置元素的最小宽度。 |
+| [width](zh-cn/browser-side/css/css3-属性#width)   | 设置元素的宽度。     |
+
+---
+
+## CSS 显示与可见性
+
+### CSS Display(显示) 与 Visibility（可见性）
+
+CSS display 属性和 visibility 属性都可以用来隐藏某个元素，但是这两个属性有不同的定义，请详细阅读以下内容。
+
+------
+
+### 隐藏元素 - display:none 或 visibility:hidden
+
+隐藏一个元素可以通过把 display 属性设置为"none"，或把 visibility 属性设置为"hidden"。
+
+!> 但是请注意，这两种方法会产生不同的结果。
+
+!> visibility:hidden 可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间
+
+- display:none 可以隐藏某个元素，且隐藏的元素不会占用任何空间。也就是说，该元素不但被隐藏了，而且该元素原本占用的空间也会从页面布局中消失。
+
+- visibility:hidden 可以隐藏某个元素，但隐藏的元素仍需占用与未隐藏之前一样的空间。也就是说，该元素虽然被隐藏了，但仍然会影响布局。
+
+---
+
+### CSS Display - 块和内联元素
+
+- 块元素是一个元素，占用了全部宽度，在前后都是换行符。
+
+- 内联元素只需要必要的宽度，不强制换行。
+
+---
+
+### 如何改变一个元素显示
+
+?> 可以更改内联元素为块元素，反之亦然
+
+下面的示例把列表项显示为内联元素：
+
+```css
+li{display:inline}
+```
+
+下面的示例把 span 元素作为块元素：
+
+```css
+span {display:block;}
+```
+
+!> **注意：**变更元素的显示类型看该元素是如何显示，它是什么样的元素。例如：一个内联元素设置为 display:block 是不允许有它内部的嵌套块元素。
+
+---
+
+### 所有CSS 尺寸 (Dimension)属性
+
+| 属性                                                      | 描述                       |
+| :-------------------------------------------------------- | :------------------------- |
+| [display](zh-cn/browser-side/css/css3-属性#display)       | 规定元素应该生成的框的类型 |
+| [visibility](zh-cn/browser-side/css/css3-属性#visibility) | 指定一个元素是否是可见的   |
+
+---
+
+## CSS 定位
+
+### CSS Positioning (定位)
+
+CSS position 属性，允许您将布局的一部分与另一部分重叠
+
+---
+
+<div style="width:98%;height:100px;position:relative">
+    <p style="position:absolute;top:0px;right:0px">定位有时很棘手！</p>
+    <div style="width:55%;height:60%;position:absolute;top:0px;left:0px;border:1px solid #c3c3c3;background-color:#e5eecc;padding:0px 10px;z-index:1;">
+         <h2>决定显示在前面的元素！</h2>
+    </div>
+    <div style="width:55%;height:60%;position:absolute;bottom:0px;right:0px;border:1px solid #c3c3c3;background-color:#e5eecc;padding:0px 10px;">
+         <h2 style="margin-top:25px">元素可以重叠！</h2>
+    </div>
+</div>
+
+---
+
+### Positioning (定位)
+
+CSS 定位属性允许你为一个元素定位。它也可以将一个元素放在另一个元素后面，并指定一个元素的内容太大时，应该发生什么。
+
+元素可以使用的顶部，底部，左侧和右侧属性定位。然而，这些属性无法工作，除非事先设定 position 属性。他们也有不同的工作方式，这取决于定位方法.
+
+?> 有四种不同的定位方法。
+
+---
+
+#### Static 定位
+
+HTML 元素的默认值，即没有定位，元素出现在正常的流中。
+
+静态定位的元素不会受到 top, bottom, left, right 影响。
+
+---
+
+#### Fixed 定位
+
+元素的位置相对于浏览器窗口是固定位置。
+
+即使窗口是滚动的它也不会移动：
+
+```css
+p.pos_fixed
+{
+position:fixed;
+top:30px;
+right:5px;
+}
+```
+
+Fixed 定位使元素的位置与文档流无关，因此不占据空间。
+
+Fixed 定位的元素和其他元素重叠。
+
+---
+
+#### Relative 定位
+
+相对定位元素的定位是相对其正常位置。
+
+```css
+h2.pos_left
+{
+position:relative;
+left:-20px;
+}
+h2.pos_right
+{
+position:relative;
+left:20px;
+}
+```
+
+?> 可以移动的相对定位元素的内容和相互重叠的元素，它原本所占的空间不会改变。
+
+?> 相对定位元素经常被用来作为绝对定位元素的容器块。
+
+---
+
+#### Absolute 定位
+
+绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于 \<html>:
+
+Absolutely 定位使元素的位置与文档流无关，因此不占据空间。
+
+Absolutely 定位的元素和其他元素重叠。
+
+---
+
+### 重叠的元素
+
+元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素
+
+z-index 属性指定了一个元素的堆叠顺序（哪个元素应该放在前面，或后面）
+
+一个元素可以有正数或负数的堆叠顺序：
+
+具有更高堆叠顺序的元素总是在较低的堆叠顺序元素的前面。
+
+!> **注意：** 如果两个定位元素重叠，没有指定 z - index，最后定位在 HTML 代码中的元素将被显示在最前面。
+
+---
+
+### 更多实例
+
+[裁剪元素的外形](https://www.w3cschool.cn/tryrun/showhtml/trycss_clip)
+
+此示例演示如何设置元素的外形。该元素被剪裁成这种形状，并显示出来。
+
+[如何使用滚动条来显示元素内溢出的内容](https://www.w3cschool.cn/tryrun/showhtml/trycss_overflow)
+
+这个例子演示了overflow属性创建一个滚动条，当一个元素的内容在指定的区域过大时如何设置以适应。
+
+[如何设置浏览器自动溢出处理](https://www.w3cschool.cn/tryrun/showhtml/trycss_pos_overflow_auto)
+
+这个例子演示了如何设置浏览器来自动处理溢出。
+
+[更改光标](https://www.w3cschool.cn/tryrun/showhtml/trycss_cursor)
+
+这个例子演示了如何改变光标。
+
+---
+
+### 所有的CSS定位属性
+
+"CSS" 列中的数字表示哪个CSS(CSS1 或者CSS2)版本定义了该属性。
+
+| 属性                                                         | 说明                                                         | 值                                                           | CSS  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :--- |
+| [bottom](zh-cn/browser-side/css/css3-属性#visibility) | 定义了定位元素下外边距边界与其包含块下边界之间的偏移。       | auto   length   inherit                                      | 2    |
+| [clip](zh-cn/browser-side/css/css3-属性#clip)     | 剪辑一个绝对定位的元素                                       | shape auto inherit                                         | 2    |
+| [cursor](zh-cn/browser-side/css/css3-属性#cursor) | 显示光标移动到指定的类型                                     | url auto crosshair default pointer move e-resize ne-resize nw-resize n-resize se-resize sw-resize s-resize w-resize text wait help | 2    |
+| [left](zh-cn/browser-side/css/css3-属性#left)     | 定义了定位元素左外边距边界与其包含块左边界之间的偏移。       | auto length inherit                                      | 2    |
+| [overflow](zh-cn/browser-side/css/css3-属性#overflow) | 设置当元素的内容溢出其区域时发生的事情。                     | auto hidden scroll visible inherit                           | 2    |
+| [position](zh-cn/browser-side/css/css3-属性#position) | 指定元素的定位类型                                           | absolute fixed relative static inherit                       | 2    |
+| [right](zh-cn/browser-side/css/css3-属性#right)   | 定义了定位元素右外边距边界与其包含块右边界之间的偏移。       | auto length inherit                                      | 2    |
+| [top](zh-cn/browser-side/css/css3-属性#top)       | 定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。 | auto length inherit                                      | 2    |
+| [z-index](zh-cn/browser-side/css/css3-属性#z-index) | 设置元素的堆叠顺序                                           | numberauto inherit                                        | 2    |
+
+---
+
+## CSS 浮动
+
+### CSS Float(浮动)
+
+CSS float 属性定义元素在哪个方向浮动，浮动元素会生成一个块级框，直到该块级框的外边缘碰到包含框或者其他的浮动框为止。
+
+!> CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。
+
+Float（浮动），往往是用于图像，但它在布局时一样非常有用。
+
+---
+
+### 元素怎样浮动
+
+元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。
+
+一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+
+浮动元素之后的元素将围绕它。
+
+浮动元素之前的元素将不会受到影响。
+
+如果图像是右浮动，下面的文本流将环绕在它左边：
+
+![image-20220726112102028](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/sRgVrt000image-20220726112102028.png)
+
+---
+
+### 彼此相邻的浮动元素
+
+如果你把几个浮动的元素放到一起，如果有空间的话，它们将彼此相邻。
+
+在这里，我们对图片廊使用 float 属性：
+
+![image-20220726112134245](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/ROMMHa000image-20220726112134245.png)
+
+---
+
+### 清除浮动 - 使用 clear
+
+元素浮动之后，周围的元素会重新排列，为了避免这种情况，使用 clear 属性。
+
+clear 属性指定元素两侧不能出现浮动元素。
+
+使用 clear 属性往文本中添加图片廊：
+
+![image-20220726112230952](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/fJdUl5000image-20220726112230952.png)
+
+---
+
+### 更多实例
+
+[为图像添加边框和边距并浮动到段落的右侧](https://www.w3cschool.cn/tryrun/showhtml/trycss_float2)
+
+让我们为图像添加边框和边距并浮动到段落的右侧
+
+[标题和图片向右侧浮动](https://www.w3cschool.cn/tryrun/showhtml/trycss_float3)
+
+让标题和图片向右侧浮动。
+
+[让段落的第一个字母浮动到左侧](https://www.w3cschool.cn/tryrun/showhtml/trycss_float4)
+
+改变样式，让段落的第一个字母浮动到左侧。
+
+[创建一个没有表格的网页](https://www.w3cschool.cn/tryrun/showhtml/trycss_float6)
+
+使用 float 创建一个网页页眉、页脚、左边的内容和主要内容。
+
+---
+
+### CSS 中所有的浮动属性
+
+"CSS" 列中的数字表示不同的 CSS 版本（CSS1 或 CSS2）定义了该属性。
+
+| 属性                                            | 描述                               | 值                           | CSS  |
+| :---------------------------------------------- | :--------------------------------- | :--------------------------- | :--- |
+| [clear](zh-cn/browser-side/css/css3-属性#clear) | 指定不允许元素周围有浮动元素。     | left right both none inherit | 1    |
+| [float](zh-cn/browser-side/css/css3-属性#float) | 指定一个盒子（元素）是否可以浮动。 | left right none inherit      | 1    |
+
+---
+
+## CSS 水平对齐
+
+### CSS 水平对齐 (Horizontal Align)
+
+关于 CSS 中元素的水平对齐 (Horizontal Align)，你可以使用多种属性来进行设置。
+
+---
+
+<div style="text-align:center">
+    <div style="border:1px solid gray;padding:2px 14px;margin-left:auto;margin-right:auto;width:45%;background-color:#e5eecc;text-align:left">
+         <h2>在CSS中，有几个属性用于元素水平对齐。</h2>
+    </div>
+</div>
+
+---
+
+#### 块元素对齐
+
+块元素是一个元素，占用了全宽，前后都是换行符。
+
+块元素的例子：
+
+- <h1>
+
+- <p>
+
+- <div>
+
+文本对齐，请参阅 [CSS文本](#css-文本) 章节。.
+
+在这一章中，我们会告诉你块元素如何水平对齐布局。
+
+---
+
+### 中心对齐,使用margin属性
+
+块元素可以把左，右页边距设置为"自动"对齐。
+
+margin属性可任意拆分为左，右页边距设置自动指定，结果都是出现居中元素：
+
+```css
+.center
+{
+margin-left:auto;
+margin-right:auto;
+width:70%;
+background-color:#b0e0e6;
+}
+```
+
+?>  **提示:** 如果宽度是 100％，对齐是没有效果的。
+
+---
+
+### 使用 position 属性设置左，右对齐
+
+元素对齐的方法之一是使用绝对定位：
+
+```css
+.right
+{
+position:absolute;
+right:0px;
+width:300px;
+background-color:#b0e0e6;
+}
+```
+
+!> **注意：**绝对定位与文档流无关，所以它们可以覆盖页面上的其它元素。
+
+---
+
+### 使用 float 属性设置左，右对齐
+
+使用 float 属性是对齐元素的方法之一：
+
+```css
+.right
+{
+float:right;
+width:300px;
+background-color:#b0e0e6;
+}
+```
+
+---
+
+### 使用 Padding 设置垂直居中对齐
+
+CSS 中一个简单的设置垂直居中对齐的方式就是头部顶部使用 padding:
+
+```css
+.center { padding: 70px 0; border: 3px solid green; }
+```
+
+如果要水平和垂直都居中，可以使用 padding 和 text-align: center:
+
+```css
+.center { padding: 70px 0; border: 3px solid green; text-align: center; }
+```
+
+---
+
+## CSS 组合选择符
+
+CSS 组合选择符可以让你直观的明白选择器与选择器之间的关系。
+
+CSS组合选择符包括各种简单选择符的组合方式。
+
+在 CSS3 中包含了四种组合方式:
+
+- 后代选取器(以空格分隔)
+- 子元素选择器(以大于号分隔）
+- 相邻兄弟选择器（以加号分隔）
+- 普通兄弟选择器（以波浪号分隔）
+
+---
+
+### 后代选取器
+
+后代选取器匹配所有指定元素的后代元素。
+
+以下实例选取所有 <p> 元素插入到 <div> 元素中:
+
+```css
+div p
+{
+background-color:yellow;
+}
+```
+
+---
+
+### 子元素选择器
+
+与后代选择器相比，子元素选择器（Child selectors）只能选择作为某元素子元素的元素。
+
+以下实例选择了<div>元素中所有直接子元素 <p> ：
+
+```css
+div>p
+{
+background-color:yellow;
+}
+```
+
+---
+
+### 相邻兄弟选择器
+
+相邻兄弟选择器（Adjacent sibling selector）可选择紧接在另一元素后的元素，且二者有相同父元素。
+
+如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器（Adjacent sibling selector）。
+
+以下实例选取了所有位于 <div> 元素后的第一个 <p> 元素:
+
+```js
+div+p
+{
+background-color:yellow;
+}
+```
+
+---
+
+### 普通相邻兄弟选择器
+
+```css
+div~p
+{
+background-color:yellow;
+}
+```
+
+---
+
+## CSS 伪类
+
+### CSS 伪类 (Pseudo-classes)
+
+CSS 伪类是用来添加一些选择器的特殊效果。
+
+由于状态的变化是非静态的，所以元素达到一个特定状态时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和 class 有些类似，但它是基于文档之外的抽象，所以叫伪类。
+
+---
+
+### 语法
+
+伪类的语法：
+
+```css
+selector:pseudo-class {property:value;}
+```
+
+CSS 类也可以使用伪类：
+
+```css
+selector.class:pseudo-class {property:value;}
+```
+
+---
+
+### anchor 伪类
+
+在支持 CSS 的浏览器中，链接的不同状态都可以以不同的方式显示
+
+```css
+a:link {color:#FF0000;} /* 未访问的链接 */
+a:visited {color:#00FF00;} /* 已访问的链接 */
+a:hover {color:#FF00FF;} /* 鼠标划过链接 */
+a:active {color:#0000FF;} /* 已选中的链接 */
+```
+
+!> **注意：** 在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。
+
+!> **注意：** 在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。
+
+!> **注意：**伪类的名称不区分大小写。
+
+---
+
+### 伪类和 CSS 类
+
+伪类可以与 CSS 类配合使用：
+
+```css
+a.red:visited {color:#FF0000;}
+
+<a class="red" href="css-syntax.html">CSS Syntax</a>
+```
+
+如果在上面的例子的链接已被访问，它会显示为红色。
+
+------
+
+### CSS - :first - child 伪类
+
+您可以使用 :first-child 伪类来选择元素的第一个子元素
+
+#### 匹配第一个\<p\> 元素
+
+```css
+p:first-child
+{
+color:blue;
+}
+```
+
+#### 匹配所有 \<p> 元素中的第一个 \<i> 元素
+
+```css
+p > i:first-child
+{
+color:blue;
+}
+```
+
+#### 匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素
+
+```css
+p:first-child i
+{
+color:blue;
+}
+```
+
+---
+
+### CSS - :lang 伪类
+
+:lang 伪类使你有能力为不同的语言定义特殊的规则
+
+![image-20220726145253436](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/VrXk1V000image-20220726145253436.png)
+
+---
+
+### 更多实例
+
+[为超链接添加不同样式](https://www.w3cschool.cn/tryrun/showhtml/trycss_link2)
+这个例子演示了如何为超链接添加其他样式。
+
+[使用 :focus](https://www.w3cschool.cn/tryrun/showhtml/trycss_link_focus)
+这个例子演示了如何使用 :focus 伪类。
+
+---
+
+### 所有CSS伪类/元素
+
+| 选择器                                                       | 示例           | 示例说明                                         |
+| :----------------------------------------------------------- | :------------- | :----------------------------------------------- |
+| [:link](zh-cn/browser-side/css/css3/css3-选择器#link选择器)       | a:link         | 选择所有未访问链接                               |
+| [:visited](zh-cn/browser-side/css/css3/css3-选择器#visited选择器) | a:visited      | 选择所有访问过的链接                             |
+| [:active](zh-cn/browser-side/css/css3/css3-选择器#active选择器)   | a:active       | 选择正在活动链接                                 |
+| [:hover](zh-cn/browser-side/css/css3/css3-选择器#hover选择器)     | a:hover        | 把鼠标放在链接上的状态                           |
+| [:focus](zh-cn/browser-side/css/css3/css3-选择器#focus选择器)     | input:focus    | 选择元素输入后具有焦点                           |
+| [:first-letter](zh-cn/browser-side/css/css3/css3-选择器#first-letter选择器) | p:first-letter | 选择每个<p> 元素的第一个字母                     |
+| [:first-line](zh-cn/browser-side/css/css3/css3-选择器#first-line选择器) | p:first-line   | 选择每个<p> 元素的第一行                         |
+| [:first-child](zh-cn/browser-side/css/css3/css3-选择器#lfirst-child选择器) | p:first-child  | 选择器匹配属于任意元素的第一个子元素的 <]p> 元素 |
+| [:before](zh-cn/browser-side/css/css3/css3-选择器#before选择器)   | p:before       | 在每个<p>元素之前插入内容                        |
+| [:after](zh-cn/browser-side/css/css3/css3-选择器#after选择器)     | p:after        | 在每个<p>元素之后插入内容                        |
+| [:lang(*language*)](zh-cn/browser-side/css/css3/css3-选择器#lang选择器) | p:lang(it)     | 为<p>元素的lang属性选择一个开始值                |
+
+---
+
+### 扩展阅读
+
+CSS 拾遗系列：[浅谈CSS中的伪元素和伪类](zh-cn/browser-side/css/other/CSS-伪元素和伪类)

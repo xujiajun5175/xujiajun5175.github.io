@@ -499,12 +499,6 @@ session可以接受原生接口
 
 <!-- tabs:end -->
 
-
-
-
-
-
-
 #### 介绍一下盒模型⭐⭐
 
 答：
@@ -517,8 +511,6 @@ IE盒模型又叫border-box，元素宽度/高度由content组成。
 （属性width,height包含border和padding，指的是content+padding+border。）
 PS：盒模型这个东西需要多理解。。。
 
-
-
 #### CSS中有哪些长度单位？⭐⭐
 
 1. 绝对长度单位：**px**
@@ -527,8 +519,6 @@ PS：盒模型这个东西需要多理解。。。
 4. 相对于根元素字体大小的单位: **rem**
 5. 相对于视口*宽度的百分比（100vw即视窗宽度的100%）: **vw**
 6. 相对于视口*高度的百分比（100vh即视窗高度的100%）: **vh**
-
-
 
 #### display:none和visibility:hidden的区别⭐
 
@@ -559,11 +549,7 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 
 ```
 
-
-
 <!-- tabs:end -->
-
-
 
 #### 用CSS实现高度为0.5像素的线条
 
@@ -585,22 +571,18 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 
 ```
 
-
-
 #### 用CSS 实现三角形
 
 向上
 
 ```css
                 width:0;
-                height:0;   
-                border-left:30px solid transparent;   
-                border-right:30px solid transparent;   
+                height:0;
+                border-left:30px solid transparent;
+                border-right:30px solid transparent;
                 border-bottom:30px solid red;
 
 ```
-
-
 
 #### 伪类和伪元素的区别⭐⭐
 
@@ -613,8 +595,6 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 - 伪类只能使用“**：**”，伪元素既可以使用“:”，也可以使用“::”
 - 伪元素其实相当于伪造了一个元素，伪类没有伪造元素，例如first-child只是给子元素添加样式而已。（本质区别就是**是否抽象创造了新元素**）
 
-
-
 #### 重绘和重排是什么？如何避免？⭐⭐
 
 重排：当DOM的变化影响了元素的几何信息(元素的的位置和尺寸大小)，浏览器需要重新计算元素的几何属性，将其安放在界面中的正确位置，这个过程叫做重排。
@@ -624,12 +604,6 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 
 触发重排的方法： 页面初始渲染、添加/删除可见的DOM元素、改变元素位置、改变元素尺寸、改变元素内容、改变元素字体大小、改变浏览器窗口尺寸、设置 style 属性的值等。
 避免重排的方式：样式集中改变、使用 absolute 或 fixed 脱离文档流。
-
-
-
-
-
-
 
 ### js
 
@@ -646,8 +620,6 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 9. Promise
 10. Proxy
 11. Symbol
-
-
 
 #### 闭包的理解⭐⭐
 
@@ -667,17 +639,11 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
   - call,apply直接执行
   - bind返回的是一个函数,可以调用执行
 
-
-
-
-
 #### 原型，原型链⭐⭐⭐
 
 用来继承和扩展对象
 
 每个函数对象都有一个 prototype 属性，这个属性就是函数的原型对象。
-
-
 
 原型链是JavaScript实现继承的重要方式，原型链的形成是真正是靠__proto__ 而非prototype。
 
@@ -686,10 +652,6 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 构造函数 new 出来一个对象，而每个对象都有一个 constructor 属性，该属性指向创建该实例的构造函数。
 实例对象通过__proto__或者 object.getPrototype 的方法获取原型。
 原型链其实就是有限的实例对象和原型之间组成有限链，就是用来实现共享属性和继承的。
-
-
-
-
 
 #### 基本数据类型⭐
 
@@ -707,23 +669,13 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
    Array：数组。
    Function：函数。
 
-
-
 !> 注：**Object.prototype.toString.call()**适用于所有类型的判断检测
-
-
-
-
 
 #### export和export default的区别⭐
 
 - 均可导出常量、函数、文件、模块等。
 - 在一个文件或模块中，export、import可以有多个。export default仅有一个。
 - 通过export方式导出，在导入时要加{ }，export default则不需要。
-
-
-
-
 
 #### 箭头函数和普通函数的区别⭐⭐
 
@@ -732,8 +684,6 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 箭头函数不能使用arguments，而用rest参数…解决
 箭头函数没有自己的this,会捕获其所在的上下文的this值,并且不能通过call()和apply()来改变其this
 箭头函数没有原型
-
-
 
 #### GET和POST的区别⭐⭐⭐
 
@@ -748,26 +698,16 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 可见性：GET参数通过URL传递对所有人可见，POST数据不可见。
 历史保留：GET请求参数会被完整保留在浏览器历史记录里，而POST中的参数不会被保留。
 
-
-
-
-
 #### forEach和map的区别⭐
 
 **forEach**没有返回值，**map**返回新的数组。
 **map**创建新数组，**forEach**不修改原数组。
-
-
 
 #### JS基本数据类型的比较⭐⭐
 
 ?> 黄色表示ture
 
 ![黄色表示ture](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/qhAW3x000watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0pldF9Mb3Zlcg==,size_16,color_FFFFFF,t_70.jpeg)
-
-
-
-
 
 #### 对象的继承⭐
 
@@ -778,30 +718,20 @@ visibility:hidden: 隐藏元素，但是在文档布局中仍保留原来的空�
 3. 原型链+借用构造函数的组合继承（使用 call 或 applay 方法）
 4. ES6中class 的继承（class可以通过extends关键字实现继承）
 
-
-
 #### 简述一下你理解的面向对象⭐
 
 抽象,封装,继承,多态
-
-
 
 #### == 和 ===的区别⭐
 
 相同点：都是判定两个**值**是否相等
 不同点：== 只比较**值**不比较**类型**，而 ===会判断**类型**
 
-
-
 #### 数组有哪些方法⭐⭐
 
-https://blog.csdn.net/Jet_Lover/article/details/107061795
-
-
+<https://blog.csdn.net/Jet_Lover/article/details/107061795>
 
 #### 普通的数组去重⭐⭐
-
-
 
 （笔试一般都会有）
 
@@ -817,23 +747,15 @@ https://blog.csdn.net/Jet_Lover/article/details/107061795
 !> 注 ：如果有多维数组如 [1,[2],[3,[2,3,4,5]] ] 先扁平化再去重,
 用**Array.flat(Infinity)**实现扁平化。
 
-
-
 #### Promise⭐⭐⭐
 
-https://es6.ruanyifeng.com/#docs/promise
-
-
-
-
+<https://es6.ruanyifeng.com/#docs/promise>
 
 #### JS中new操作符有什么用？⭐⭐
 
 - 创建临时对象，并将this指向临时对象
 - 将构造函数的**原型属性**和**方法**挂载到新对象的__proto__(原型指针)上
 - return 临时对象
-
-
 
 #### JS获取HTML DOM元素的方法⭐⭐
 
@@ -847,8 +769,6 @@ https://es6.ruanyifeng.com/#docs/promise
 通过选择器获取一组元素（querySelectorAll）
 用法以及防坑可看JS获取HTML DOM元素的方法
 
-
-
 #### 事件捕获和事件冒泡⭐⭐
 
 事件捕获和事件冒泡主要解决了页面事件流的问题。页面的事件流经过了三个阶段，分别是事件捕获、目标阶段和事件冒泡阶段。
@@ -856,16 +776,10 @@ https://es6.ruanyifeng.com/#docs/promise
 event.stopPropagation() 可以阻止事件流的进一步传播。
 采用事件代理的方式，能够节省内存消耗，对于动态改变子元素的时候，也非常有利，避免了很多麻烦的步骤，比如重新绑定事件。（把子元素的事件委托给父元素来处理）
 
-
-
 #### 虚拟dom⭐
 
 定义：虚拟DOM就是普通的js对象。用来描述真实dom结构的js对象，因为它不是真实的dom，所以才叫做虚拟dom。
 作用：虚拟dom可以很好地跟踪当前dom状态，因为它会根据当前数据生成一个描述当前dom结构的虚拟dom，然后数据发生变化时，有生成一个新的虚拟dom，而两个虚拟dom恰好保存了变化前后的状态。然后通过diff算法，计算出当前两个虚拟dom之间的差异，得出一个更好的替换方案。
-
-
-
-
 
 #### 排序方式⭐
 
@@ -875,40 +789,24 @@ event.stopPropagation() 可以阻止事件流的进一步传播。
 归并排序：把数组劈成两半，再递归地对数组进行“分”操作，直到分成一个个单独的数。
 快速排序：从数组中任意选择一个基准，所有比基准小的元素放到基准前面，比基准大的元素放到基准的后面
 
-
-
 #### 数组操作方法会改变原数组⭐⭐
 
 会改变：**push()**，pop(),shift(),unshift() ,splice(),sort(),reverse()。
 不变：concat(),split(),slice()。
-
-
-
-
 
 #### JS有几种方法判断变量的类型？⭐⭐⭐
 
 typeof
 判断基本数据类型，对于引用数据类型除了function返回’function‘，其余全部返回’object’。
 
-
-
 instanceof
 区分引用数据类型，检测方法是检测的类型在当前实例的原型链上，用其检测出来的结果都是true，不太适合用于简单数据类型的检测，检测过程繁琐且对于简单数据类型中的undefined, null, symbol检测不出来。
-
-
 
 constructor
 检测引用数据类型，检测方法是获取实例的构造函数判断和某个类是否相同，如果相同就说明该数据是符合那个数据类型的，这种方法不会把原型链上的其他类也加入进来，避免了原型链的干扰。
 
-
-
 Object.prototype.toString.call()
 适用于所有类型的判断检测，检测方法是Object.prototype.toString.call(数据) 返回的是该数据类型的字符串。(举例：字符串返回的是[object String])
-
-
-
-
 
 instanceof的实现原理：验证当前类的原型prototype是否会出现在实例的原型链__proto__上，只要在它的原型链上，则结果都为true。因此，instanceof 在查找的过程中会遍历左边变量的原型链，直到找到右边变量的 prototype，找到返回true，未找到返回false。
 Object.prototype.toString.call原理：Object.prototype.toString 表示一个返回对象类型的字符串，call()方法可以改变this的指向，那么把Object.prototype.toString()方法指向不同的数据类型上面，返回不同的结果
@@ -916,8 +814,6 @@ Object.prototype.toString.call原理：Object.prototype.toString 表示一个返
 #### 如何判断一个对象是否存在？⭐
 
 建议使用**typeof**运算符，
-
-
 
 #### 深拷贝，浅拷贝⭐⭐⭐
 
@@ -935,8 +831,6 @@ es6的展开运算符 …
 Array.prototype.concat()
 Array.prototype.slice()
 
-
-
 ```js
 let arr=[{name:"uzi"}]
 let arr1= Object.assign({}, arr);   arr1[0].name="xiaoming"
@@ -949,12 +843,6 @@ console.log(arr[0].name==arr[1].name==arr[2].name==……);
 
 ```
 
-
-
-
-
-
-
 **深拷贝**：
 
 1. **JSON.parse(JSON.stringify())**
@@ -963,7 +851,7 @@ console.log(arr[0].name==arr[1].name==arr[2].name==……);
 4. [**手写递归方法**](https://zhuanlan.zhihu.com/p/161061945)(转)
 
 ```JS
-var $ = require('jquery'); 
+var $ = require('jquery');
             let arr=[{name:"theShy"，age:"21"}]
  1.             let arr1= JSON.parse(JSON.stringify(arr));   arr1[0].name="rookie"
  2.             let arr2= _.cloneDeep(arr);                  arr2[0].name="ning"
@@ -972,10 +860,6 @@ var $ = require('jquery');
                //fales arr1[0].name="rookie" arr2[0].name="ning"
 
 ```
-
-
-
-
 
 #### require和import区别⭐
 
@@ -995,10 +879,6 @@ import是解构过程。
 ES6 模块语法是 JavaScript 模块的标准写法，坚持使用这种写法，取代 Node.js 的 CommonJS 语法。
 使用import取代require()。
 
-
-
-
-
 #### 事件循环（Event Loop）⭐⭐⭐
 
 原因：JavaScript是单线程，所有任务需要排队，前一个任务结束，才会执行后一个任务。
@@ -1012,7 +892,7 @@ ES6 模块语法是 JavaScript 模块的标准写法，坚持使用这种写法�
 微任务：Promise.then、catch、finally、async/await。
 宏任务：整体代码 Script、UI 渲染、setTimeout、setInterval、Dom事件、ajax事件。
 
-https://www.ruanyifeng.com/blog/2014/10/event-loop.html
+<https://www.ruanyifeng.com/blog/2014/10/event-loop.html>
 
 ### vue
 
@@ -1065,9 +945,7 @@ https://www.ruanyifeng.com/blog/2014/10/event-loop.html
 
 六、获取父组件实例this.$parent
 
-https://blog.csdn.net/Jet_Lover/article/details/117418041
-
-
+<https://blog.csdn.net/Jet_Lover/article/details/117418041>
 
 #### 路由之间如何传参⭐⭐
 
@@ -1112,8 +990,6 @@ this.$router.push({
 **params**在地址栏中不显示参数，刷新页面，参数丢失,
 其余方法在地址栏中显示传递的参数，刷新页面，参数不丢失。
 
-
-
 #### 谈一谈VUEX⭐⭐
 
 原理：Vuex是专门为vue.js应用程序设计的状态管理工具。
@@ -1125,16 +1001,10 @@ actions:提交mutations，可异步操作。
 getters：是store的计算属性。
 modules:模块，每个模块里面有四个属性
 
-
-
 #### 如何解决vuex页面刷新数据丢失问题？⭐⭐
 
 原因：因为vuex里的数据是保存在**运行内存**中的，当页面刷新时，页面会重新加载vue实例，vuex里面的数据就会被清空。
 解决方法：将vuex中的数据直接保存到浏览器缓存中。（一般是用sessionStorage）
-
-
-
-
 
 #### computed和watch的区别？⭐⭐⭐
 
@@ -1146,21 +1016,15 @@ watch： 更多的是观察的作用，支持异步，类似于某些数据的�
 computed应用场景：需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；
 watch应用场景：需要在数据变化时执行异步或开销较大的操作时，应该使用 watch，使用 watch 选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。
 
-
-
 #### Route和router的区别⭐
 
 - **route**:是路由信息对象，包括“path,parms,hash,name“等路由信息参数。
 - **Router**:是路由实例对象，包括了路由跳转方法，钩子函数等。
 
-
-
 #### v-show和v-if的区别⭐
 
 - **v-if**:组件的销毁和重建，更适合带有权限的操作，切换开大。如果开始条件为false则什么都不做，只有为true才会编译。
 - **v-show**:css切换，隐藏显示更适合频繁切换。在任何情况下都会被编译，然后被缓存，而且dom元素会被保留。
-
-
 
 #### vue中父子组件传值，父组件异步请求，子组件不能实时更新怎么解决？（vue中数据不能实时更新怎么解决？）⭐⭐⭐
 
@@ -1198,10 +1062,6 @@ watch应用场景：需要在数据变化时执行异步或开销较大的操作
 
 ```
 
-
-
-
-
 1. **使用watch监听数据的变化**
    举例：
 
@@ -1224,33 +1084,20 @@ watch应用场景：需要在数据变化时执行异步或开销较大的操作
 
 #### Vue 中 $nextTick 作用与原理？⭐⭐⭐
 
-
-
  $nextTick的作用是：该方法中的代码会在当前渲染完成后执行，就解决了异步渲染获取不到更新后DOM的问题了。 n e x t T i c k 的 原 理 ： nextTick的原理：nextTick的原理：nextTick本质是返回一个Promise 。
 
-
 应用场景：在created()里面想要获取操作Dom，把操作DOM的方法放在$nextTick中
-
-
-
-
 
 #### Vue 中 for循环为什么加 key？⭐⭐
 
 为了性能优化， 因为vue是虚拟DOM，更新DOM时用diff算法对节点进行一一比对，比如有很多li元素，要在某个位置插入一个li元素，但没有给li上加key，那么在进行运算的时候，就会将所有li元素重新渲染一遍，但是如果有key，那么它就会按照key一一比对li元素，只需要创建新的li元素，插入即可，不需要对其他元素进行修改和重新渲染。
 key也不能是li元素的index，因为假设我们给数组前插入一个新元素，它的下标是0，那么和原来的第一个元素重复了，整个数组的key都发生了改变，这样就跟没有key的情况一样了。
 
-
-
 ### http
 
 #### 如何解决跨域⭐⭐
 
-https://juejin.cn/post/6844903882083024910#heading-4
-
-
-
-
+<https://juejin.cn/post/6844903882083024910#heading-4>
 
 #### 浏览器如何渲染页面的？⭐
 
@@ -1259,8 +1106,6 @@ https://juejin.cn/post/6844903882083024910#heading-4
 浏览器会将CSS规则树附着在DOM树上，并结合两者生成渲染树（Render Tree）
 生成布局（flow），浏览器通过解析计算出每一个渲染树节点的位置和大小，在屏幕上画出渲染树的所有节点
 合成绘制生成页面。
-
-
 
 #### 防抖与节流⭐⭐⭐
 
@@ -1274,11 +1119,7 @@ window对象的resize、scroll事件
 拖拽时候的mousemove
 射击游戏中的mousedown、keydown事件
 文字输入、自动完成的keyup事件
-https://blog.csdn.net/Jet_Lover/article/details/120372116
-
-
-
-
+<https://blog.csdn.net/Jet_Lover/article/details/120372116>
 
 #### webpack是怎么打包的，babel又是什么⭐
 
@@ -1287,20 +1128,11 @@ Webpack：把所有依赖打包成一个 bundle.js文件，通过代码分割成
 
 babel将es6、es7、es8等语法转换成浏览器可识别的es5或es3语法。
 
-
-
-
-
-
 #### webSocket ⭐
 
 webSocket：可以让服务器主动向客户端发送消息，适合开发聊天室，多人游戏等协作应用。
 
 WebSocket协议是基于TCP的一种新的网络协议。在 WebSocket API 中，浏览器和服务器只需要完成一次握手，两者之间就直接可以创建持久性的连接，并进行双向数据传输。
-
-
-
-
 
 ### 其他
 
@@ -1308,10 +1140,6 @@ WebSocket协议是基于TCP的一种新的网络协议。在 WebSocket API 中�
 
 **原因**：普通去重不能去除对象。
 **解决方法**：可看[数组中有对象去除](https://blog.csdn.net/Jet_Lover/article/details/120826517)
-
-
-
-
 
 #### 移动端1px问题
 
