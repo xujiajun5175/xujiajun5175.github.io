@@ -152,6 +152,17 @@ div.arrow-left:after {
 }
 ```
 
+其实原理很简单，
+
+> 设置`.arrow`属性的`:before`和`:after`的`border`属性为`10px`，颜色为透明的。然后将`:before`和`:after`中的任意一层的`border-color`设置为可辨识的，然后使用`z-index`值较高的层遮盖`z-index`值较低的层，通过微调`top`和`left`的值达到目的
+
+这里我们当然可以通过一些美化的手段，使得我们的箭头看起来更加好看一点，比如像下面这样，
+
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/zIUAqk000002.png)
+
 
 
 > [demo1](http://www.jiawin.com/css-before-after/)是一个专门介绍使用`:before`及`:after`的博文，可以学习下。
+
+
+

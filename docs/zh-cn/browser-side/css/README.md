@@ -2346,3 +2346,887 @@ color:blue;
 ### 扩展阅读
 
 CSS 拾遗系列：[浅谈CSS中的伪元素和伪类](zh-cn/browser-side/css/other/CSS-伪元素和伪类)
+
+---
+
+## CSS 伪元素
+
+CSS 伪元素是用来添加一些选择器的特殊效果。
+
+CSS 伪元素控制的内容和元素是没有差别的，但是它本身只是基于元素的抽象，并不存在于文档中，所以称为伪元素。
+
+### 语法
+
+伪元素的语法：
+
+```css
+selector:pseudo-element {property:value;}
+```
+
+CSS类也可以使用伪元素：
+
+```css
+selector.class:pseudo-element {property:value;}
+```
+
+?> 在CSS1和CSS2中，伪元素和伪类都采用单冒号进行表示，在CSS3中为了区分伪元素和伪类，规定使用双冒号代表伪元素，单冒号代表伪类，即CSS3标准中应该这么写：`selector.class:：pseudo-element {property:value;}`
+
+?> 虽然CSS3规定了必须使用双冒号，但实际上使用单冒号也可以工作，这是由于CSS的兼容性带来的，但这并不意味着可以无所忌惮的使用单冒号，因为单双冒号的区分，可以给CSS代码带来更高的可读性。
+
+---
+
+### :first-line 伪元素
+
+"first-line" 伪元素用于向文本的首行设置特殊样式。
+
+!> **注意：**"first-line" 伪元素只能用于块级元素。
+
+!> **注意：** 下面的属性可应用于 "first-line" 伪元素：
+
+- font properties
+- color properties
+- background properties
+- word-spacing
+- letter-spacing
+- text-decoration
+- vertical-align
+- text-transform
+- line-height
+- clear
+
+---
+
+### :first-letter 伪元素
+
+"first-letter" 伪元素用于向文本的首字母设置特殊样式：
+
+!> **注意：** "first-letter" 伪元素只能用于块级元素。
+
+!> **注意：** 下面的属性可应用于 "first-letter" 伪元素：
+
+- font properties
+- color properties
+- background properties
+- margin properties
+- padding properties
+- border properties
+- text-decoration
+- vertical-align (only if "float" is "none")
+- text-transform
+- line-height
+- float
+- clear
+
+---
+
+### Multiple Pseudo-elements
+
+可以结合多个伪元素来使用。
+
+在下面的例子中，段落的第一个字母将显示为红色，其字体大小为 xx-large。第一行中的其余文本将为蓝色，并以小型大写字母显示。
+
+段落中的其余文本将以默认字体大小和颜色来显示：
+
+```css
+p:first-letter
+{
+color:#ff0000;
+font-size:xx-large;
+}
+p:first-line
+{
+color:#0000ff;
+font-variant:small-caps;
+}
+```
+
+---
+
+### :before 伪元素
+
+":before" 伪元素可以在元素的内容前面插入新内容。
+
+下面的例子在每个 <h1>元素前面插入一幅图片：
+
+```css
+h1:before
+{
+content:url(smiley.gif);
+}
+```
+
+---
+
+### :after 伪元素
+
+":after" 伪元素可以在元素的内容之后插入新内容。
+
+下面的例子在每个 <h1> 元素后面插入一幅图片：
+
+```css
+h1:after
+{
+content:url(smiley.gif);
+}
+
+```
+
+---
+
+### 所有CSS伪类/元素
+
+| 选择器                                                       | 示例           | 示例说明                                         |
+| :----------------------------------------------------------- | :------------- | :----------------------------------------------- |
+| [:link](zh-cn/browser-side/css/css3/css3-选择器#link选择器)  | a:link         | 选择所有未访问链接                               |
+| [:visited](zh-cn/browser-side/css/css3/css3-选择器#visited选择器) | a:visited      | 选择所有访问过的链接                             |
+| [:active](zh-cn/browser-side/css/css3/css3-选择器#active选择器) | a:active       | 选择正在活动链接                                 |
+| [:hover](zh-cn/browser-side/css/css3/css3-选择器#hover选择器) | a:hover        | 把鼠标放在链接上的状态                           |
+| [:focus](zh-cn/browser-side/css/css3/css3-选择器#focus选择器) | input:focus    | 选择元素输入后具有焦点                           |
+| [:first-letter](zh-cn/browser-side/css/css3/css3-选择器#first-letter选择器) | p:first-letter | 选择每个<p> 元素的第一个字母                     |
+| [:first-line](zh-cn/browser-side/css/css3/css3-选择器#first-line选择器) | p:first-line   | 选择每个<p> 元素的第一行                         |
+| [:first-child](zh-cn/browser-side/css/css3/css3-选择器#lfirst-child选择器) | p:first-child  | 选择器匹配属于任意元素的第一个子元素的 <]p> 元素 |
+| [:before](zh-cn/browser-side/css/css3/css3-选择器#before选择器) | p:before       | 在每个<p>元素之前插入内容                        |
+| [:after](zh-cn/browser-side/css/css3/css3-选择器#after选择器) | p:after        | 在每个<p>元素之后插入内容                        |
+| [:lang(*language*)](zh-cn/browser-side/css/css3/css3-选择器#lang选择器) | p:lang(it)     | 为<p>元素的lang属性选择一个开始值                |
+
+---
+
+## CSS 导航栏
+
+### 垂直导航栏
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    ul
+    {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    }
+    a:link,a:visited
+    {
+    display:block;
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#98bf21;
+    width:120px;
+    text-align:center;
+    padding:4px;
+    text-decoration:none;
+    text-transform:uppercase;
+    }
+    a:hover,a:active
+    {
+    background-color:#7A991A;
+    }
+</style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#home">主页</a>
+        </li>
+        <li>
+            <a href="#news">新闻</a>
+        </li>
+        <li>
+            <a href="#contact">联系</a>
+        </li>
+        <li>
+            <a href="#about">关于</a>
+        </li>
+    </ul>
+</body>
+</html>
+```
+
+![image-20220728135639588](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/0SKgPT000image-20220728135639588.png)
+
+---
+
+### 水平导航栏
+
+有两种方法创建横向导航栏。使用**内联**或**浮动**的列表项。
+
+这两种方法都很好，但如果你想链接到具有相同的大小，你必须使用浮动的方法。
+
+---
+
+### 内嵌列表项
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+padding-top:6px;
+padding-bottom:6px;
+}
+li
+{
+display:inline;
+}
+a:link,a:visited
+{
+font-weight:bold;
+color:#FFFFFF;
+background-color:#98bf21;
+text-align:center;
+padding:6px;
+text-decoration:none;
+text-transform:uppercase;
+}
+a:hover,a:active
+{
+background-color:#7A991A;
+}
+
+</style>
+</head>
+
+<body>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#news">News</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+
+<p><b>Note:</b> If you only set the padding for a elements (and not ul), the links will go outside the ul element. Therefore, we have added a top and bottom padding for the ul element.</p>
+</body>
+</html>
+```
+
+![image-20220728140103089](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/ID8feg000image-20220728140103089.png)
+
+---
+
+### 浮动列表项
+
+在上面的例子中链接有不同的宽度。对于所有的链接宽度相等，浮动元素，并指定为 元素的宽度：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    ul
+    {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    }
+    li
+    {
+    float:left;
+    }
+    a:link,a:visited
+    {
+    display:block;
+    width:120px;
+    font-weight:bold;
+    color:#FFFFFF;
+    background-color:#98bf21;
+    text-align:center;
+    padding:4px;
+    text-decoration:none;
+    text-transform:uppercase;
+    }
+    a:hover,a:active
+    {
+    background-color:#7A991A;
+    }
+
+</style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#home">主页</a>
+        </li>
+        <li>
+            <a href="#news">新闻</a>
+        </li>
+        <li>
+            <a href="#contact">联系</a>
+        </li>
+        <li>
+            <a href="#about">关于</a>
+        </li>
+    </ul>
+</body>
+</html>
+```
+
+实例解析：
+
+- `float:left` - 使用浮动块元素的幻灯片彼此相邻
+- `display:block` - 显示块元素的链接，让整体变为可点击链接区域（不只是文本），它允许我们指定宽度
+- width:60px - 块元素默认情况下是最大宽度。我们要指定一个60像素的宽度
+- `display:inline;` -默认情况下，元素是块元素。在这里，我们删除换行符之前和之后每个列表项，以显示一行 。
+
+![image-20220728140222943](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/h1gOu7000image-20220728140222943.png)
+
+---
+
+## CSS 下拉菜单
+
+### 基本下拉菜单
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>下拉菜单实例|W3Cschool教程(w3cschool.cn)</title>
+<meta charset="utf-8">
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<h2>下拉菜单</h2>
+<p>鼠标移动到按钮上打开下拉菜单。</p>
+
+<div class="dropdown">
+  <button class="dropbtn">下拉菜单</button>
+  <div class="dropdown-content">
+    <a href="http://www.w3cschool.cn">W3Cschool教程 1</a>
+    <a href="http://www.w3cschool.cn">W3Cschool教程 2</a>
+    <a href="http://www.w3cschool.cn">W3Cschool教程 3</a>
+  </div>
+</div>
+
+</body>
+</html>
+```
+
+![image-20220728140526977](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/pXdWgY000image-20220728140526977.png)
+
+#### 实例解析
+
+**HTML 部分：**
+
+我们可以使用任何的 HTML元素来打开下拉菜单，如\<span>, 或 a\<button> 元素。
+
+使用容器元素 (如：\<div>) 来创建下拉菜单的内容，并放在任何你想放的位置上。
+
+使用\<div> 元素来包裹这些元素，并使用 CSS 来设置下拉内容的样式。
+
+**CSS 部分：**
+
+`.dropdown` 类使用 `position:relative`, 这将设置下拉菜单的内容放置在下拉按钮 (使用 `position:absolute`) 的右下角位置。
+
+`.dropdown-content` 类中是实际的下拉菜单。默认是隐藏的，在鼠标移动到指定元素后会显示。 注意 `min-width` 的值设置为 160px。你可以随意修改它。 **注意:** 如果你想设置下拉内容与下拉按钮的宽度一致，可设置 `width` 为 100% ( `overflow:auto` 设置可以在小尺寸屏幕上滚动)。
+
+我们使用 `box-shadow` 属性让下拉菜单看起来像一个"卡片"。
+
+`:hover` 选择器用于在用户将鼠标移动到下拉按钮上时显示下拉菜单。
+
+---
+
+### 下拉内容对齐方式
+
+**float:left;**
+
+**float:right;**
+
+```css
+.dropdown-content {
+right: 0; }
+```
+
+---
+
+### 更多实例
+
+[图片下拉](https://www.w3cschool.cn/tryrun/showhtml/trycss_dropdown_image)
+该实例演示了如何如何在下拉菜单中添加图片。
+
+[导航条下拉](https://www.w3cschool.cn/tryrun/showhtml/trycss_dropdown_navbar)
+该实例演示了如何在导航条上添加下拉菜单。
+
+---
+
+## CSS 图片廊
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>W3Cschool教程(w3cschool.cn)</title>
+<style>
+
+
+    div.img
+    {
+      margin: 2px;
+      border: 1px solid #000000;
+      height: auto;
+      width: auto;
+      float: left;
+      text-align: center;
+    }
+    div.img img
+    {
+      display: inline;
+      margin: 3px;
+      border: 1px solid #ffffff;
+    }
+    div.img a:hover img {border: 1px solid #0000ff;}
+    div.desc
+    {
+      text-align: center;
+      font-weight: normal;
+      width: 120px;
+      margin: 2px;
+    }
+</style>
+</head>
+
+
+<body>
+    <div class="img">
+         <a target="_blank" href="javascript;:"><img src="/statics/images/course/klematis_small.jpg" alt="Klematis" width="110" height="90"></a>
+         <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="img">
+         <a target="_blank" href="javascript;:"><img src="/statics/images/course/klematis2_small.jpg" alt="Klematis" width="110" height="90"></a>
+         <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="img">
+         <a target="_blank" href="javascript;:"><img src="/statics/images/course/klematis3_small.jpg" alt="Klematis" width="110" height="90"></a>
+         <div class="desc">Add a description of the image here</div>
+    </div>
+    <div class="img">
+         <a target="_blank" href="javascript;:"><img src="/statics/images/course/klematis4_small.jpg" alt="Klematis" width="110" height="90"></a>
+         <div class="desc">Add a description of the image here</div>
+    </div>
+</body>
+```
+
+![image-20220728140826390](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/GmGwOA000image-20220728140826390.png)
+
+---
+
+### CSS 图像透明
+
+使用 CSS 很容易创建透明的图像。
+
+!> **注意：**CSS Opacity 属性是W3C 的 CSS3 建议的一部分。
+
+---
+
+### 创建一个透明图像
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    img
+    {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    }
+</style>
+</head>
+<body>
+
+    <h1>Image Transparency</h1>
+    <img src="/statics/images/course/klematis.jpg" width="150" height="113" alt="klematis">
+    <img src="/statics/images/course/klematis2.jpg" width="150" height="113" alt="klematis">
+
+    <p><b>Note:</b> In IE, a &lt;!DOCTYPE&gt; must be added for the :hover selector to work on other elements than the &lt;a&gt; element.</p>
+</body>
+</html>
+```
+
+![image-20220728140924368](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/EYZ3GV000image-20220728140924368.png)
+
+---
+
+### 图像的透明度 - 悬停效果
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    img
+    {
+    opacity:0.4;
+    filter:alpha(opacity=40); /* For IE8 and earlier */
+    }
+    img:hover
+    {
+    opacity:1.0;
+    filter:alpha(opacity=100); /* For IE8 and earlier */
+    }
+</style>
+</head>
+<body>
+
+    <h1>Image Transparency</h1>
+    <img src="/statics/images/course/klematis.jpg" width="150" height="113" alt="klematis">
+    <img src="/statics/images/course/klematis2.jpg" width="150" height="113" alt="klematis">
+
+    <p><b>Note:</b> In IE, a &lt;!DOCTYPE&gt; must be added for the :hover selector to work on other elements than the &lt;a&gt; element.</p>
+</body>
+</html>
+```
+
+![image-20220728141030812](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/79h1iZ000image-20220728141030812.png)
+
+---
+
+### 透明的盒子中的文字
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    div.background
+    {
+      width: 500px;
+      height: 250px;
+      background: url(/statics/images/course/klematis.jpg) repeat;
+      border: 2px solid black;
+    }
+    div.transbox
+    {
+      width: 400px;
+      height: 180px;
+      margin: 30px 50px;
+      background-color: #ffffff;
+      border: 1px solid black;
+      opacity:0.6;
+      filter:alpha(opacity=60); /* For IE8 and earlier */
+    }
+    div.transbox p
+    {
+      margin: 30px 40px;
+      font-weight: bold;
+      color: #000000;
+    }
+</style>
+</head>
+<body>
+    <div class="background">
+        <div class="transbox">
+            <p>This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+            This is some text that is placed in the transparent box.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+![image-20220728141104003](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/JDnOLd000image-20220728141104003.png)
+
+---
+
+### CSS 图像拼合技术
+
+### 图像拼合
+
+图像拼合就是单个图像的集合。
+
+有许多图像的网页可能需要很长的时间来加载和生成多个服务器的请求。
+
+使用图像拼合会降低服务器的请求数量，并节省带宽。
+
+---
+
+与其使用三个独立的图像，不如我们使用这种单个图像`（"img_navsprites.gif"）`：
+
+![navigation images](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/Hk1Dgu000img_navsprites.gif)
+
+有了CSS，我们可以只显示我们需要的图像的一部分。
+
+在下面的例子CSS指定显示 "img_navsprites.gif" 的图像的一部分：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    img.home {
+        width: 46px;
+        height: 44px;
+        background: url(/statics/images/course/img_navsprites.gif) 0 0;
+    }
+
+    img.next {
+        width: 43px;
+        height: 44px;
+        background: url(/statics/images/course/img_navsprites.gif) -91px 0;
+    }
+</style>
+</head>
+<body>
+
+    <img class="home" src="/statics/images/course/img_trans.gif"><br><br>
+    <img class="next" src="/statics/images/course/img_trans.gif">
+
+</body>
+</html>
+```
+
+![image-20220728141937317](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/emxexY000image-20220728141937317.png)
+
+**实例解析：**
+
+- <img class="home" src="img_trans.gif" /> -因为不能为空，`src` 属性只定义了一个小的透明图像。显示的图像将是我们在 CSS 中指定的背景图像
+- 宽度：46px;高度：44px; - 定义我们使用的那部分图像
+- `background:url(img_navsprites.gif) 0 0`; - 定义背景图像和它的位置（左 0px，顶部 0px）
+
+这是使用图像拼合最简单的方法，现在我们使用链接和悬停效果。
+
+---
+
+### 图像拼合 - 创建一个导航列表
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    #navlist{position:relative;}
+    #navlist li{margin:0;padding:0;list-style:none;position:absolute;top:0;}
+    #navlist li, #navlist a{height:44px;display:block;}
+
+    #home{left:0px;width:46px;}
+    #home{background:url('/statics/images/course/img_navsprites.gif') 0 0;}
+
+    #prev{left:63px;width:43px;}
+    #prev{background:url('/statics/images/course/img_navsprites.gif') -47px 0;}
+
+    #next{left:129px;width:43px;}
+    #next{background:url('/statics/images/course/img_navsprites.gif') -91px 0;}
+</style>
+</head>
+
+<body>
+    <ul id="navlist">
+      <li id="home"><a href="http://www.w3cschool.cn/css"></a></li>
+      <li id="prev"><a href="http://www.w3cschool.cn/css"></a></li>
+      <li id="next"><a href="http://www.w3cschool.cn/css"></a></li>
+    </ul>
+</body>
+</html>
+```
+
+![image-20220728142016090](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/GURvN4000image-20220728142016090.png)
+
+**实例解析：**
+
+- `#navlist{position:relative;}` - 位置设置相对定位，让里面的绝对定位
+- `#navlist li{margin:0;padding:0;list-style:none;position:absolute;top:0;}`- `margin`和`padding` 设置为0，列表样式被删除，所有列表项是绝对定位
+- `#navlist li, #navlist a{height:44px;display:block;}` - 所有图像的高度是 44px
+
+现在开始每个具体部分的定位和样式：
+
+- `#home{left:0px;width:46px;}` - 定位到最左边的方式，以及图像的宽度是 46px
+- `#home{background:url(img_navsprites.gif) 0 0;}` - 定义背景图像和它的位置（左0px，顶部0px）
+- `#prev{left:63px;width:43px;}` - 左外边距定位63px（＃home宽46px+项目之间的一些多余的空间），宽度为43px。
+- `#prev{background:url('img_navsprites.gif') -47px 0;}` - 定义背景图像向右侧定位47px（＃home宽46px+分隔线的1px）
+- `#next{left:129px;width:43px;}`- 左外边距定位129px(#prev 63px + #prev宽是43px + 剩余的空间), 宽度是43px.
+- `>#next{background:url('img_navsprites.gif') no-repeat -91px 0;}`
+- \- 定义背景图像
+
+- 向右侧定位
+
+- 91px（＃home 46px+1px的分割线+＃prev宽43px+1px的分隔线）
+
+---
+
+### 图像拼合 - 悬停效果
+
+我们的新图像 ("img_navsprites_hover.gif") 包含三个导航图像和三幅图像：
+
+![navigation images](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/HLWMrv000img_navsprites_hover.gif)
+
+因为这是一个单一的图像，而不是6个单独的图像文件，当用户停留在图像上不会有延迟加载。
+
+我们添加悬停效果只添加三行代码：
+
+```css
+#home a:hover{background: url('img_navsprites_hover.gif') 0 -45px;}
+#prev a:hover{background: url('img_navsprites_hover.gif') -47px -45px;}
+#next a:hover{background: url('img_navsprites_hover.gif') -91px -45px;}
+```
+
+**实例解析：**
+
+- 由于该列表项包含一个链接，我们可以使用`：hover` 伪类
+- `#home a:hover{background: transparent url(img_navsprites_hover.gif) 0 -45px;}` - 对于所有三个悬停图像，我们指定相同的背景位置，只是每个再向下45px
+
+---
+
+## CSS 媒体类型
+
+媒体类型允许你指定文件将如何在不同媒体呈现。该文件可以以不同的方式显示在屏幕上，在纸张上，或听觉浏览器等等。
+
+---
+
+### 媒体类型
+
+某些 CSS 属性仅仅被设计为针对某些媒介。
+
+比方说 `voice-family` 属性被设计为针对听觉用户终端。
+
+其他一些属性可用于不同的媒体类型。
+
+例如，`font-size`属性可用于屏幕和印刷媒体，但有不同的值。
+
+屏幕和纸上的文件不同，通常需要一个更大的字体，`sans - serif`字体比较适合在屏幕上阅读，而 serif 字体更容易在纸上阅读。
+
+---
+
+### @media 规则
+
+@media 规则允许在相同样式表为不同媒体设置不同的样式。
+
+在下面的例子告诉我们浏览器屏幕上显示一个14像素的 Verdana 字体样式。但是如果页面打印，将是10个像素的 Times 字体。请注意，`font-weight`在屏幕上和纸上设置为粗体：
+
+```css
+<style>
+
+@media screen
+
+{ p.test {font-family:verdana,sans-serif;font-size:14px; } }
+
+@media print
+
+{ p.test {font-family:times,serif;font-size:10px;} }
+
+@media screen,print
+
+{ p.test {font-weight:bold;}}
+
+</style>
+```
+
+有关 @media 规则的更多信息，请参考[CSS @media查询](zh-cn/browser-side/css/css3-属性#media)
+
+---
+
+### 其他媒体类型
+
+**注意：**媒体类型名称不区分大小写。
+
+| 媒体类型   | 描述                                                   |
+| :--------- | :----------------------------------------------------- |
+| all        | 用于所有的媒体设备。                                   |
+| aural      | 用于语音和音频合成器。                                 |
+| braille    | 用于盲人用点字法触觉回馈设备。                         |
+| embossed   | 用于分页的盲人用点字法打印机。                         |
+| handheld   | 用于小的手持的设备。                                   |
+| print      | 用于打印机。                                           |
+| projection | 用于方案展示，比如幻灯片。                             |
+| screen     | 用于电脑显示器。                                       |
+| tty        | 用于使用固定密度字母栅格的媒体，比如电传打字机和终端。 |
+| tv         | 用于电视机类型的设备。                                 |
+
+---
+
+## 响应式Web设计
+
+### 什么是响应式 Web 设计?
+
+响应式 Web 设计让你的网页能在所有设备上有好显示。
+
+响应式 Web 设计只使用 HTML 和 CSS。
+
+响应式 Web 设计不是一个程序或Javascript脚本。
+
+---
+
+## 设计最好的用户体验
+
+友好的用户体验是网页可以在任何设备上展示和操作，设备包括桌面系统设备，平板电脑，iPhone等手机等。
+
+网页应该根据设备的大小自动调整内容。
+
+#### 桌面设备
+
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/8PFcQl000rwd_desktop.png)
+
+#### 平板设备
+
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/pOyqX9000rwd_tablet.png)
+
+#### 手机设备
+
+![img](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/2MQT2E000rwd_phone.png)
+
+页面的设计与开发根据用户行为以及设备环境(系统平台、屏幕尺寸、屏幕定向等)进行相应的响应和调整称之为响应式 Web 设计。
+
+---
+
+### 相关参考
+
+- [viewport](zh-cn/browser-side/css/响应式设计/01-viewport)
+- [网格视图](zh-cn/browser-side/css/响应式设计/02-网格视图)
+- [媒体查询](zh-cn/browser-side/css/响应式设计/03-媒体查询)
+- [图片](zh-cn/browser-side/css/响应式设计/04-图片)
+- [视频](zh-cn/browser-side/css/响应式设计/05-视频)
+- [框架](zh-cn/browser-side/css/响应式设计/06-框架)
+
+---
+
