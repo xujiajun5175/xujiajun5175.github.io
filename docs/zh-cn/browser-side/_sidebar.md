@@ -78,11 +78,16 @@
 
   - [TypeScript](zh-cn/browser-side/javascript/ts/)
 
+- **react**
+  - [简介](zh-cn/browser-side/react/)
+  - [JSX](zh-cn/browser-side/react/01-jsx)
+
 - **vue**
   - [Vue2](zh-cn/browser-side/vue/vue2/)
   - [vuex](zh-cn/browser-side/vue/vue2/vuex/)
   - [vue-router](zh-cn/browser-side/vue/vue2/vue-router/)
   - [Vue3](zh-cn/browser-side/vue/vue3/)
+
 - **JS 库**
 
   - [ECharts](zh-cn/browser-side/javascript/other/echarts/)
