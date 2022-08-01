@@ -14,6 +14,8 @@ React 并没有采用将标记与逻辑进行分离到不同文件这种人为�
 
 ?> React 不强制要求使用 JSX
 
+---
+
 ## 在 JSX 中嵌入表达式
 
 在下面的例子中，我们声明了一个名为 name 的变量，然后在 JSX 中使用它，并将它包裹在大括号中：
@@ -31,6 +33,8 @@ ReactDOM.render(
 
 ?> 建议将内容包裹在括号中，虽然这样做不是强制要求的，但是这可以避免遇到自动插入分号陷阱
 
+---
+
 ## JSX 也是一个表达式
 
 在编译之后，JSX 表达式会被转为普通 JavaScript 函数调用，并且对其取值后得到 JavaScript 对象。
@@ -45,6 +49,8 @@ function getGreeting(user) {
   return <h1>Hello, Stranger.</h1>;
 }
 ```
+
+---
 
 ## JSX 特定属性
 
@@ -63,6 +69,8 @@ const element = <img src={user.avatarUrl}></img>;
 ?> 在属性中嵌入 JavaScript 表达式时，不要在大括号外面加上引号。你应该仅使用引号（对于字符串值）或大括号（对于表达式）中的一个，对于同一属性不能同时使用这两种符号。
 
 !> 警告：<br>因为 JSX 语法上更接近 JavaScript 而不是 HTML，所以 React DOM 使用 camelCase（小驼峰命名）来定义属性的名称，而不使用 HTML 属性名称的命名约定。<br>例如，JSX 里的 class 变成了 className，而 tabindex 则变为 tabIndex。
+
+---
 
 ## 使用 JSX 指定子元素
 
@@ -83,4 +91,59 @@ const element = (
 );
 ```
 
+---
+
 ## JSX 防止注入攻击
+
+```js
+const title = response.potentiallyMaliciousInput;
+// 直接使用是安全的：
+const element = <h1>{title}</h1>;
+```
+
+React DOM 在渲染所有输入内容之前，默认会进行**转义**。
+
+它可以确保在你的应用中，永远不会注入那些并非自己明确编写的内容。所有的内容在渲染之前都被转换成了字符串。
+
+这样可以有效地防止 **XSS（cross-site-scripting, 跨站脚本）**攻击。
+
+---
+
+## JSX 表示对象
+
+Babel 会把 JSX 转译成一个名为 `React.createElement()` 函数调用。
+
+```js
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+
+等效于:
+
+```js
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+
+`React.createElement()` 会预先执行一些检查，以帮助你编写无错代码，但实际上它创建了一个这样的对象：
+
+```js
+// 注意：这是简化过的结构
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Hello, world!'
+  }
+};
+```
+
+这些对象被称为 “React 元素”。
+
+React 通过读取这些对象，然后使用它们来构建 DOM 以及保持随时更新。
