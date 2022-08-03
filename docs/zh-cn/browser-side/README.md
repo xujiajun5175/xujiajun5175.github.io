@@ -81,8 +81,10 @@
 - **react**
   - [简介](zh-cn/browser-side/react/)
   - [JSX](zh-cn/browser-side/react/01-jsx)
-  - [JSX](zh-cn/browser-side/react/02-元素渲染)
-  - [JSX](zh-cn/browser-side/react/03-组件)
+  - [元素渲染](zh-cn/browser-side/react/02-元素渲染)
+  - [组件](zh-cn/browser-side/react/03-组件)
+  - [State & 生命周期](zh-cn/browser-side/react/04-state&生命周期)
+  - [事件处理](zh-cn/browser-side/react/05-事件处理)
 
 - **vue**
   - [Vue2](zh-cn/browser-side/vue/vue2/)
