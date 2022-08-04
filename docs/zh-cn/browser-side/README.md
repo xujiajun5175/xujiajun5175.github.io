@@ -85,6 +85,8 @@
   - [组件](zh-cn/browser-side/react/03-组件)
   - [State & 生命周期](zh-cn/browser-side/react/04-state&生命周期)
   - [事件处理](zh-cn/browser-side/react/05-事件处理)
+  - [条件渲染](zh-cn/browser-side/react/06-条件渲染)
+  - [列表 & Key](zh-cn/browser-side/react/07-列表&Key)
 
 - **vue**
   - [Vue2](zh-cn/browser-side/vue/vue2/)
