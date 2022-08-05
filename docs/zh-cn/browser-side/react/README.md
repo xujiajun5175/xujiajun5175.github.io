@@ -20,3 +20,5 @@ root.render(<h1>Hello, world!</h1>);
 - [JSX](zh-cn/browser-side/react/03-jsx)
 - [JSX](zh-cn/browser-side/react/04-jsx)
 - [JSX](zh-cn/browser-side/react/05-jsx) -->
+
+- [剑魔](https://bbs.colg.cn/thread-8489652-1-1.html)
