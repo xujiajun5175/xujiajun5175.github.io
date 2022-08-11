@@ -87,6 +87,8 @@
   - [事件处理](zh-cn/browser-side/react/05-事件处理)
   - [条件渲染](zh-cn/browser-side/react/06-条件渲染)
   - [列表 & Key](zh-cn/browser-side/react/07-列表&Key)
+  - [表单](zh-cn/browser-side/react/08-表单)
+  - [状态提升](zh-cn/browser-side/react/09-状态提升)
 
 - **vue**
   - [Vue2](zh-cn/browser-side/vue/vue2/)
