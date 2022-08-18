@@ -22,3 +22,18 @@ select @名称 := last_insert_id();
 ALTER TABLE icoa_company AUTO_INCREMENT = 1
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
+### linux 安装mysql远程连接授权
+
+> https://blog.csdn.net/segegefe/article/details/124319511

@@ -2,6 +2,8 @@
 
 - [后端](zh-cn/server-side/)
 
+- [工作](zh-cn/work/)
+
 - 工具
 
   - [Git](zh-cn/dev-utils/git/)

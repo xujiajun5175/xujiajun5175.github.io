@@ -16,9 +16,11 @@ root.render(<h1>Hello, world!</h1>);
 ## 核心概念
 
 - [JSX](zh-cn/browser-side/react/01-jsx)
-<!-- - [JSX](zh-cn/browser-side/react/02-jsx)
-- [JSX](zh-cn/browser-side/react/03-jsx)
-- [JSX](zh-cn/browser-side/react/04-jsx)
-- [JSX](zh-cn/browser-side/react/05-jsx) -->
-
-- [剑魔](https://bbs.colg.cn/thread-8489652-1-1.html)
+- [元素渲染](zh-cn/browser-side/react/02-元素渲染)
+- [组件](zh-cn/browser-side/react/03-组件)
+- [State & 生命周期](zh-cn/browser-side/react/04-state&生命周期)
+- [事件处理](zh-cn/browser-side/react/05-事件处理)
+- [条件渲染](zh-cn/browser-side/react/06-条件渲染)
+- [列表 & Key](zh-cn/browser-side/react/07-列表&Key)
+- [表单](zh-cn/browser-side/react/08-表单)
+- [状态提升](zh-cn/browser-side/react/09-状态提升)
