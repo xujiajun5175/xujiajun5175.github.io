@@ -4,8 +4,6 @@
 
 # 环境准备
 
-
-
 ## 本地必备开发环境
 
 - [Nacos v2.0.4（Win）](https://github.com/alibaba/nacos/releases/download/2.0.4/nacos-server-2.0.4.zip)/[Nacos v2.0.4（Mac）](https://github.com/alibaba/nacos/releases/download/2.0.4/nacos-server-2.0.4.tar.gz)：<https://nacos.io/zh-cn/docs/quick-start.html>
@@ -23,8 +21,6 @@
 - Docker v20.10.17（开发时在此下载适合本机环境的Docker，安装、启动即可<https://www.docker.com/get-started>）
 
 ---
-
-
 
 ## 本地非必须环境、服务
 
@@ -44,39 +40,27 @@
 
 ---
 
-
-
 # 参考文档
 
+表单设计器：<http://designer.form-create.com/guide/>
 
+表单解析器：<http://www.form-create.com/v2/guide/>
 
-表单设计器：http://designer.form-create.com/guide/
+前端框架：<https://panjiachen.github.io/vue-element-admin-site/zh/>
 
-表单解析器：http://www.form-create.com/v2/guide/
+UI组件：<https://element.eleme.io/#/zh-CN/component/installation>
 
-前端框架：https://panjiachen.github.io/vue-element-admin-site/zh/
+Vue：<https://cn.vuejs.org/v2/guide/index.html>
 
-UI组件：https://element.eleme.io/#/zh-CN/component/installation
+Nacos：<https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html>
 
-Vue：https://cn.vuejs.org/v2/guide/index.html
-
-Nacos：https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html
-
-Mybatis-Plus：https://baomidou.com/
-
-
+Mybatis-Plus：<https://baomidou.com/>
 
 ---
 
-
-
-# 项目启动 
-
-
+# 项目启动
 
 ?> 建议本地运行的已标明，未标明的可以使用远端服务
-
-
 
 ## 开发必须运行
 
@@ -100,8 +84,6 @@ Mybatis-Plus：https://baomidou.com/
 .\startup.cmd -m standalone
 ```
 
-
-
 ![image-20220818134109932](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/xxVf5K000image-20220818134109932.png)
 
 4. 访问`127.0.0.1:8848`，账号/密码向相关人员询问
@@ -118,11 +100,7 @@ Mybatis-Plus：https://baomidou.com/
 
 ![image-20220818134207579](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/0ugm1i000image-20220818134207579.png)
 
-
-
 ---
-
-
 
 ### Seata
 
@@ -139,10 +117,8 @@ Mybatis-Plus：https://baomidou.com/
 - Linux/Mac :
 
 ```shell
-$ sh ./bin/seata-server.sh -p 8099
+sh ./bin/seata-server.sh -p 8099
 ```
-
-
 
 - Windows :
 
@@ -151,8 +127,6 @@ bin\seata-server.bat -p 8099
 ```
 
 ---
-
-
 
 ### 前端
 
@@ -169,8 +143,6 @@ bin\seata-server.bat -p 8099
 ![image-20220818134801454](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/IJAeRA000image-20220818134801454.png)
 
 ---
-
-
 
 ### 后端
 
@@ -192,10 +164,6 @@ bin\seata-server.bat -p 8099
 docker login devel-registry.misetech.cn
 ```
 
-
-
-
-
 ?> 没有Docker环境，执行bin目录下的 `startup.bat（sh)` 脚本，会以Java进程启动网关和其他共通依赖服务
 
 ![image-20220818134929724](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/CJlZ1O000image-20220818134929724.png)
@@ -206,11 +174,7 @@ docker login devel-registry.misetech.cn
 
 ![image-20220818134944124](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/IrLxjn000image-20220818134944124.png)
 
-
-
 ---
-
-
 
 ## 开发非必须运行
 
@@ -224,23 +188,13 @@ docker login devel-registry.misetech.cn
 java -Dserver.port=8188 -Dcsp.sentinel.dashboard.server=localhost:8188 -Dproject.name=sentinel-dashboard -jar sentinel-dashboard-1.8.0.jar
 ```
 
-
-
 ---
-
-
 
 ### Redis\>=4.0.0
 
 !> 开发暂时使用服务器资源即可，有特殊需要可以连接本地
 
-
-
-
-
 ---
-
-
 
 ### 数据库
 
@@ -248,27 +202,15 @@ java -Dserver.port=8188 -Dcsp.sentinel.dashboard.server=localhost:8188 -Dproject
 
 上述nacos中导入的配置文件中，有数据库连接信息，自行使用工具连接访问即可
 
-
-
-
-
 ---
-
-
 
 ## 访问项目
 
 至此，本地的开发环境项目可以使用了。访问`http://localhost:9528/`就可以了，如果前端启动后提示的端口，至此开发人员仅需要运行前端代码和后端业务服务代码即可
 
-
-
 ---
 
-
-
 ## Docker容器更新
-
-
 
 ### 查看正在运行的容器
 
@@ -278,19 +220,11 @@ docker ps
 
 ![image-20220818135131579](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/Ammz4P000image-20220818135131579.png)
 
-
-
-
-
 ### 停止当前运行的容器
-
-
 
 ```bash
 docker stop containerID  //第一列的信息，要停哪个用哪个
 ```
-
-
 
 ### 移除当前容器
 
@@ -298,35 +232,21 @@ docker stop containerID  //第一列的信息，要停哪个用哪个
 docker rm containerID  //第一列的信息，要停删哪个用哪个
 ```
 
-
-
 ### 更新镜像
-
-
 
 ```bash
 docker pull containerName //第二列的信息，要更新哪个用哪个，建议每个都获取一下更新
 ```
 
-
-
 ### 重新运行
 
 执行`startup-by-docker.bat（sh）`脚本
 
-
-
 ---
-
-
 
 # 开发流程概述
 
-
-
 ## 后端
-
-
 
 1. 新建子工程
 
@@ -422,13 +342,7 @@ docker pull containerName //第二列的信息，要更新哪个用哪个，建�
 
 ![image-20220818143058340](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/tAsBM2000image-20220818143058340.png)
 
-
-
 ---
-
-
-
-
 
 ### 微服务间调用
 
@@ -446,8 +360,6 @@ docker pull containerName //第二列的信息，要更新哪个用哪个，建�
 
 ![image-20220818143244319](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/CIycHr000image-20220818143244319.png)
 
-
-
 ---
 
 ### 自动注入开发规范
@@ -455,8 +367,6 @@ docker pull containerName //第二列的信息，要更新哪个用哪个，建�
 对象的自动注入，如非特殊情况使用构造器形式，不要用Autowired或Resource注释，避免因注入时机或调用先后导致的空指针问题
 
 ![image-20220818143249014](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/1B0fsr000image-20220818143249014.png)
-
-
 
 ---
 
@@ -475,8 +385,6 @@ docker pull containerName //第二列的信息，要更新哪个用哪个，建�
 ### String工具类
 
 ![image-20220818143308737](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/kHCJHU000image-20220818143308737.png)
-
-
 
 ---
 
@@ -504,11 +412,7 @@ docker pull containerName //第二列的信息，要更新哪个用哪个，建�
 
 6. 页面布局及设计可以简单根据[ElementUI](https://element.eleme.io/#/zh-CN/component/installation)编写
 
-
-
 ---
-
-
 
 ### 页面集成接口
 
@@ -528,9 +432,7 @@ docker pull containerName //第二列的信息，要更新哪个用哪个，建�
 
 ---
 
-
-
-## 代码拉取/提交 
+## 代码拉取/提交
 
 !> 注意：提交代码时，如果有相关的配置文件，需要将配置变更点附加说明<br>本项目使用Git，和SVN的使用有很多不用，使用中有疑问随时提出
 
@@ -544,15 +446,11 @@ git clone \<代码仓库地址\>
 
 ?> 根据提示输入用户名、密码
 
-
-
 2. 更新代码
 
 ```bash
 git pull
 ```
-
-
 
 3. 提交代码
 
@@ -563,8 +461,6 @@ git push
 ```
 
 ---
-
-
 
 ## 错误代码
 
@@ -582,15 +478,9 @@ git push
 
 ---
 
-
-
 # 共通方法
 
-
-
 ## 后端
-
-
 
 ### 分布ID
 
@@ -607,8 +497,6 @@ Web服务的配置文件中需要增加分布式ID相关配置
 ![image-20220818143900108](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/W1R5ys000image-20220818143900108.png)
 
 ---
-
-
 
 ### 自定义@RequestList
 
@@ -656,8 +544,6 @@ unless = "#result?.result.size() == 0"
 
 ![图形用户界面, 文本 描述已自动生成](media/image66.png)
 
-
-
 ---
 
 ### 数据缓存-RedisUtil
@@ -678,8 +564,6 @@ unless = "#result?.result.size() == 0"
 
 \*：更多方法参考工具类
 
-
-
 ---
 
 ### 分布式锁
@@ -693,8 +577,6 @@ unless = "#result?.result.size() == 0"
 业务使用锁时如图，关键内容为红框内，锁的内容必须为String
 
 ![文本 描述已自动生成](media/image69.png)
-
-
 
 ---
 
@@ -723,8 +605,6 @@ unless = "#result?.result.size() == 0"
 
 ![图形用户界面, 文本 中度可信度描述已自动生成](media/image71.png)
 
-
-
 ---
 
 ### 全局事务注解
@@ -732,8 +612,6 @@ unless = "#result?.result.size() == 0"
 ![图形用户界面, 文本, 网站 描述已自动生成](media/image72.png)
 
 注解@GlobalTransactional，可以加在控制层、业务层，可以管理服务内、跨服务（Feign调用）的事务
-
-
 
 ---
 
@@ -743,8 +621,6 @@ unless = "#result?.result.size() == 0"
 
 ![图形用户界面, 文本, 聊天或短信 描述已自动生成](media/image73.png)
 
-
-
 ---
 
 ### 降级
@@ -753,15 +629,11 @@ unless = "#result?.result.size() == 0"
 
 ![文本 描述已自动生成](media/image74.png)
 
-
-
 ---
 
 在Feign调用时增加fallback属性，fallback指定feign实现类即可，在feign调用失败时，就会自动使用实现类的响应，同时注意在接口上增加注解@Primary，否则Fallback实现类和接口的bean将冲突
 
 ![手机屏幕的截图 描述已自动生成](media/image75.png)
-
-
 
 ---
 
@@ -775,8 +647,6 @@ unless = "#result?.result.size() == 0"
 
 ![图形用户界面, 应用程序 描述已自动生成](media/image77.png)
 
-
-
 ---
 
 ### 消息队列订阅
@@ -786,8 +656,6 @@ unless = "#result?.result.size() == 0"
 ![文本 描述已自动生成](media/image78.png)
 
 ![文本 描述已自动生成](media/image79.png)
-
-
 
 ---
 
@@ -817,8 +685,6 @@ dataParamsIndex：同步数据在参数中的位置
 
 由于安全策略，相同的明文值加密后的密文也是不一样的，所以无法目前无法实现对加密字段条件查询，暂时可以使用查询后由代码过滤（持久层查询出来是解密后的）得到需要数据
 
-
-
 ---
 
 ### 分表查询
@@ -829,8 +695,6 @@ dataParamsIndex：同步数据在参数中的位置
 
 [TABLE]
 
-
-
 ---
 
 ### 分表查询忽略配置
@@ -840,8 +704,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 配置内容为表名（支持正则表达式）数组
 
 ![](media/image82.png)
-
-
 
 ---
 
@@ -883,8 +745,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ![image-20220818144315861](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/LG1eeN000image-20220818144315861.png)
 
-
-
 ---
 
 ### 菜单功能权限配置
@@ -895,27 +755,21 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 效果为：
 
-1.  用户有该页面路由权限，也就是说，用户可以访问由该路由页面发出的API请求
+1. 用户有该页面路由权限，也就是说，用户可以访问由该路由页面发出的API请求
 
-2.  如果用户的权限没有该页面路由（菜单），则无权限访问该页面【菜单权限】下的任何接口
+2. 如果用户的权限没有该页面路由（菜单），则无权限访问该页面【菜单权限】下的任何接口
 
-3.  如果用户的权限有该页面路由 （菜单），则继续校验【菜单权限】中，分配给该用户的 菜单权限，是否符合本次访问的接口地址
+3. 如果用户的权限有该页面路由 （菜单），则继续校验【菜单权限】中，分配给该用户的 菜单权限，是否符合本次访问的接口地址
 
-4.  接口地址不符合该用户拥有的【菜单权限】，返回无访问权限
+4. 接口地址不符合该用户拥有的【菜单权限】，返回无访问权限
 
-5.  接口地址符合该用户拥有的【菜单权限】，正常调用接口
-
-
+5. 接口地址符合该用户拥有的【菜单权限】，正常调用接口
 
 ---
 
 ### 判断用户身份？
 
-
-
 ---
-
-
 
 ### 前台国际化
 
@@ -933,11 +787,7 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ![image-20220818144358039](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/DyDVQQ000image-20220818144358039.png)
 
-
-
 ---
-
-
 
 ### 字典表数据获取
 
@@ -951,11 +801,7 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 使用哪种方法，根据自己需要即可
 
-
-
 ---
-
-
 
 ### 字典表数据转换
 
@@ -964,8 +810,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 在页面元素UI标签中使用，第一个参数是字典type列表，第二个参数是当前数据的key
 
 ![image-20220818144417562](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/19hq86000image-20220818144417562.png)
-
-
 
 ---
 
@@ -985,8 +829,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ![image-20220818144434381](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/61vTBP000image-20220818144434381.png)
 
-
-
 ---
 
 # 前端组件
@@ -995,15 +837,11 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ![image-20220818144442570](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/FY3x0S000image-20220818144442570.png)
 
-
-
 ---
 
 ## Markdown编辑器
 
 ![image-20220818144446323](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/AoGz51000image-20220818144446323.png)
-
-
 
 ---
 
@@ -1011,21 +849,15 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ![image-20220818144450007](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/1o0xNl000image-20220818144450007.png)
 
-
-
 ---
 
 ## 浏览器指纹
 
 获取浏览器唯一标识，用于通过用户的客户端判断用户的唯一性，同一台设备同一个系统设置系统版本的浏览器都是一个（可以较大的概率辨别用户客户端唯一的标识，但不是100%），主要用于没有用户信息或用户ID时，辨别不同的客户端访问![image-20220818144454209](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/huRQM3000image-20220818144454209.png)
 
-
-
 ---
 
 ## Web代码编辑器？
-
-
 
 ---
 
@@ -1038,8 +870,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 状态为只读，左右比对差异
 
 ![image-20220818144504629](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/NcnMkB000image-20220818144504629.png)
-
-
 
 ---
 
@@ -1061,7 +891,7 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 | is-access      | Boolean | true     | 是否需要授权访问文件资源                                                          |
 | show-file-list | Boolean | true     | 是否显示上传文件列表                                                              |
 | drag           | Boolean | false    | 是否可以拖拽                                                                      |
-| accept         | String  | ‘’       | 参考：https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept |
+| accept         | String  | ‘’       | 参考：<https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept> |
 | limit          | Number  | 1        | 上传文件数量限制                                                                  |
 | list-type      | String  | text     | text/picture/picture-card                                                         |
 | button-text    | String  | 点击上传 | 上传按钮文字                                                                      |
@@ -1086,8 +916,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ---
 
-
-
 ## 文件展示
 
 引入文件展示浏览器本地URL的API
@@ -1102,8 +930,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ![image-20220818144543385](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/pFJje9000image-20220818144543385.png)
 
-
-
 ---
 
 ## 表单设计/解析器
@@ -1112,15 +938,11 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 ![image-20220818144553246](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/Tts8wq000image-20220818144553246.png)
 
-
-
 ---
 
 ## 拖拽流程图
 
 ![image-20220818144557651](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/0642lG000image-20220818144557651.png)
-
-
 
 ---
 
@@ -1143,10 +965,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 特殊说明：日志输出，使用log.()仅会输出到控制台、java的日志，不会在定时任务调度器中查看日志，如果需要在定时任务调度器中也看到日志，使用XxlJobHelper.log()输出日志即可
 
 ![图形用户界面, 文本 描述已自动生成](media/image120.png)
-
-
-
-
 
 ---
 
@@ -1185,8 +1003,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 ![社交网站的手机截图 描述已自动生成](media/image126.png)
 
 ![图形用户界面, 文本, 应用程序, 电子邮件 描述已自动生成](media/image127.png)
-
-
 
 ---
 
@@ -1232,8 +1048,6 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 重启该服务
 
-
-
 ---
 
 ## 接口文档查看
@@ -1256,7 +1070,7 @@ mybatis-plus.custom-config. dynamicTableNameIgnore
 
 \</dependency\>
 
-不用提交，本地用就行，然后访问对应服务的端口+/doc.html#/home，如system：http://127.0.0.1:8206/doc.html#/home
+不用提交，本地用就行，然后访问对应服务的端口+/doc.html#/home，如system：<http://127.0.0.1:8206/doc.html#/home>
 
 便可进行接口的查看及基本调用调试
 

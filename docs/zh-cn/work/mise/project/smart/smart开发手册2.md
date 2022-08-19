@@ -1,5 +1,7 @@
 # 后端
 
+
+
 ## 代码格式
 
 Java代码格式按照《Alibaba Java Coding Guidelines》
@@ -10,17 +12,23 @@ Java代码格式按照《Alibaba Java Coding Guidelines》
 
 1、安装该插件，可以检查代码规范
 
-![图形用户界面, 文本, 应用程序, 聊天或短信 描述已自动生成](media/image1.png)
+![image-20220819101658199](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/NsjNnQ000image-20220819101658199.png)
 
 2、安装该插件，可以设置保存动作，格式化代码
 
-![电脑屏幕的手机截图 描述已自动生成](media/image2.png)
+![image-20220819101703780](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/eDhbic000image-20220819101703780.png)
 
 3、配置插件
 
-![文本 描述已自动生成](media/image3.png)
+![image-20220819101707783](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/6eaHeN000image-20220819101707783.png)
 
 这样在文件保存时，就会自动格式化到规范格式了
+
+
+
+---
+
+
 
 ## 注释
 
@@ -132,7 +140,13 @@ Key有female，Value为女
 
 前台页面的这个name和页面叶子目录一个名，否则几个页面的名就重复了，跳页的时候会发生问题
 
-![图形用户界面, 网站 中度可信度描述已自动生成](media/image7.jpeg)
+![image-20220819101748421](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/3Rap3i000image-20220819101748421.png)
+
+
+
+---
+
+
 
 ## 格式化
 
@@ -140,31 +154,58 @@ Key有female，Value为女
 
 安装扩展ESLint
 
-![手机的屏幕截图 描述已自动生成](media/image8.png)
+![image-20220819101756971](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/eOpwMG000image-20220819101756971.png)
 
-![](media/image9.png)
+![image-20220819101800409](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/c39y8N000image-20220819101800409.png)
 
-![电脑屏幕截图 描述已自动生成](media/image10.png)
+![image-20220819101804029](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/emPTXO000image-20220819101804029.png)
 
-![图形用户界面, 文本, 应用程序 描述已自动生成](media/image11.png)
+![image-20220819101807679](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/60xyAn000image-20220819101807679.png)
+
+
+
+---
+
+
 
 ## 国际化
 
 国际化信息配置时，中文必须有值，默认文本为中文
 
+
+
+---
+
 ## 页面标识
 
 vue页面需要设置name值
 
-[TABLE]
+```js
+export default {
+  name: 'OperaRecordBrower',
+}
+```
+
+
+
+---
+
+
 
 ## 接口调用
 
 接口调用一定要判断succes，并展示失败处理，提示信息
 
-| if (!response.success) return |
-|-------------------------------|
+```js
+if (!response.success) return
+```
 
 提示统一使用该方法
 
-[TABLE]
+```js
+this.$message({
+type: 'success', // success/warning/info/error
+message: ‘消息内容’ // 国际化
+})
+```
+
