@@ -1,3 +1,11 @@
+<!--
+ * @Author: 徐家俊 15151832830@163.com
+ * @Date: 2022-08-17 09:24:27
+ * @LastEditors: 徐家俊 15151832830@163.com
+ * @LastEditTime: 2022-08-29 09:44:47
+ * @FilePath: /18626428291/docs/zh-cn/work/mise/OA系统说明.md
+ * @Description: np
+-->
 ## 内容引擎
 
 ### 集成管理
@@ -18,17 +26,11 @@
 
 ---
 
-
-
 ##### 新建目录
 
 ![image-20220817111548412](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/Yx93Zo000image-20220817111548412.png)
 
-
-
 ![image-20220817111602589](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/dI8tZ8000image-20220817111602589.png)
-
-
 
 - 上级目录
 - 目录名称
@@ -36,21 +38,11 @@
 - 禁止文档重名 :禁止文档重名开启后，此目录下的文档不允许重名
 - 顺序: 决定了此目录在目录树中的显示顺序
 
-
-
 - 保存并进入详细设置 :保存并进入此目录的详细属性的编辑页面,如下
 
 ![image-20220817112734450](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/qql4Yv000image-20220817112734450.png)
 
 ---
-
-
-
-
-
-
-
-
 
 1. 基本信息
 

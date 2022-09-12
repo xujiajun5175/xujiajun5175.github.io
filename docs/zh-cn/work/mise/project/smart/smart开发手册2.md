@@ -1,6 +1,8 @@
+# smart 项目开发规范<!-- {docsify-ignore} -->
+
+**文档更新日期: {docsify-updated}**
+
 # 后端
-
-
 
 ## 代码格式
 
@@ -24,11 +26,7 @@ Java代码格式按照《Alibaba Java Coding Guidelines》
 
 这样在文件保存时，就会自动格式化到规范格式了
 
-
-
 ---
-
-
 
 ## 注释
 
@@ -142,11 +140,7 @@ Key有female，Value为女
 
 ![image-20220819101748421](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/3Rap3i000image-20220819101748421.png)
 
-
-
 ---
-
-
 
 ## 格式化
 
@@ -162,17 +156,11 @@ Key有female，Value为女
 
 ![image-20220819101807679](https://typora-img-1257000606.cos.ap-beijing.myqcloud.com/uPic/60xyAn000image-20220819101807679.png)
 
-
-
 ---
-
-
 
 ## 国际化
 
 国际化信息配置时，中文必须有值，默认文本为中文
-
-
 
 ---
 
@@ -186,11 +174,7 @@ export default {
 }
 ```
 
-
-
 ---
-
-
 
 ## 接口调用
 
@@ -208,4 +192,3 @@ type: 'success', // success/warning/info/error
 message: ‘消息内容’ // 国际化
 })
 ```
-
