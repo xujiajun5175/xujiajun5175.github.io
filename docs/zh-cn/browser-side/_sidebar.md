@@ -91,11 +91,14 @@
   - [状态提升](zh-cn/browser-side/react/09-状态提升)
   - [组合 vs 继承](zh-cn/browser-side/react/10-组合vs继承)
 
-- **vue**
+- **Vue2**
   - [Vue2](zh-cn/browser-side/vue/vue2/)
   - [vuex](zh-cn/browser-side/vue/vue2/vuex/)
   - [vue-router](zh-cn/browser-side/vue/vue2/vue-router/)
-  - [Vue3](zh-cn/browser-side/vue/vue3/)
+
+- **Vue3**
+  - [简介](zh-cn/browser-side/vue/vue3/)
+  - [手册](zh-cn/browser-side/vue/vue3/)
 
 - **JS 库**
 
