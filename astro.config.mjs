@@ -1,7 +1,7 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-10-28 09:17:05
- * @LastEditTime: 2024-10-30 14:23:13
+ * @LastEditTime: 2024-10-30 14:46:53
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
  * @FilePath: /xujiajun.github.io/astro.config.mjs
@@ -19,7 +19,7 @@ export default defineConfig({
     UnoCSS(),
     vue(),
     starlight({
-      title: '我的令人愉悦的文档网站'
+      title: '我的令人愉悦的文档'
     }),
     mdx()
   ]
