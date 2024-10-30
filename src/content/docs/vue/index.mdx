@@ -2,29 +2,30 @@
 title: vuejs
 slug: docs/vue
 ---
+
 ## dasdasds
-import { Icon, Code, Aside, Card } from '@astrojs/starlight/components';
 
-<Icon name="open-book" />
+import { Icon, Code, Aside, Card } from '@astrojs/starlight/components'
 
-<Card title="试试这个">一些你想着重展示的有趣内容。</Card>
-<Card title="星星" icon="star">
+<Icon name='open-book' />
+
+<Card title='试试这个'>一些你想着重展示的有趣内容。</Card>
+<Card title='星星' icon='star'>
   天狼星，织女星，参宿四
 </Card>
 ### **dasdasd**
 <Aside>一些在旁白中的内容。</Aside>
 
-<Aside type="caution">一些警示内容。</Aside>
+<Aside type='caution'>一些警示内容。</Aside>
 
-<Aside type="tip"></Aside>
+<Aside type='tip'></Aside>
 
+export const exampleCode = `console.log('这可能来自文件或 CMS！');`
+export const fileName = 'example.js'
+export const highlights = ['文件', 'CMS']
 
-export const exampleCode = `console.log('这可能来自文件或 CMS！');`;
-export const fileName = 'example.js';
-export const highlights = ['文件', 'CMS'];
-
-<Code code={exampleCode} lang="js" title={fileName} mark={highlights} />
-import { FileTree } from '@astrojs/starlight/components';
+<Code code={exampleCode} lang='js' title={fileName} mark={highlights} />
+import {FileTree} from '@astrojs/starlight/components';
 
 <FileTree>
 
