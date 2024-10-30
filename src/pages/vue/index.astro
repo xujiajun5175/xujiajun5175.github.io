@@ -1,0 +1,69 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro'
+import { Aside } from '@astrojs/starlight/components'
+
+import {} from '@astrojs/starlight'
+const frontmatter = {
+  title: '我的自定义页面',
+  banner: {
+    content: ` 我们刚刚发布了一下非常酷的东西！
+    <a href="https://example.com">点击查看！</a>`
+  },
+  description: '页面描述用于页面元数据，将被搜索引擎和社交媒体预览捕获。',
+  tableOfContents: {
+    minHeadingLevel: 1,
+    maxHeadingLevel: 4
+  }
+}
+
+const headings = [
+  { depth: 1, slug: 'asdasds', text: 'asdasds' },
+  { depth: 2, slug: '2222', text: '2222' },
+  { depth: 3, slug: '3333', text: '3333' },
+  { depth: 4, slug: '444444', text: '444444' },
+  { depth: 5, slug: '5555555555555555', text: '5555555555555555' }
+]
+---
+
+<script>
+  const messages = []
+  const socket = new WebSocket(
+    'ws://8.140.205.94:30002/major-hazard/websocket/1'
+  )
+  socket.addEventListener('open', () => {
+    console.log('WebSocket连接已打开')
+    // 可以在这里发送初始消息，如：
+    socket.send('Hello, Server!11111')
+  })
+  socket.addEventListener('message', (event) => {
+    messages.push(event.data)
+    console.log('message', messages)
+  })
+  socket.addEventListener('close', () => {
+    console.log('WebSocket连接已关闭')
+  })
+  socket.addEventListener('error', (error) => {
+    console.error('WebSocket错误:', error)
+  })
+</script>
+<StarlightPage frontmatter={frontmatter} headings={headings}>
+  <h1>asdasd</h1>
+
+  <Aside>一些在旁白中的内容。</Aside>
+
+  <Aside type='caution'>一些警示内容。</Aside>
+
+  <Aside type='tip' />
+  {Array.from({ length: 30 }).map((v) => <div>vue</div>)}
+  <h2>asdasds</h2>
+  {Array.from({ length: 30 }).map((v) => <div>vue</div>)}
+  <h3 id='2222'>2222</h3>
+  {Array.from({ length: 30 }).map((v) => <div>vue</div>)}
+  <h3 id='3333'>3333</h3>
+  {Array.from({ length: 30 }).map((v) => <div>vue</div>)}
+  <h4 id='444444'>444444</h4>
+  {Array.from({ length: 30 }).map((v) => <div>vue</div>)}
+  <h5 id='5555555555555555'>5555555555555555</h5>
+  {Array.from({ length: 30 }).map((v) => <div>vue</div>)}
+</StarlightPage>
