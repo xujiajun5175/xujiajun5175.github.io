@@ -1,0 +1,147 @@
+<script>
+  import DOMPurify from 'dompurify'
+  import Fuse from 'fuse.js'
+  import type { IFuseOptions, FuseResult, FuseSortFunctionItem } from 'fuse.js'
+  let SEARCH_DATA: any
+  const SEARCH_OPTION: IFuseOptions<any> = {
+    includeScore: true,
+    shouldSort: true,
+    threshold: 0.5,
+    keys: [
+      {
+        name: 'title',
+        weight: 1
+      },
+      {
+        name: 'description',
+        weight: 0.75
+      }
+    ]
+  }
+  let fuseInst: Fuse<any> | null
+  const SpinnerSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256" id="spinner" class="default_cursor_cs"><path d="M236,128a108,108,0,0,1-216,0c0-42.52,24.73-81.34,63-98.9A12,12,0,1,1,93,50.91C63.24,64.57,44,94.83,44,128a84,84,0,0,0,168,0c0-33.17-19.24-63.43-49-77.09A12,12,0,1,1,173,29.1C211.27,46.66,236,85.48,236,128Z"></path>
+    <style>
+      #spinner{
+      animation: spin 1s linear infinite;}
+      @keyframes spin{
+      100%{
+      transform:rotate(360deg);
+      }}</style>
+    </svg>`
+  const formDom = document.querySelector('form')
+  const searchDom: HTMLInputElement | null = document.querySelector('#search')
+  const searchReadoutDom: HTMLElement | null =
+    document.querySelector('#searchReadout')
+  const searchResultsDom: HTMLElement | null =
+    document.querySelector('#search-result')
+  formDom?.addEventListener('submit', (e) => {
+    e.preventDefault()
+    const formData = new FormData(formDom)
+    const serachItem = DOMPurify.sanitize(formData.get('search')?.toString()!)
+    if (!serachItem || !serachItem.length) return
+    const url = new URL('/search', window.location.origin)
+    url.searchParams.set('p', serachItem)
+    window.location.assign(url.toString())
+  })
+  function updateSerachReadout(search: number | string) {
+    document.title = '已搜索到'
+    if (searchReadoutDom) {
+      searchReadoutDom.textContent = `一共搜索到${search}条`
+    }
+  }
+
+  function updateSearchPageURL(val: string) {
+    const url = new URL(window.location.href)
+    url.searchParams.set('p', val)
+    window.history.replaceState(null, '', url)
+  }
+
+  function generateSearchList(list: FuseResult<any>[]) {
+    return list
+      .map((v) => {
+        const { title, date, slug } = v.item
+        console.log('🚀 ~ returnlist.map ~ date:', date)
+        const dateAsDate = new Date(date)
+        console.log('🚀 ~ returnlist.map ~ dateAsDate:', dateAsDate)
+
+        return `
+      <li>
+        <time datetime="${dateAsDate.toISOString()}">
+          ${dateAsDate.toLocaleDateString('zh-cn', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          })}
+        </time>
+        <a href="/blog/${slug}">${title}</a>
+      </li>`
+      })
+      .join('')
+  }
+  async function fetchSearchResults(val: string) {
+    if (!val.length) return
+    searchDom && (searchDom.innerHTML = SpinnerSvg)
+    if (!SEARCH_DATA) {
+      try {
+        const res = await fetch('/search.json')
+        if (!res.ok) throw new Error('请求错误')
+        const data = await res.json()
+        SEARCH_DATA = data
+        console.log('🚀 ~ fetchSearchResults ~ SEARCH_DATA:', SEARCH_DATA)
+      } catch (error: any) {
+        console.log('🚀 ~ fetchSearchResults ~ error:', error)
+      }
+    }
+    if (SEARCH_DATA && !fuseInst) {
+      fuseInst = new Fuse(SEARCH_DATA, SEARCH_OPTION)
+    }
+    if (!fuseInst) return
+    const searchResult = fuseInst.search(val)
+    updateSerachReadout(searchResult?.length)
+    console.log('🚀 ~ fetchSearchResults ~ searchResult:', searchResult)
+    if (searchResultsDom) {
+      searchResultsDom.innerHTML = searchResult.length
+        ? generateSearchList(searchResult)
+        : '未搜索到'
+    }
+  }
+  window.addEventListener('DOMContentLoaded', () => {
+    const urlSearchParams = DOMPurify.sanitize(
+      new URLSearchParams(window.location.search).get('p')!
+    )
+    if (searchDom) {
+      searchDom.value = urlSearchParams
+      fetchSearchResults(urlSearchParams)
+      // updateSerachReadout(urlSearchParams)
+      searchDom.focus()
+    }
+  })
+  searchDom?.addEventListener('input', () => {
+    const val = DOMPurify.sanitize(searchDom.value)
+    fetchSearchResults(val)
+    updateSearchPageURL(val)
+  })
+</script>
+<section
+  class='form block sticky px-5% top-0px py-20px w-full z-10 bg-gray-200'
+>
+  <form action='search'>
+    <div>
+      <label for='search'>搜索你想搜索的</label>
+      <span>请输入你要搜索的内容</span>
+    </div>
+    <input
+      type='search'
+      required
+      min='2'
+      max='24'
+      name='search'
+      id='search'
+      placeholder='模糊搜索'
+    />
+  </form>
+  <div id='searchReadout'></div>
+  <main aria-label='Search Results'>
+    <ul id='search-result'></ul>
+  </main>
+</section>
