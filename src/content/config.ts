@@ -1,14 +1,14 @@
 /*
  * @Author: xujiajun xujiajun@vchangyi.com
  * @Date: 2024-10-28 21:37:20
- * @LastEditTime: 2024-10-29 23:31:38
- * @LastEditors: xujiajun xujiajun@vchangyi.com
+ * @LastEditTime: 2024-10-31 10:35:00
+ * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
- * @FilePath: \my-astro\src\content\config.ts
+ * @FilePath: /xujiajun.github.io/src/content/config.ts
  */
 import { defineCollection, z } from 'astro:content'
-import { docsSchema } from '@astrojs/starlight/schema'
-const blog = defineCollection({
+import { docsSchema, i18nSchema } from '@astrojs/starlight/schema'
+/* const blog = defineCollection({
   // Type-check frontmatter using a schema
   schema: z.object({
     title: z.string(),
@@ -24,8 +24,9 @@ const blog = defineCollection({
       .transform((str) => (str ? new Date(str) : undefined)),
     heroImage: z.string().optional()
   })
-})
+}) */
 
 export const collections = {
-  docs: defineCollection({ schema: docsSchema() })
+  docs: defineCollection({ schema: docsSchema() }),
+  i18n: defineCollection({ type: 'data', schema: i18nSchema() })
 }
