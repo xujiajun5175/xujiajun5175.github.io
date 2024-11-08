@@ -2,6 +2,6 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "preserve",
-    "types": ["element-plus/global"]
+    "types": ["element-plus/global", "@types/jquery", "draggabilly"]
   }
 }

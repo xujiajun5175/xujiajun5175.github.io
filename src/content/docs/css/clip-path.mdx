@@ -1,0 +1,45 @@
+---
+title: clip-path
+description: 裁剪 | CSS | clip-path
+---
+
+import Example from '../../../examples/css/clippath/index.astro'
+import { LinkCard, CardGrid } from '@astrojs/starlight/components'
+
+`clip-path` CSS 属性使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏
+
+## 形式语法
+
+---
+
+```css
+{
+  /* <clip-source> values */
+  clip-path: url(resources.svg#c1);
+  /* <geometry-box> values */
+  clip-path:[margin | border | padding | content | fill | stroke | view]-box;
+  /* <basic-shape> values */
+  clip-path:inset() | circle() | ellipse() | polygon() | path();
+  /* Box and shape values combined */
+  clip-path: <geometry-box> <basic-shape>;
+  /* Global values */
+  clip-path: inherit | revert | revert-layer | initial | unset;
+}
+```
+
+<CardGrid>
+  <LinkCard
+    title='geometry-box'
+    description='过滤器函数'
+    href='/css/function/filter-function/'
+  />
+  <LinkCard
+    title='basic-shape'
+    description='过滤器函数'
+    href='/css/function/filter-function/'
+  />
+</CardGrid>
+
+## 示例
+
+<Example client:load />
