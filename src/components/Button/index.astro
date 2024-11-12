@@ -1,0 +1,38 @@
+---
+import Example from './button'
+---
+
+<script>
+  const doms = document.querySelectorAll('button.unoui')
+  let dom: Element | null = null
+  if (doms?.length) {
+    dom = doms[0]
+    dom.addEventListener('click', () => {
+      // unocss theme toggle
+      document.body.classList.toggle('dark')
+      // starlight-theme toggle
+      const res = localStorage.getItem('starlight-theme')
+      document.documentElement.dataset.theme =
+        res === 'light' ? 'dark' : 'light'
+      localStorage.setItem(
+        'starlight-theme',
+        res === 'light' ? 'dark' : 'light'
+      )
+    })
+  }
+  // console.log(dom)
+</script>
+<Example title='2222' />
+<button
+  class='unoui inline-flex items-center gap-2 rounded-md cursor-pointer dark:text-white text-black'
+>
+  <span>
+    <slot name='prefix' />
+  </span>
+  <span>
+    <slot />
+  </span>
+  <span>
+    <slot name='suffix' />
+  </span>
+</button>

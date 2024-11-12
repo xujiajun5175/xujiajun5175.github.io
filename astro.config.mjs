@@ -1,7 +1,7 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-10-28 09:17:05
- * @LastEditTime: 2024-10-31 16:58:06
+ * @LastEditTime: 2024-11-11 12:16:27
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
  * @FilePath: /xujiajun.github.io/astro.config.mjs
@@ -16,6 +16,7 @@ import starlight from '@astrojs/starlight'
 // import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import mdx from '@astrojs/mdx'
 import ElementPlus from 'unplugin-element-plus/vite'
+import react from '@astrojs/react'
 // https://astro.build/config
 export default defineConfig({
   site: 'https://xujiajun5175.github.io',
@@ -28,24 +29,8 @@ export default defineConfig({
   },
   integrations: [
     UnoCSS(),
-    vue(),
-
-    // AutoImport({
-    //   imports: [
-    //     'vue',
-    //     {
-    //       'naive-ui': [
-    //         'useDialog',
-    //         'useMessage',
-    //         'useNotification',
-    //         'useLoadingBar'
-    //       ]
-    //     }
-    //   ]
-    // }),
-    // Components({
-    //   resolvers: [NaiveUiResolver()]
-    // }),
+    vue(), // AutoImport({
+    react(),
     starlight({
       title: '令人愉悦的文档',
       locales: {
