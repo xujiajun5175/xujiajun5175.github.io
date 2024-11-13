@@ -1,0 +1,70 @@
+---
+title: 动画
+description: CSS Animate | 动画
+---
+
+import TextTransitionAnimate from '@examples/snippit/text-transition-animate.astro'
+
+## 文字过渡动画
+
+<TextTransitionAnimate />
+
+<details>
+  <summary>查看说明</summary>
+
+- 核心实现原理：
+  - morph 阶段：两个文字元素同时改变透明度和模糊度，创造渐变效果。
+  - cooldown 阶段：保持当前文字显示一段时间。
+  - 使用数学函数（如 Math.pow 和 Math.min）来创建非线性的动画效果，使过渡更加平滑。
+  - 使用 [SVG 滤镜](/css/)来实现额外的视觉效果。
+
+</details>
+
+---
+
+## 心形点赞动画
+
+- 点击动画
+
+import ClickAnimateHeart from '@examples/snippit/click-animate-heart.astro'
+
+<ClickAnimateHeart />
+
+<details>
+  <summary>查看说明</summary>
+
+- 动画效果：
+  - 按钮按下效果：使用 transform 实现轻微的缩放和位移。
+  - 心形填充：通过改变 SVG 的 fill 属性。
+  - 涟漪效果：使用 transform: scale() 实现圆形扩散。
+  - 粒子动画：结合 transform 和 @keyframes 实现粒子的散开效果。
+
+</details>
+
+---
+
+## 密码隐藏显示动画
+
+import PasswordDisplayAnimate from '@examples/snippit/password-display-animate.astro'
+
+<PasswordDisplayAnimate></PasswordDisplayAnimate>
+
+<details>
+  <summary>查看说明</summary>
+
+- CSS 样式：
+  - 使用 CSS 变量和 calc() 函数来动态计算数字的放大和模糊程度。
+  - 使用 :hover 和 :focus-visible 伪类来定义数字在悬停或聚焦时的样式变化。
+  - 使用 filter 和 scale 属性来实现模糊和放大效果。
+- CSS 选择器：使用 :is() 和 :has() 选择器来实现相邻数字的联动效果，允许根据当前数字的状态来影响后续数字的样式。
+- CSS 动画：使用 transition 属性来平滑地过渡数字的放大和模糊效果，使得用户体验更加流畅。
+
+</details>
+
+---
+
+## 卡片悬停动画效果
+
+import CardBgHover from '@examples/snippit/card-bg-hover.astro'
+
+<CardBgHover></CardBgHover>

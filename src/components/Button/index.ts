@@ -6,5 +6,5 @@
  * @Description:
  * @FilePath: /my-astro/src/components/Button/index.ts
  */
-import Common from './common.astro'
-export default { Button: Common }
+import VButton from './button.vue'
+export default { VButton }

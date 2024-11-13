@@ -1,7 +1,7 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-10-28 09:17:05
- * @LastEditTime: 2024-11-11 12:16:27
+ * @LastEditTime: 2024-11-13 16:26:10
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
  * @FilePath: /xujiajun.github.io/astro.config.mjs
@@ -44,6 +44,16 @@ export default defineConfig({
         dark: '/src/assets/logo-dark.svg',
         replacesTitle: true
       },
+      head: [
+        {
+          tag: 'script',
+          attrs: {
+            src: '/observer.js',
+            'data-site': 'MY-FATHOM-ID',
+            defer: true
+          }
+        }
+      ],
       customCss: process.env.NO_GRADIENTS ? [] : ['./src/assets/landing.css']
     }),
     mdx()
