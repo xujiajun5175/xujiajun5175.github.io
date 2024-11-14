@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import localBirdImage from '@assets/svg/mdn.svg'
+// import localBirdImage from '@assets/svg/mdn.svg'
 const shapes: { style: string; label: string }[] = [
   {
     style:
@@ -112,7 +112,7 @@ const insetBtn: HTMLElement | null = document.getElementById('insetBtn')
   </div>
   <div class=''>asdasd</div>
 </div>
-<Image src={localBirdImage} alt='mdn logo' id='clipped' />
+<!-- <Image src={localBirdImage} alt='mdn logo' id='clipped' /> -->
 <svg height='0' width='0'>
   <defs>
     <clipPath id='cross'>
@@ -133,10 +133,10 @@ const insetBtn: HTMLElement | null = document.getElementById('insetBtn')
   </option>
 </select>
 <style lang='scss' scoped>
-  #clipped {
-    margin-bottom: 20px;
-    clip-path: url(#cross);
-  }
+  // #clipped {
+  //   margin-bottom: 20px;
+  //   clip-path: url(#cross);
+  // }
   .clip-path-inset {
     clip-path: inset(20px);
   }
