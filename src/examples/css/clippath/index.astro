@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import localBirdImage from '../../../assets/svg/mdn.svg'
+import localBirdImage from '@assets/svg/mdn.svg'
 const shapes: { style: string; label: string }[] = [
   {
     style:
@@ -43,7 +43,6 @@ const shapes: { style: string; label: string }[] = [
 <script>
   import $ from 'jquery'
   import Draggabilly from 'draggabilly'
-
   const shapeDoms = document.querySelectorAll('figure.shape-preset')
   shapeDoms.forEach((dom) => {
     dom.addEventListener('click', () => {
@@ -69,7 +68,6 @@ const shapes: { style: string; label: string }[] = [
       }
     })
   } */
-
   /*   
 const insetBtn: HTMLElement | null = document.getElementById('insetBtn')
   const clipPathDom: HTMLElement | null = document.getElementById('clipPathDom')

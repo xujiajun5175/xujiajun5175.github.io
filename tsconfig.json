@@ -2,22 +2,13 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "types": [
-      "element-plus/global",
-      "@types/jquery",
-      "draggabilly"
-    ],
+    "types": ["element-plus/global", "@types/jquery", "draggabilly"],
     "baseUrl": ".",
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@examples/*": [
-        "src/examples/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@examples/*": ["src/examples/*"]
     },
     "jsxImportSource": "react"
   }
