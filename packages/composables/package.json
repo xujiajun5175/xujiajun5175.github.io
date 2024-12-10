@@ -1,8 +1,7 @@
 {
-    "name": "admin-template",
-    "private": true,
+    "name": "@admin-template/composables",
     "version": "1.0.0",
-    "description": "",
+    "description": "组合式方法集合",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
