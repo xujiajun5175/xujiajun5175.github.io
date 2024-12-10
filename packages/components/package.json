@@ -2,11 +2,16 @@
     "name": "@admin-template/components",
     "version": "1.0.0",
     "description": "公共组件库",
-    "main": "index.js",
+    "main": "index.ts",
+    "module": "index.ts",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "peerDependencies": {
+        "vue": "latest",
+        "element-plus": "^2.9.0"
+    }
 }
