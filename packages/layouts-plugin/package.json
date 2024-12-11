@@ -1,0 +1,10 @@
+{
+    "name": "@admin-template/vue-layouts-plugins",
+    "version": "1.0.0",
+    "description": "自动导入layouts vite插件",
+    "main": "index.ts",
+    "module": "index.ts",
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

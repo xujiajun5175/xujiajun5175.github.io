@@ -6,6 +6,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
+import VueLayouts from './build/layouts-plugin'
 import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
@@ -35,11 +36,14 @@ export default defineConfig({
                 },
             ],
         }),
+        VueLayouts(),
         AutoImport({
+            dts: './src/typings/auto-imports.d.ts',
             imports: [VueRouterAutoImports],
             resolvers: [ElementPlusResolver()],
         }),
         Components({
+            dts: './src/typings/components.d.ts',
             resolvers: [ElementPlusResolver()],
         }),
     ],

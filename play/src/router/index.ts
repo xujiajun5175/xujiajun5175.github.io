@@ -1,23 +1,19 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-12-11 09:51:37
- * @LastEditTime: 2024-12-11 12:31:25
+ * @LastEditTime: 2024-12-11 16:00:12
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
  * @FilePath: /xujiajun.github.io/play/src/router/index.ts
  */
 
 import { createWebHistory, createRouter } from 'vue-router'
-import { routes, handleHotUpdate } from 'vue-router/auto-routes'
-import Main from '../App.vue'
-import Login from '../pages/_internal/login.vue'
-import Module1 from '../pages/modules/module1/index.vue'
-import Module2 from '../pages/modules/module2/index.vue'
+import { routes as _routes, handleHotUpdate } from 'vue-router/auto-routes'
 
-/** layouts */
-import DefaultLayout from '@/layouts/default.vue'
+import { setupLayouts } from 'virtual:vue-layouts'
 
-console.log(routes)
+const routes = setupLayouts(_routes)
+console.log(routes, _routes)
 const router = createRouter({
     history: createWebHistory(),
     routes,
