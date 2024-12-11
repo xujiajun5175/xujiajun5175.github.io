@@ -1,13 +1,16 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
- * @Date: 2024-12-11 15:19:51
- * @LastEditTime: 2024-12-11 16:35:46
- * @LastEditors: 徐家俊 15151832830@163.com
+ * @Date: 2024-12-11 16:10:45
+ * @LastEditTime: 2024-12-11 23:06:15
+ * @LastEditors: 徐家俊 1515183820@163.com
  * @Description:
- * @FilePath: /xujiajun.github.io/play/build/layouts-plugin.ts
+ * @FilePath: \xujiajun5175.github.io\packages\layouts-plugin\src\virtual.ts
  */
 import { normalizePath } from './utils'
-function createVirtualModuleID(name: string) {
+
+import type { Options } from './typescript'
+
+export function createVirtualModuleID(name: string) {
     const virtualModuleId = `virtual:${name}`
     const resolvedVirtualModuleId = `\0${virtualModuleId}`
     return {
@@ -16,21 +19,14 @@ function createVirtualModuleID(name: string) {
     }
 }
 
-async function createVirtualGlob(target: string, isSync: boolean) {
-    return `import.meta.glob("${target}/**/*.vue", { eager: ${isSync} })`
+export async function createVirtualGlob(target: string, isSync: boolean) {
+    return `import.meta.glob('${target}/**/*.vue',{eager:${isSync}})`
 }
 
-interface VirtualModuleCodeOptions {
-    target: string
-    defaultLayout: string
-    importMode: 'sync' | 'async'
-    skipTopLevelRouteLayout: boolean
-}
-
-async function createVirtualModuleCode(options: VirtualModuleCodeOptions) {
+export async function createVirtualModuleCode(options: Partial<Options>) {
     const { target, defaultLayout, importMode, skipTopLevelRouteLayout } = options
 
-    const normalizedTarget = normalizePath(target)
+    const normalizedTarget = normalizePath(target as string)
 
     const isSync = importMode === 'sync'
 
@@ -55,6 +51,7 @@ async function createVirtualModuleCode(options: VirtualModuleCodeOptions) {
       const layouts = {}
 
       const modules = ${await createVirtualGlob(normalizedTarget, isSync)}
+      console.log("🚀 ~ setupLayouts ~ modules:", modules);
 
       Object.entries(modules).forEach(([name, module]) => {
         let key = name.replace("${normalizedTarget}/", '').replace('.vue', '')
@@ -100,54 +97,4 @@ async function createVirtualModuleCode(options: VirtualModuleCodeOptions) {
       return deepSetupLayout(routes)
     }
   `
-}
-
-import type { Plugin } from 'vite'
-
-export interface Options {
-    /**
-     * layouts dir
-     * @default "src/layouts"
-     */
-    target?: string
-    /**
-     * default layout
-     * @default "default"
-     */
-    defaultLayout?: string
-    /**
-     * default auto resolve
-     */
-    importMode?: 'sync' | 'async'
-    /**
-     * If opened, fix →
-     * https://github.com/JohnCampionJr/vite-plugin-vue-layouts/issues/134
-     * @default false
-     */
-    skipTopLevelRouteLayout?: boolean
-}
-
-export default function VueLayouts(options: Partial<Options> = {}): Plugin {
-    const { target = 'src/layouts', defaultLayout = 'default', importMode = process.env.VITE_SSG ? 'sync' : 'async', skipTopLevelRouteLayout = false } = options
-
-    const { virtualModuleId, resolvedVirtualModuleId } = createVirtualModuleID('vue-layouts')
-
-    return {
-        name: 'unplugin-vue-layouts',
-        resolveId(id) {
-            if (id === virtualModuleId) {
-                return resolvedVirtualModuleId
-            }
-        },
-        load(id) {
-            if (id === resolvedVirtualModuleId) {
-                return createVirtualModuleCode({
-                    target,
-                    importMode,
-                    defaultLayout,
-                    skipTopLevelRouteLayout,
-                })
-            }
-        },
-    }
 }

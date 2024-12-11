@@ -5,7 +5,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "cross-env-shell \"cd play && pnpm run dev\""
+        "dev": "cross-env-shell \"cd ./play && pnpm run dev\""
     },
     "packageManager": "pnpm@9.5.0",
     "keywords": [],
@@ -15,6 +15,7 @@
         "@admin-template/api": "workspace:*",
         "@admin-template/components": "workspace:*",
         "@admin-template/composables": "workspace:*",
+        "@admin-template/vite-layouts-plugins": "workspace:*",
         "element-plus": "^2.9.0",
         "vue": "latest"
     },
@@ -27,11 +28,14 @@
         "typescript": "~5.6.2",
         "unocss": "^0.65.1",
         "vite": "^6.0.1",
+        "vue-router": "^4.5.0",
         "vue-tsc": "^2.1.10"
     },
     "peerDependencies": {
         "element-plus": "^2.9.0",
-        "vue": "latest"
+        "vue": "latest",
+        "vite": ">=5.0.12",
+        "vue-router": ">=4.2.5"
     },
     "volta": {
         "node": "18.20.5"

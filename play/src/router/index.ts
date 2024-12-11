@@ -1,10 +1,10 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-12-11 09:51:37
- * @LastEditTime: 2024-12-11 16:00:12
- * @LastEditors: 徐家俊 15151832830@163.com
+ * @LastEditTime: 2024-12-11 23:07:21
+ * @LastEditors: 徐家俊 1515183820@163.com
  * @Description:
- * @FilePath: /xujiajun.github.io/play/src/router/index.ts
+ * @FilePath: \xujiajun5175.github.io\play\src\router\index.ts
  */
 
 import { createWebHistory, createRouter } from 'vue-router'
