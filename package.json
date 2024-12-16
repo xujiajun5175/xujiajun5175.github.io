@@ -17,6 +17,7 @@
         "@admin-template/composables": "workspace:*",
         "@admin-template/vite-layouts-plugins": "workspace:*",
         "element-plus": "^2.9.0",
+        "lodash-es": "^4.17.21",
         "vue": "latest"
     },
     "devDependencies": {
@@ -33,8 +34,8 @@
     },
     "peerDependencies": {
         "element-plus": "^2.9.0",
-        "vue": "latest",
         "vite": ">=5.0.12",
+        "vue": "latest",
         "vue-router": ">=4.2.5"
     },
     "volta": {

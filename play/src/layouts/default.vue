@@ -1,10 +1,10 @@
 <!--
- * @Author: 徐家俊 15151832830@163.com
- * @Date: 2024-12-11 10:47:17
- * @LastEditTime: 2024-12-11 23:16:38
- * @LastEditors: 徐家俊 1515183820@163.com
+ * @Author: 徐家俊 1515183820@163.com
+ * @Date: 2024-12-11 23:35:11
+ * @LastEditTime: 2024-12-16 10:09:26
+ * @LastEditors: 徐家俊 15151832830@163.com
  * @Description: 
- * @FilePath: \xujiajun5175.github.io\play\src\layouts\default.vue
+ * @FilePath: /xujiajun.github.io/play/src/layouts/default.vue
 -->
 <script setup lang="ts">
     defineOptions({

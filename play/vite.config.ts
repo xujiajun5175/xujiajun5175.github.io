@@ -1,10 +1,10 @@
 /*
  * @Author: 徐家俊 1515183820@163.com
  * @Date: 2024-12-11 20:41:51
- * @LastEditTime: 2024-12-11 23:08:26
- * @LastEditors: 徐家俊 1515183820@163.com
+ * @LastEditTime: 2024-12-16 11:15:46
+ * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
- * @FilePath: \xujiajun5175.github.io\play\vite.config.ts
+ * @FilePath: /xujiajun.github.io/play/vite.config.ts
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -14,8 +14,9 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Unocss from 'unocss/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
-// import VueLayouts from './build/layouts-plugin'
 import VueLayouts from '@admin-template/vite-layouts-plugins'
+// import VueLayouts from 'vite-plugin-vue-layouts'
+
 import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
@@ -31,23 +32,24 @@ export default defineConfig({
             exclude: ['**/components/**/*'],
             dts: './src/typings/typed-router.d.ts',
             routesFolder: [
-                {
-                    src: 'src/pages/_internal',
-                    path: 'auth/',
-                },
-                {
-                    src: 'src/pages/modules/module1',
-                    path: 'module1/',
-                },
-                {
-                    src: 'src/pages/modules/module2',
-                    path: 'module2/',
-                },
+              'src/pages',
+              // {
+              //     src: 'src/pages/_internal',
+              //     path: 'auth/',
+              // },
+              // {
+              //     src: 'src/pages/modules/module1',
+              //     path: 'module1/',
+              // },
+              // {
+              //     src: 'src/pages/modules/module2',
+              //     path: 'module2/',
+              // },
             ],
         }),
-        VueLayouts({
-            skipTopLevelRouteLayout: true,
-        }),
+      // VueLayouts({
+      //   skipTopLevelRouteLayout: true
+      //   }),
         AutoImport({
             dts: './src/typings/auto-imports.d.ts',
             imports: [VueRouterAutoImports],
@@ -67,6 +69,9 @@ export default defineConfig({
             },
         },
     },
+  server: {
+    port: 5177,
+  },
     css: {
         preprocessorOptions: {
             scss: { api: 'modern-compiler' },

@@ -1,0 +1,79 @@
+[
+    {
+        "path": "/_internal",
+        "children": [
+            {
+                "path": "login",
+                "name": "/_internal/login",
+                "meta": {
+                    "layout": "green"
+                },
+                "alias": []
+            },
+            {
+                "path": "login2",
+                "name": "/_internal/login2",
+                "meta": {
+                    "layout": "green"
+                },
+                "alias": []
+            }
+        ]
+    },
+    {
+        "path": "/:path(.*)",
+        "name": "/[...path]"
+    },
+    {
+        "path": "/modules",
+        "children": [
+            {
+                "path": "module1",
+                "children": [
+                    {
+                        "path": "",
+                        "name": "/modules/module1/",
+                        "meta": {
+                            "layout": "admin"
+                        },
+                        "alias": []
+                    },
+                    {
+                        "path": "child-module",
+                        "children": [
+                            {
+                                "path": "test",
+                                "name": "/modules/module1/child-module/test"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "path": "module2",
+                "children": [
+                    {
+                        "path": "",
+                        "name": "/modules/module2/",
+                        "meta": {
+                            "layout": "green"
+                        },
+                        "alias": []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "path": "/test",
+        "name": "/test",
+        "meta": {
+            "layout": "green"
+        },
+        "alias": []
+    },
+    {
+        "path": "/",
+        "redirect": "/_internal/login"
+    }
+]
