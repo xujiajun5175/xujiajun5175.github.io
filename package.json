@@ -5,7 +5,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "cross-env-shell \"cd ./play && pnpm run dev\""
+        "dev": "cross-env-shell \"cd ./play && pnpm run dev\"",
+        "build": "cross-env-shell \"cd ./play && pnpm run build\""
     },
     "packageManager": "pnpm@9.5.0",
     "keywords": [],
