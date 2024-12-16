@@ -1,7 +1,7 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-12-11 09:51:37
- * @LastEditTime: 2024-12-16 14:52:19
+ * @LastEditTime: 2024-12-16 17:21:09
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
  * @FilePath: /xujiajun.github.io/play/src/router/index.ts
@@ -70,9 +70,13 @@ function setupLayouts(routes: RouteRecordRaw[]) {
   })
   return routes
 }
+const routes = setupLayouts(_routes)
+// if (import.meta.env.MODE === 'development') {
+console.log("🚀 ~ routes:", routes);
+// }
 const router = createRouter({
   history: createWebHistory(),
-  routes: setupLayouts(_routes),
+  routes
 })
 createRouterGuard(router)
 if (import.meta.hot) {
