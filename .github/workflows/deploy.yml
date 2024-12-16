@@ -30,20 +30,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - uses: pnpm/action-setup@0609f0983b7a228f052f81ef4c3d6510cae254ad
+      - name: 安装pnpm
+        uses: pnpm/action-setup@v4
         with:
-          version: 6.10.0
+          version: 9
       - name: 安装node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
           cache: 'pnpm'
       - name: 安装依赖
         run: |
           cd play
-          pnpm i
+          pnpm install
         shell: bash
-      - name: Build
+      - name: 构建
         run: pnpm build
       - name: Setup Pages
         uses: actions/configure-pages@v4
