@@ -1,7 +1,7 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-12-11 09:51:37
- * @LastEditTime: 2024-12-17 09:19:56
+ * @LastEditTime: 2024-12-17 09:28:49
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
  * @FilePath: /xujiajun.github.io/src/router/index.ts
@@ -13,12 +13,16 @@ _routes.push({
   path: '/',
   redirect: '/_internal/login',
 })
+
+const modules = import.meta.glob('../layouts/**/*.vue', { eager: false })
+const layouts: Record<string, any> = {}
+Object.entries(modules).forEach(([key, value]) => {
+  layouts[key.replace('../layouts/', '').replace('.vue', '')] = value
+})
+
 function setupLayouts(routes: RouteRecordRaw[]) {
-  const modules = import.meta.glob('../layouts/**/*.vue', { eager: false })
-  const layouts: Record<string, any> = {}
-  Object.entries(modules).forEach(([key, value]) => {
-    layouts[key.replace('../layouts/', '').replace('.vue', '')] = value
-  })
+  console.log("🚀 ~ setupLayouts ~ setupLayouts:", setupLayouts);
+
   /** ### flatten routes */
   function flattenRoutes(routes: RouteRecordRaw[]) {
     const __: any[] = []
