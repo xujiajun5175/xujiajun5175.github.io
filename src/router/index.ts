@@ -1,12 +1,12 @@
 /*
  * @Author: 徐家俊 15151832830@163.com
  * @Date: 2024-12-11 09:51:37
- * @LastEditTime: 2024-12-16 17:21:09
+ * @LastEditTime: 2024-12-17 09:19:56
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
- * @FilePath: /xujiajun.github.io/play/src/router/index.ts
+ * @FilePath: /xujiajun.github.io/src/router/index.ts
  */
-import { createWebHistory, createRouter, RouteRecordRaw } from 'vue-router/auto'
+import { createWebHashHistory, createRouter, RouteRecordRaw } from 'vue-router/auto'
 import { routes as _routes, handleHotUpdate } from 'vue-router/auto-routes'
 import { createRouterGuard } from './guard'
 _routes.push({
@@ -75,7 +75,7 @@ const routes = setupLayouts(_routes)
 console.log("🚀 ~ routes:", routes);
 // }
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 createRouterGuard(router)
