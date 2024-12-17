@@ -8,7 +8,7 @@
         "skipLibCheck": true,
 
         /* Bundler mode */
-        "moduleResolution": "bundler",
+        "moduleResolution": "Bundler",
         "allowImportingTsExtensions": true,
         "isolatedModules": true,
         "moduleDetection": "force",
@@ -20,7 +20,13 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        "noUncheckedSideEffectImports": true
+        "noUncheckedSideEffectImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["src/*"]
+        }
     },
-    "include": ["./**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+    "include": ["src/typings/**/*.d.ts", "module/**/*.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
+    "exclude": ["node_modules"]
 }
