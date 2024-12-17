@@ -1,7 +1,7 @@
 /*
  * @Author: 徐家俊 1515183820@163.com
  * @Date: 2024-12-11 20:41:51
- * @LastEditTime: 2024-12-17 09:07:48
+ * @LastEditTime: 2024-12-17 09:48:09
  * @LastEditors: 徐家俊 15151832830@163.com
  * @Description:
  * @FilePath: /xujiajun.github.io/vite.config.ts
@@ -48,8 +48,11 @@ export default defineConfig({
     port: 5177,
   },
   css: {
-    preprocessorOptions: {
-      scss: { api: 'modern-compiler' },
-    },
+    transformer: 'lightningcss',
+    lightningcss: { cssModules: true }
+
   },
+  build: {
+    cssMinify: "lightningcss"
+  }
 })
